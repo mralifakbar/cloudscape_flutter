@@ -59,6 +59,12 @@ final CsDemoCategory feedbackCategory = CsDemoCategory(
       docPath: 'doc/components/CsLiveRegion.md',
       builder: (_) => const _LiveRegionDemo(),
     ),
+    CsDemo(
+      title: 'CsErrorBoundary',
+      description: 'A section that fails to build shows an error fallback with a Refresh action.',
+      docPath: 'doc/components/CsErrorBoundary.md',
+      builder: (_) => const _ErrorBoundaryDemo(),
+    ),
   ],
 );
 
@@ -667,6 +673,95 @@ class _LiveRegionDemoState extends State<_LiveRegionDemo> {
           ),
         ),
       ],
+    );
+  }
+}
+
+class _ErrorBoundaryDemo extends StatefulWidget {
+  const _ErrorBoundaryDemo();
+
+  @override
+  State<_ErrorBoundaryDemo> createState() => _ErrorBoundaryDemoState();
+}
+
+class _ErrorBoundaryDemoState extends State<_ErrorBoundaryDemo> {
+  final GlobalKey<CsErrorBoundaryState> _custom = GlobalKey();
+  bool _broken = false;
+  final List<String> _log = [];
+
+  @override
+  Widget build(BuildContext context) {
+    return DemoColumn(
+      children: [
+        DemoSection(
+          title: 'A widget that throws while building',
+          caption: 'Break the section to replace it with the default fallback. Refresh builds it again.',
+          child: CsSpaceBetween(
+            size: CsSpacingSize.s,
+            children: [
+              CsButton(text: 'Break instance details', onPress: _broken ? null : () => setState(() => _broken = true)),
+              CsErrorBoundary(
+                errorBoundaryId: 'instance-details',
+                onError: (d) => setState(() => _log.insert(0, '${d.errorBoundaryId}: ${d.error}')),
+                onRefresh: () => setState(() => _broken = false),
+                child: _InstanceDetails(broken: _broken),
+              ),
+              if (_log.isNotEmpty)
+                CsBox(color: CsBoxColor.textBodySecondary, variant: CsBoxVariant.small, text: 'onError: ${_log.first}'),
+            ],
+          ),
+        ),
+        DemoSection(
+          title: 'Custom fallback',
+          caption: 'renderFallback rearranges the default slots.',
+          child: CsSpaceBetween(
+            size: CsSpacingSize.s,
+            children: [
+              CsButton(text: 'Show fallback', onPress: () => _custom.currentState?.forceError()),
+              CsErrorBoundary(
+                key: _custom,
+                onError: (_) {},
+                i18nStrings: const CsErrorBoundaryI18nStrings(
+                  headerText: 'Metrics could not be shown',
+                  descriptionText: 'The chart failed to render.',
+                  refreshActionText: 'Try again',
+                ),
+                renderFallback: (context, slots) => CsContainer(
+                  header: DefaultTextStyle.merge(
+                    style: context.cs.text(CsTypeScale.headingS, weight: CsTypography.bold),
+                    child: slots.header,
+                  ),
+                  footer: slots.action,
+                  child: slots.description,
+                ),
+                child: const CsContainer(child: Text('CPU utilization 42%, network in 1.2 MB/s')),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _InstanceDetails extends StatelessWidget {
+  const _InstanceDetails({required this.broken});
+
+  final bool broken;
+
+  @override
+  Widget build(BuildContext context) {
+    if (broken) throw StateError('Sample failure: instance details could not be built');
+    return const CsContainer(
+      child: CsKeyValuePairs(
+        items: [
+          CsKeyValuePair(label: 'Instance ID', value: 'i-0abc123'),
+          CsKeyValuePair(
+            label: 'State',
+            valueWidget: CsStatusIndicator(type: CsStatusType.success, text: 'Running'),
+          ),
+        ],
+      ),
     );
   }
 }

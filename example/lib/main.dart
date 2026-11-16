@@ -8,11 +8,12 @@ import 'gallery/foundations/icons_page.dart';
 import 'gallery/foundations/typography_page.dart';
 import 'gallery/home_page.dart';
 import 'gallery/settings_scope.dart';
+import 'sample/console_app.dart';
 
 void main() => runApp(const GalleryApp());
 
 /// The cloudscape_flutter gallery: every component with live demos, plus the
-/// foundations (colors, type, icons).
+/// foundations (colors, type, icons) and a sample cloud console.
 class GalleryApp extends StatefulWidget {
   const GalleryApp({super.key, this.home});
 
@@ -51,11 +52,14 @@ class _GalleryAppState extends State<GalleryApp> {
 }
 
 /// Start page chosen with `--dart-define=CS_GALLERY_START=<page>`, for
-/// screenshots: `colors`, `typography`, `icons`, a category title (`Forms`)
-/// or `demo:<ClassName>`.
+/// screenshots: `console`, `console:dashboard`, `console:launch`, `colors`,
+/// `typography`, `icons`, a category title (`Forms`) or `demo:<ClassName>`.
 Widget _startPage() {
   const start = String.fromEnvironment('CS_GALLERY_START');
-  if (start.isEmpty) return const HomePage();
+  if (start.isEmpty) return const HomePage(sampleApp: _console);
+  if (start == 'console') return const ConsoleApp();
+  if (start == 'console:dashboard') return const ConsoleApp(initialSection: ConsoleSection.dashboard);
+  if (start == 'console:launch') return const ConsoleApp(initialSection: ConsoleSection.launch);
   if (start == 'colors') return const ColorsPage();
   if (start == 'typography') return const TypographyPage();
   if (start == 'icons') return const IconsPage();
@@ -65,5 +69,7 @@ Widget _startPage() {
       if ('demo:${d.title}' == start) return DemoPage(demo: d);
     }
   }
-  return const HomePage();
+  return const HomePage(sampleApp: _console);
 }
+
+Widget _console(BuildContext context) => const ConsoleApp();

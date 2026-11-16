@@ -36,7 +36,7 @@ CsChatBubble(
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
 | `type` | `CsChatBubbleType` | required | `incoming` or `outgoing`. |
-| `ariaLabel` | `String` | required | Unique accessible name of the message group, such as "Jane Doe at 3:42pm". |
+| `ariaLabel` | `String` | required | Unique accessible name of the message group, such as "Sample user at 3:42pm". |
 | `child` | `Widget` | required | Message content. Text uses body-m on a 22px line. |
 | `avatar` | `Widget?` | `null` | Usually a `CsAvatar`. |
 | `actions` | `Widget?` | `null` | Footer below the content. |
@@ -53,8 +53,8 @@ CsChatBubble(
 const CsChatBubble(
   type: CsChatBubbleType.outgoing,
   align: CsChatBubbleAlign.end,
-  ariaLabel: 'Jane Doe at 3:41pm',
-  avatar: CsAvatar(ariaLabel: 'Jane Doe', initials: 'JD'),
+  ariaLabel: 'Sample user at 3:41pm',
+  avatar: CsAvatar(ariaLabel: 'Account', initials: 'SU'),
   child: Text('Is versioning enabled on example-bucket?'),
 )
 ```

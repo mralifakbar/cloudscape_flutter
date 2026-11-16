@@ -100,7 +100,15 @@ class CsKeyValuePairs extends StatelessWidget {
   /// [minColumnWidth] wide, and an even count when it has to wrap.
   static int columnCountFor(int columns, double minColumnWidth, double width) {
     if (!width.isFinite || width <= 0) return columns;
-    final fit = minColumnWidth <= 0 ? columns : (width / minColumnWidth).floor();
+    // Without a minimum column width, collapse like Cloudscape's column
+    // layout: two columns below 688px, one below 465px.
+    final fit = minColumnWidth > 0
+        ? (width / minColumnWidth).floor()
+        : width < CsBreakpoint.xxs.minWidth
+        ? 1
+        : width < CsBreakpoint.xs.minWidth
+        ? 2
+        : columns;
     final target = fit < columns ? fit : columns;
     final count = target < columns && target.isOdd ? target - 1 : target;
     return count < 1 ? 1 : count;
@@ -113,12 +121,18 @@ class CsKeyValuePairs extends StatelessWidget {
     final maxCols = columns > maxColumns ? maxColumns : columns;
     Widget grid = LayoutBuilder(
       builder: (context, constraints) {
-        final n = columnCountFor(maxCols, minColumnWidth, constraints.maxWidth);
+        // Without a width bound (inside a horizontal scroll view) there is no
+        // column width to divide, so the pairs stack in one column.
+        final n = constraints.hasBoundedWidth ? columnCountFor(maxCols, minColumnWidth, constraints.maxWidth) : 1;
         final rows = <Widget>[];
         for (var start = 0; start < items.length; start += n) {
           final end = start + n > items.length ? items.length : start + n;
           rows.add(
             _GridRow(
+              // Keyed by layout so a change in column count builds fresh rows
+              // instead of morphing a LayoutBuilder row into a single cell
+              // during layout.
+              key: ValueKey('kvp-$n-$start'),
               columns: n,
               gutter: gutter,
               dividerColor: cs.colors.borderDividerDefault,
@@ -233,7 +247,13 @@ class _Pair extends StatelessWidget {
 /// on both sides except the first column's start, with a divider in the
 /// middle of each gap (`column-layout` `grid-variant-text-grid`).
 class _GridRow extends StatelessWidget {
-  const _GridRow({required this.columns, required this.gutter, required this.dividerColor, required this.children});
+  const _GridRow({
+    super.key,
+    required this.columns,
+    required this.gutter,
+    required this.dividerColor,
+    required this.children,
+  });
 
   final int columns;
   final double gutter;
@@ -247,6 +267,16 @@ class _GridRow extends StatelessWidget {
       builder: (context, constraints) {
         final width = constraints.maxWidth;
         final col = (width - gutter * (columns - 1)) / columns;
+        // Too narrow to split (a panel animating open from zero width):
+        // stack the cells instead of handing out negative widths.
+        if (!width.isFinite || col < gutter * 2) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.min,
+            spacing: gutter,
+            children: children,
+          );
+        }
         final cells = <Widget>[];
         for (var i = 0; i < children.length; i++) {
           if (i > 0) cells.add(SizedBox(width: gutter));

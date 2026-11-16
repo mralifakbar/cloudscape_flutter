@@ -140,7 +140,7 @@ class _TopNavigationDemoState extends State<_TopNavigationDemo> {
     ),
     CsTopNavigationMenuDropdown(
       icon: CsIcons.userProfile,
-      text: 'Jane Doe',
+      text: 'Account',
       description: 'jane.doe@example.com',
       items: const [
         CsTopNavigationMenuItem(id: 'profile', text: 'Profile'),

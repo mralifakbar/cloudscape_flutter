@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import '../theme/cs_theme.dart';
 import '../theme/generated/cs_colors.g.dart';
 import 'cs_icon_data.dart';
+import 'cs_icon_provider.dart';
 
 /// Icon sizes (Cloudscape `size`). Each size has its own stroke width, so
 /// small icons stay crisp and large ones do not look thin.
@@ -126,15 +127,26 @@ class CsIcon extends StatelessWidget {
             ? cs.colors[variant.token!]
             : (DefaultTextStyle.of(context).style.color ?? IconTheme.of(context).color ?? cs.colors.textBodyDefault));
     final d = size.dimension;
-    Widget glyph = custom != null
+    var data = icon;
+    var customChild = custom;
+    if (data != null) {
+      // An enclosing CsIconProvider can replace a built-in icon by name.
+      final override = CsIconProvider.overrideOf(context, data.name);
+      if (override is CsIconData) {
+        data = override;
+      } else if (override is Widget) {
+        customChild = CsIconOverrideScope(name: data.name, child: override);
+      }
+    }
+    Widget glyph = customChild != null
         ? SizedBox.square(
             dimension: d,
-            child: FittedBox(child: custom),
+            child: FittedBox(child: customChild),
           )
         : CustomPaint(
             size: Size.square(d),
             painter: CsIconPainter(
-              icon: icon!,
+              icon: data!,
               color: color,
               stroke: size.stroke,
               textDirection: Directionality.maybeOf(context),

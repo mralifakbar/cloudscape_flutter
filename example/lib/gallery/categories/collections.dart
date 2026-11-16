@@ -56,6 +56,43 @@ final CsDemoCategory collectionsCategory = CsDemoCategory(
       docPath: 'doc/components/CsCollection.md',
       builder: (_) => const _CollectionDemo(),
     ),
+    CsDemo(
+      title: 'CsTableRoot',
+      description:
+          'A composed table with grid columns, sorting, selection, striped rows, compact density and a sticky first column.',
+      docPath: 'doc/components/CsTableRoot.md',
+      builder: (_) => const _TableRootDemo(),
+    ),
+    CsDemo(
+      title: 'CsTableHead',
+      description: 'A header section that stays pinned while the body scrolls.',
+      docPath: 'doc/components/CsTableHead.md',
+      builder: (_) => const _TableHeadDemo(),
+    ),
+    CsDemo(
+      title: 'CsTableBody',
+      description: 'Body rows with striping, dividers and a spanning empty-state row.',
+      docPath: 'doc/components/CsTableBody.md',
+      builder: (_) => const _TableBodyDemo(),
+    ),
+    CsDemo(
+      title: 'CsTableRow',
+      description: 'Selected rows that join, a tappable row and a shaded summary row.',
+      docPath: 'doc/components/CsTableRow.md',
+      builder: (_) => const _TableRowDemo(),
+    ),
+    CsDemo(
+      title: 'CsTableHeaderCell',
+      description: 'Sortable headers with the sorting caret, a resizable column and a disabled sort.',
+      docPath: 'doc/components/CsTableHeaderCell.md',
+      builder: (_) => const _TableHeaderCellDemo(),
+    ),
+    CsDemo(
+      title: 'CsTableBodyCell',
+      description: 'Row headers, wrapped text, top alignment, spanning cells and inline edit.',
+      docPath: 'doc/components/CsTableBodyCell.md',
+      builder: (_) => const _TableBodyCellDemo(),
+    ),
   ],
 );
 
@@ -973,6 +1010,539 @@ class _CollectionDemoState extends State<_CollectionDemo> {
                 renderAriaLive: (d) => 'Displaying items ${d.firstIndex} to ${d.lastIndex} of ${d.totalItemsCount}',
               );
             },
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// Sample instances for the composable table demos.
+class _PartsInstance {
+  const _PartsInstance(this.name, this.id, this.type, this.state, this.zone);
+
+  final String name;
+  final String id;
+  final String type;
+  final String state;
+  final String zone;
+}
+
+const _partsInstances = [
+  _PartsInstance('web-server-1', 'i-0abc123', 't3.micro', 'Running', 'us-east-1a'),
+  _PartsInstance('web-server-2', 'i-0abc124', 't3.micro', 'Stopped', 'us-east-1b'),
+  _PartsInstance('batch-worker', 'i-0abc125', 'c6i.large', 'Running', 'us-east-1a'),
+  _PartsInstance('bastion', 'i-0abc126', 't3.nano', 'Pending', 'us-east-1c'),
+  _PartsInstance('analytics-db', 'i-0abc127', 'r6i.xlarge', 'Running', 'us-east-1b'),
+];
+
+CsStatusType _partsStatus(String state) => switch (state) {
+  'Running' => CsStatusType.success,
+  'Stopped' => CsStatusType.stopped,
+  _ => CsStatusType.pending,
+};
+
+class _TableRootDemo extends StatefulWidget {
+  const _TableRootDemo();
+
+  @override
+  State<_TableRootDemo> createState() => _TableRootDemoState();
+}
+
+class _TableRootDemoState extends State<_TableRootDemo> {
+  bool _striped = false;
+  bool _compact = false;
+  bool _descending = false;
+  final Set<String> _selected = {'i-0abc125'};
+
+  @override
+  Widget build(BuildContext context) {
+    final items = [..._partsInstances]
+      ..sort((a, b) => _descending ? b.name.compareTo(a.name) : a.name.compareTo(b.name));
+    final all = _selected.length == items.length;
+    return DemoColumn(
+      children: [
+        DemoSection(
+          title: 'Composed instances table',
+          caption:
+              'Sample data. Grid columns with a selection column, the first data column sticky when the table '
+              'scrolls sideways.',
+          child: CsSpaceBetween(
+            size: CsSpacingSize.s,
+            children: [
+              Wrap(
+                spacing: CsSpace.l,
+                runSpacing: CsSpace.xs,
+                children: [
+                  CsToggle(checked: _striped, onChange: (v) => setState(() => _striped = v), label: 'Striped rows'),
+                  CsToggle(checked: _compact, onChange: (v) => setState(() => _compact = v), label: 'Compact'),
+                ],
+              ),
+              CsTableRoot(
+                ariaLabel: 'Instances',
+                variant: CsTableVariant.container,
+                stripedRows: _striped,
+                contentDensity: _compact ? CsDensity.compact : CsDensity.comfortable,
+                stickyColumns: const CsStickyColumns(first: 2),
+                columnLayout: const CsTableColumnLayout.grid([
+                  CsTableGridColumn.fixed(CsSize.tableSelectionHorizontal),
+                  CsTableGridColumn(minWidth: 150, flex: 2),
+                  CsTableGridColumn(minWidth: 110),
+                  CsTableGridColumn(minWidth: 110),
+                  CsTableGridColumn(minWidth: 120),
+                ]),
+                children: [
+                  CsTableHead(
+                    child: CsTableRow(
+                      children: [
+                        CsTableHeaderCell(
+                          disablePaddings: true,
+                          child: Center(
+                            child: CsCheckbox(
+                              checked: all,
+                              indeterminate: _selected.isNotEmpty && !all,
+                              ariaLabel: 'Select all instances',
+                              onChange: (v) => setState(() {
+                                _selected.clear();
+                                if (v) _selected.addAll(items.map((i) => i.id));
+                              }),
+                            ),
+                          ),
+                        ),
+                        CsTableHeaderCell(
+                          sortingState: _descending ? CsTableSortingState.descending : CsTableSortingState.ascending,
+                          onSort: () => setState(() => _descending = !_descending),
+                          child: const Text('Name'),
+                        ),
+                        const CsTableHeaderCell(child: Text('Instance ID')),
+                        const CsTableHeaderCell(child: Text('Type')),
+                        const CsTableHeaderCell(child: Text('State')),
+                      ],
+                    ),
+                  ),
+                  CsTableBody(
+                    children: [
+                      for (final i in items)
+                        CsTableRow(
+                          selected: _selected.contains(i.id),
+                          children: [
+                            CsTableBodyCell(
+                              disablePaddings: true,
+                              child: Center(
+                                child: CsCheckbox(
+                                  checked: _selected.contains(i.id),
+                                  ariaLabel: 'Select ${i.name}',
+                                  onChange: (v) => setState(() => v ? _selected.add(i.id) : _selected.remove(i.id)),
+                                ),
+                              ),
+                            ),
+                            CsTableBodyCell(isRowHeader: true, child: Text(i.name)),
+                            CsTableBodyCell(child: Text(i.id)),
+                            CsTableBodyCell(child: Text(i.type)),
+                            CsTableBodyCell(
+                              child: CsStatusIndicator(type: _partsStatus(i.state), text: i.state),
+                            ),
+                          ],
+                        ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _TableHeadDemo extends StatelessWidget {
+  const _TableHeadDemo();
+
+  @override
+  Widget build(BuildContext context) {
+    return DemoColumn(
+      children: [
+        DemoSection(
+          title: 'Sticky header',
+          caption: 'Scroll the 30 sample events: the head stays at the top and gains the sticky shadow.',
+          child: SizedBox(
+            height: 300,
+            child: CsTableRoot(
+              ariaLabel: 'Events',
+              variant: CsTableVariant.container,
+              stickyHeader: const CsTableHead(
+                child: CsTableRow(
+                  children: [
+                    CsTableHeaderCell(child: Text('Event')),
+                    CsTableHeaderCell(child: Text('Resource')),
+                  ],
+                ),
+              ),
+              children: [
+                CsTableBody(
+                  children: [
+                    for (var i = 0; i < 30; i++)
+                      CsTableRow(
+                        children: [
+                          CsTableBodyCell(child: Text(i.isEven ? 'StartInstances' : 'StopInstances')),
+                          CsTableBodyCell(child: Text('i-0abc${100 + i}')),
+                        ],
+                      ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        const DemoSection(
+          title: 'Borderless head',
+          caption: 'In the borderless variant the head has no fill, only the divider below.',
+          child: CsTableRoot(
+            children: [
+              CsTableHead(
+                child: CsTableRow(
+                  children: [
+                    CsTableHeaderCell(child: Text('Bucket')),
+                    CsTableHeaderCell(child: Text('Region')),
+                  ],
+                ),
+              ),
+              CsTableBody(
+                children: [
+                  CsTableRow(
+                    children: [
+                      CsTableBodyCell(child: Text('example-bucket')),
+                      CsTableBodyCell(child: Text('us-east-1')),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _TableBodyDemo extends StatefulWidget {
+  const _TableBodyDemo();
+
+  @override
+  State<_TableBodyDemo> createState() => _TableBodyDemoState();
+}
+
+class _TableBodyDemoState extends State<_TableBodyDemo> {
+  bool _empty = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return DemoColumn(
+      children: [
+        DemoSection(
+          title: 'Striped body and empty state',
+          caption: 'Sample data. The empty state is one cell spanning every column.',
+          child: CsSpaceBetween(
+            size: CsSpacingSize.s,
+            children: [
+              CsToggle(checked: _empty, onChange: (v) => setState(() => _empty = v), label: 'No matches'),
+              CsTableRoot(
+                variant: CsTableVariant.container,
+                stripedRows: true,
+                children: [
+                  const CsTableHead(
+                    child: CsTableRow(
+                      children: [
+                        CsTableHeaderCell(child: Text('Distribution')),
+                        CsTableHeaderCell(child: Text('Domain')),
+                        CsTableHeaderCell(child: Text('Status')),
+                      ],
+                    ),
+                  ),
+                  CsTableBody(
+                    children: _empty
+                        ? [
+                            const CsTableRow(
+                              children: [
+                                CsTableBodyCell(
+                                  colSpan: 3,
+                                  child: Center(child: Text('No distributions match the filter.')),
+                                ),
+                              ],
+                            ),
+                          ]
+                        : [
+                            for (var i = 0; i < 4; i++)
+                              CsTableRow(
+                                children: [
+                                  CsTableBodyCell(child: Text('d11111${i}abcdef8')),
+                                  CsTableBodyCell(child: Text('d11111${i}abcdef8.example.net')),
+                                  const CsTableBodyCell(
+                                    child: CsStatusIndicator(type: CsStatusType.success, text: 'Deployed'),
+                                  ),
+                                ],
+                              ),
+                          ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _TableRowDemo extends StatefulWidget {
+  const _TableRowDemo();
+
+  @override
+  State<_TableRowDemo> createState() => _TableRowDemoState();
+}
+
+class _TableRowDemoState extends State<_TableRowDemo> {
+  final Set<int> _selected = {1, 2};
+
+  @override
+  Widget build(BuildContext context) {
+    return DemoColumn(
+      children: [
+        DemoSection(
+          title: 'Selected and tappable rows',
+          caption: 'Tap a row to toggle its selection; adjacent selected rows join into one outline.',
+          child: CsTableRoot(
+            variant: CsTableVariant.container,
+            children: [
+              const CsTableHead(
+                child: CsTableRow(
+                  children: [
+                    CsTableHeaderCell(child: Text('Name')),
+                    CsTableHeaderCell(child: Text('Zone')),
+                  ],
+                ),
+              ),
+              CsTableBody(
+                children: [
+                  for (var i = 0; i < _partsInstances.length; i++)
+                    CsTableRow(
+                      selected: _selected.contains(i),
+                      ariaLabel: _partsInstances[i].name,
+                      onPress: () => setState(() => _selected.contains(i) ? _selected.remove(i) : _selected.add(i)),
+                      children: [
+                        CsTableBodyCell(child: Text(_partsInstances[i].name)),
+                        CsTableBodyCell(child: Text(_partsInstances[i].zone)),
+                      ],
+                    ),
+                  const CsTableRow(
+                    shaded: true,
+                    children: [
+                      CsTableBodyCell(child: Text('Total')),
+                      CsTableBodyCell(child: Text('5 instances')),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _TableHeaderCellDemo extends StatefulWidget {
+  const _TableHeaderCellDemo();
+
+  @override
+  State<_TableHeaderCellDemo> createState() => _TableHeaderCellDemoState();
+}
+
+class _TableHeaderCellDemoState extends State<_TableHeaderCellDemo> {
+  String _column = 'name';
+  bool _descending = false;
+  double _nameWidth = 180;
+
+  CsTableSortingState _state(String column) => _column != column
+      ? CsTableSortingState.sortable
+      : (_descending ? CsTableSortingState.descending : CsTableSortingState.ascending);
+
+  void _sort(String column) => setState(() {
+    _descending = _column == column && !_descending;
+    _column = column;
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final items = [..._partsInstances]
+      ..sort((a, b) {
+        final r = _column == 'name' ? a.name.compareTo(b.name) : a.type.compareTo(b.type);
+        return _descending ? -r : r;
+      });
+    return DemoColumn(
+      children: [
+        DemoSection(
+          title: 'Sorting and resizing',
+          caption:
+              'Name and Type sort; drag the handle after Name to resize it (${_nameWidth.round()}px). '
+              'Zone shows a sorting state that cannot change.',
+          child: CsTableRoot(
+            variant: CsTableVariant.container,
+            columnLayout: CsTableColumnLayout.grid([
+              CsTableGridColumn.fixed(_nameWidth),
+              const CsTableGridColumn(minWidth: 110),
+              const CsTableGridColumn(minWidth: 110),
+            ]),
+            children: [
+              CsTableHead(
+                child: CsTableRow(
+                  children: [
+                    CsTableHeaderCell(
+                      sortingState: _state('name'),
+                      onSort: () => _sort('name'),
+                      resizable: true,
+                      onResize: (w) => setState(() => _nameWidth = w),
+                      child: const Text('Name'),
+                    ),
+                    CsTableHeaderCell(
+                      sortingState: _state('type'),
+                      onSort: () => _sort('type'),
+                      editable: true,
+                      child: const Text('Type'),
+                    ),
+                    const CsTableHeaderCell(
+                      sortingState: CsTableSortingState.ascending,
+                      sortingDisabled: true,
+                      child: Text('Zone'),
+                    ),
+                  ],
+                ),
+              ),
+              CsTableBody(
+                children: [
+                  for (final i in items)
+                    CsTableRow(
+                      children: [
+                        CsTableBodyCell(child: Text(i.name)),
+                        CsTableBodyCell(child: Text(i.type)),
+                        CsTableBodyCell(child: Text(i.zone)),
+                      ],
+                    ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _TableBodyCellDemo extends StatefulWidget {
+  const _TableBodyCellDemo();
+
+  @override
+  State<_TableBodyCellDemo> createState() => _TableBodyCellDemoState();
+}
+
+class _TableBodyCellDemoState extends State<_TableBodyCellDemo> {
+  final Map<String, String> _names = {for (final i in _partsInstances) i.id: i.name};
+  String? _editing;
+
+  @override
+  Widget build(BuildContext context) {
+    return DemoColumn(
+      children: [
+        DemoSection(
+          title: 'Inline edit',
+          caption:
+              'Hover or focus a name to see the edit affordance; tap to edit, Enter to save. '
+              'Running instances cannot be renamed in this sample.',
+          child: CsTableRoot(
+            variant: CsTableVariant.container,
+            children: [
+              const CsTableHead(
+                child: CsTableRow(
+                  children: [
+                    CsTableHeaderCell(editable: true, child: Text('Name')),
+                    CsTableHeaderCell(child: Text('State')),
+                  ],
+                ),
+              ),
+              CsTableBody(
+                children: [
+                  for (final i in _partsInstances.take(3))
+                    CsTableRow(
+                      children: [
+                        _editing == i.id
+                            ? CsTableBodyCell(
+                                child: CsInput(
+                                  value: _names[i.id]!,
+                                  autoFocus: true,
+                                  onChange: (v) => setState(() => _names[i.id] = v),
+                                  onSubmit: (_) => setState(() => _editing = null),
+                                ),
+                              )
+                            : CsTableBodyCell(
+                                editable: true,
+                                editAriaLabel: 'Edit name of ${i.id}',
+                                editDisabledReason: i.state == 'Running' ? 'Stop the instance to rename it.' : null,
+                                onEdit: () => setState(() => _editing = i.id),
+                                child: Text(_names[i.id]!),
+                              ),
+                        CsTableBodyCell(
+                          child: CsStatusIndicator(type: _partsStatus(i.state), text: i.state),
+                        ),
+                      ],
+                    ),
+                ],
+              ),
+            ],
+          ),
+        ),
+        const DemoSection(
+          title: 'Wrapping, alignment and spans',
+          child: CsTableRoot(
+            variant: CsTableVariant.container,
+            children: [
+              CsTableHead(
+                child: CsTableRow(
+                  children: [
+                    CsTableHeaderCell(child: Text('Rule')),
+                    CsTableHeaderCell(child: Text('Description')),
+                    CsTableHeaderCell(child: Text('Port')),
+                  ],
+                ),
+              ),
+              CsTableBody(
+                children: [
+                  CsTableRow(
+                    children: [
+                      CsTableBodyCell(
+                        isRowHeader: true,
+                        verticalAlign: CsTableVerticalAlign.top,
+                        child: Text('allow-https'),
+                      ),
+                      CsTableBodyCell(
+                        wrapLines: true,
+                        child: Text(
+                          'Allows inbound HTTPS from the load balancer security group to the web servers in every '
+                          'Availability Zone.',
+                        ),
+                      ),
+                      CsTableBodyCell(verticalAlign: CsTableVerticalAlign.top, child: Text('443')),
+                    ],
+                  ),
+                  CsTableRow(
+                    children: [
+                      CsTableBodyCell(isRowHeader: true, child: Text('default')),
+                      CsTableBodyCell(colSpan: 2, child: Text('Spans the description and port columns')),
+                    ],
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ],

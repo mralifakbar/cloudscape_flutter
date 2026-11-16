@@ -60,7 +60,7 @@ class CsChatBubble extends StatelessWidget {
   final CsChatBubbleType type;
 
   /// Accessible name of the message group, unique per bubble, such as
-  /// "Jane Doe at 3:42pm".
+  /// "Sample user at 3:42pm".
   final String ariaLabel;
 
   /// The message content.

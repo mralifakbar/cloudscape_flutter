@@ -24,8 +24,8 @@ CsTopNavigation(
       onClick: () {},
     ),
     CsTopNavigationMenuDropdown(
-      text: 'Jane Doe',
-      description: 'jane@example.com',
+      text: 'Account',
+      description: 'user@example.com',
       icon: CsIcons.userProfile,
       items: const [
         CsTopNavigationMenuItem(id: 'profile', text: 'Profile'),
@@ -52,6 +52,7 @@ CsTopNavigation(
 | `utilities` | `List<CsTopNavigationUtility>` | `[]` | `CsTopNavigationButton` and `CsTopNavigationMenuDropdown` items. |
 | `i18nStrings` | `CsTopNavigationI18nStrings` | English | `searchIconAriaLabel`, `searchDismissIconAriaLabel`, `overflowMenuTriggerText` ("More"), `overflowMenuTitleText` ("All"), `overflowMenuBackIconAriaLabel`, `overflowMenuDismissIconAriaLabel`. |
 | `visualContext` | `CsTopNavigationVisualContext` | `topNavigation` | `topNavigation` keeps the bar dark in both modes; `none` uses the page colors. |
+| `safeAreaTop` | `bool` | `true` | Pads the content below the status bar and notch while the dark bar extends under them. Turn off when the bar is not at the top of the screen. |
 | `child` | `Widget?` | `null` | Custom content. When set, `identity`, `search` and `utilities` are ignored. |
 
 Shared utility fields: `text`, `title`, `icon`, `iconWidget`, `ariaLabel`, `badge`, `disableTextCollapse`, `disableUtilityCollapse`.

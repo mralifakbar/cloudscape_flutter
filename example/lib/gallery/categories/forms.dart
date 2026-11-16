@@ -85,6 +85,12 @@ final CsDemoCategory formsCategory = CsDemoCategory(
       docPath: 'doc/components/CsFieldBox.md',
       builder: (_) => const _FieldBoxDemo(),
     ),
+    CsDemo(
+      title: 'CsControlGroup',
+      description: 'Inputs, selects and an action button joined into one control, with validation and stacking.',
+      docPath: 'doc/components/CsControlGroup.md',
+      builder: (_) => const _ControlGroupDemo(),
+    ),
   ],
 );
 
@@ -1038,6 +1044,110 @@ class _FieldBoxDemoState extends State<_FieldBoxDemo> {
             children: [
               CsFieldBox(disabled: true, child: Text('Disabled field box')),
               CsFieldBox(readOnly: true, child: Text('Read-only field box')),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _ControlGroupDemo extends StatefulWidget {
+  const _ControlGroupDemo();
+
+  @override
+  State<_ControlGroupDemo> createState() => _ControlGroupDemoState();
+}
+
+class _ControlGroupDemoState extends State<_ControlGroupDemo> {
+  static const _units = [CsOption(value: 'gib', label: 'GiB'), CsOption(value: 'tib', label: 'TiB')];
+  static const _operators = [
+    CsOption(value: '=', label: 'Equals'),
+    CsOption(value: '!=', label: 'Does not equal'),
+    CsOption(value: ':', label: 'Contains'),
+  ];
+
+  String _size = '100';
+  CsOption? _unit = _units.first;
+  String _tag = 'Environment';
+  CsOption? _operator = _operators.first;
+  String _value = 'production';
+  String _from = '8000';
+  String _to = '80';
+  int _removed = 0;
+
+  bool get _sizeInvalid => int.tryParse(_size) == null;
+
+  @override
+  Widget build(BuildContext context) {
+    return DemoColumn(
+      children: [
+        DemoSection(
+          title: 'Size and unit',
+          caption: 'A number input joined with a fixed-width unit select. Clear the number to see the error state.',
+          child: CsFormField(
+            label: 'Volume size',
+            errorText: _sizeInvalid ? 'Enter a whole number.' : null,
+            child: CsControlGroup(
+              invalid: _sizeInvalid,
+              children: [
+                CsInput(value: _size, type: CsInputType.number, onChange: (v) => setState(() => _size = v)),
+                Flexible(
+                  flex: 0,
+                  child: SizedBox(
+                    width: 96,
+                    child: CsSelect(options: _units, selectedOption: _unit, onChange: (o) => setState(() => _unit = o)),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        DemoSection(
+          title: 'Filter row with a remove action',
+          caption:
+              'Three controls and the control-group action button. At phone width the controls stack and '
+              'the action spans the column.',
+          child: CsControlGroup(
+            semanticLabel: 'Tag filter',
+            actionButton: CsControlGroupActionButton(
+              icon: CsIcons.remove,
+              ariaLabel: 'Remove filter',
+              onPress: () => setState(() => _removed++),
+            ),
+            children: [
+              CsInput(value: _tag, onChange: (v) => setState(() => _tag = v)),
+              CsSelect(options: _operators, selectedOption: _operator, onChange: (o) => setState(() => _operator = o)),
+              CsInput(value: _value, onChange: (v) => setState(() => _value = v)),
+            ],
+          ),
+        ),
+        if (_removed > 0) CsBox(color: CsBoxColor.textBodySecondary, text: 'Remove pressed $_removed times.'),
+        DemoSection(
+          title: 'Inline label, warning',
+          child: CsControlGroup(
+            inlineLabelText: 'Port mapping',
+            warning: _from == _to,
+            direction: CsControlGroupDirection.horizontal,
+            children: [
+              CsInput(value: _from, placeholder: 'Host port', onChange: (v) => setState(() => _from = v)),
+              CsInput(value: _to, placeholder: 'Container port', onChange: (v) => setState(() => _to = v)),
+            ],
+          ),
+        ),
+        const DemoSection(
+          title: 'Vertical, disabled action with a reason',
+          child: CsControlGroup(
+            direction: CsControlGroupDirection.vertical,
+            actionButton: CsControlGroupActionButton(
+              icon: CsIcons.close,
+              ariaLabel: 'Clear',
+              disabled: true,
+              disabledReason: 'The default rule cannot be cleared.',
+            ),
+            children: [
+              CsInput(value: '10.0.0.0/16'),
+              CsInput(value: 'Default VPC range', readOnly: true),
             ],
           ),
         ),

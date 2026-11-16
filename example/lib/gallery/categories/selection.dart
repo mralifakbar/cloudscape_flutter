@@ -51,6 +51,12 @@ final CsDemoCategory selectionCategory = CsDemoCategory(
       docPath: 'doc/components/CsPropertyFilter.md',
       builder: (_) => const _PropertyFilterDemo(),
     ),
+    CsDemo(
+      title: 'CsOptionList',
+      description: 'An always visible list of options: single and multi selection, groups, disabled options.',
+      docPath: 'doc/components/CsOptionList.md',
+      builder: (_) => const _OptionListDemo(),
+    ),
   ],
 );
 
@@ -645,6 +651,95 @@ class _PropertyFilterDemoState extends State<_PropertyFilterDemo> {
         DemoSection(
           title: 'Disabled',
           child: CsPropertyFilter(query: _query, onChange: (_) {}, filteringProperties: _properties, disabled: true),
+        ),
+      ],
+    );
+  }
+}
+
+class _OptionListDemo extends StatefulWidget {
+  const _OptionListDemo();
+
+  @override
+  State<_OptionListDemo> createState() => _OptionListDemoState();
+}
+
+class _OptionListDemoState extends State<_OptionListDemo> {
+  static const _types = <CsOptionItem>[
+    CsOption(value: 't3.micro', label: 't3.micro', description: '2 vCPU, 1 GiB memory', tags: ['Free tier eligible']),
+    CsOption(value: 't3.small', label: 't3.small', description: '2 vCPU, 2 GiB memory', labelTag: 'Popular'),
+    CsOption(value: 't3.large', label: 't3.large', description: '2 vCPU, 8 GiB memory'),
+    CsOption(
+      value: 'p4d.24xlarge',
+      label: 'p4d.24xlarge',
+      description: '96 vCPU, 1152 GiB memory',
+      disabled: true,
+      disabledReason: 'Request a quota increase to use this type.',
+    ),
+  ];
+  static const _regions = <CsOptionItem>[
+    CsOptionGroup(
+      label: 'North America',
+      options: [
+        CsOption(value: 'us-east-1', label: 'US East (N. Virginia)', labelTag: 'us-east-1'),
+        CsOption(value: 'us-west-2', label: 'US West (Oregon)', labelTag: 'us-west-2'),
+      ],
+    ),
+    CsOptionGroup(
+      label: 'Europe',
+      options: [
+        CsOption(value: 'eu-west-1', label: 'Europe (Ireland)', labelTag: 'eu-west-1'),
+        CsOption(value: 'eu-central-1', label: 'Europe (Frankfurt)', labelTag: 'eu-central-1'),
+      ],
+    ),
+  ];
+
+  List<CsOption> _type = const [CsOption(value: 't3.small', label: 't3.small')];
+  List<CsOption> _picked = const [];
+
+  @override
+  Widget build(BuildContext context) {
+    return DemoColumn(
+      children: [
+        DemoSection(
+          title: 'Single selection',
+          caption:
+              'Tab to the list, move with the arrow keys and choose with Enter or Space. '
+              'Selected: ${_type.isEmpty ? 'none' : _type.first.value}.',
+          child: CsContainer(
+            child: CsOptionList(
+              ariaLabel: 'Instance type',
+              selectionType: CsOptionListSelectionType.single,
+              options: _types,
+              selectedOptions: _type,
+              onChange: (v) => setState(() => _type = v),
+            ),
+          ),
+        ),
+        DemoSection(
+          title: 'Multi selection with groups',
+          caption: 'A group header selects or clears its whole group. Selected: ${_picked.length}.',
+          child: CsContainer(
+            child: CsOptionList(
+              ariaLabel: 'Regions',
+              selectionType: CsOptionListSelectionType.multi,
+              options: _regions,
+              selectedOptions: _picked,
+              maxHeight: 260,
+              onChange: (v) => setState(() => _picked = v),
+            ),
+          ),
+        ),
+        const DemoSection(
+          title: 'Empty',
+          child: CsContainer(
+            child: CsOptionList(
+              ariaLabel: 'Key pairs',
+              selectionType: CsOptionListSelectionType.single,
+              options: [],
+              empty: Text('No key pairs in this Region'),
+            ),
+          ),
         ),
       ],
     );

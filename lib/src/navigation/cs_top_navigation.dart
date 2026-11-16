@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 import '../buttons/cs_button.dart';
@@ -272,7 +273,7 @@ class CsTopNavigationResponsiveState {
 ///   utilities: [
 ///     CsTopNavigationButton(icon: CsIcons.notification, ariaLabel: 'Notifications', badge: true, onClick: openInbox),
 ///     CsTopNavigationMenuDropdown(
-///       text: 'Jane Doe',
+///       text: 'Account',
 ///       icon: CsIcons.userProfile,
 ///       items: const [
 ///         CsTopNavigationMenuItem(id: 'profile', text: 'Profile'),
@@ -298,6 +299,7 @@ class CsTopNavigation extends StatefulWidget {
     this.utilities = const [],
     this.i18nStrings = const CsTopNavigationI18nStrings(),
     this.visualContext = CsTopNavigationVisualContext.topNavigation,
+    this.safeAreaTop = true,
     this.child,
   });
 
@@ -309,6 +311,11 @@ class CsTopNavigation extends StatefulWidget {
   final List<CsTopNavigationUtility> utilities;
   final CsTopNavigationI18nStrings i18nStrings;
   final CsTopNavigationVisualContext visualContext;
+
+  /// Pad the bar's content below the status bar and notch while its dark
+  /// background extends under them. Turn off when the bar is not at the top
+  /// of the screen.
+  final bool safeAreaTop;
 
   /// Custom content. When set, [identity], [search] and [utilities] are
   /// ignored.
@@ -467,15 +474,25 @@ class _CsTopNavigationState extends State<CsTopNavigation> {
 
   Widget _frame(BuildContext context, {required Widget child, double? height}) {
     final c = context.cs.colors;
-    return Container(
-      constraints: height == null ? null : BoxConstraints(minHeight: height),
-      decoration: BoxDecoration(
-        color: c.backgroundContainerContent,
-        border: Border(
-          bottom: BorderSide(color: c.borderDividerDefault, width: CsBorderLine.dividerSectionWidth),
+    // The dark bar runs under the status bar and notch; its content starts
+    // below them.
+    final inset = widget.safeAreaTop ? MediaQuery.paddingOf(context).top : 0.0;
+    // Status bar icons follow the bar's own background, which is dark in
+    // the top navigation context.
+    final dark = context.cs.isDark;
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: dark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
+      child: Container(
+        constraints: height == null ? null : BoxConstraints(minHeight: height + inset),
+        padding: EdgeInsets.only(top: inset),
+        decoration: BoxDecoration(
+          color: c.backgroundContainerContent,
+          border: Border(
+            bottom: BorderSide(color: c.borderDividerDefault, width: CsBorderLine.dividerSectionWidth),
+          ),
         ),
+        child: child,
       ),
-      child: child,
     );
   }
 

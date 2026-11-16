@@ -52,7 +52,7 @@ class CsAvatar extends StatefulWidget {
     this.focusNode,
   });
 
-  /// Accessible name, such as "Avatar of Jane Doe" or "Generative AI
+  /// Accessible name, such as "Avatar of the sample user" or "Generative AI
   /// assistant". Include [tooltipText] in it when you use both.
   final String ariaLabel;
   final CsAvatarColor color;

@@ -8,3 +8,4 @@ export 'cs_progress_bar.dart';
 export 'cs_skeleton.dart';
 export 'cs_spinner.dart';
 export 'cs_swap.dart';
+export 'cs_error_boundary.dart';

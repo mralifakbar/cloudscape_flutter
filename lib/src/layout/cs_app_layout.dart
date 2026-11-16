@@ -850,10 +850,17 @@ class _CsAppLayoutState extends State<CsAppLayout> {
       );
     }
     // `.mobile-bar`: 2 * space-m + space-scaled-xs high, panel shadow.
+    // A fixed height (grown with the text size) rather than IntrinsicHeight:
+    // breadcrumbs measure themselves with a LayoutBuilder, which cannot
+    // report intrinsic sizes.
+    final barHeight = math.max(
+      2 * CsSpace.m + cs.space.scaledXs,
+      MediaQuery.textScalerOf(context).scale(CsTypeScale.bodyM.lineHeight) + 2 * CsSpace.s,
+    );
     return Container(
-      constraints: BoxConstraints(minHeight: 2 * CsSpace.m + cs.space.scaledXs),
+      height: barHeight,
       decoration: BoxDecoration(color: c.backgroundLayoutMobilePanel, boxShadow: cs.shadows.panel),
-      child: IntrinsicHeight(
+      child: SizedBox.expand(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -954,9 +961,16 @@ class _CsAppLayoutState extends State<CsAppLayout> {
           if (!narrow && widget.navigationOpen == null) _navOwn = null;
         }
         final body = narrow ? _narrow(constraints) : _wide(constraints);
-        return ColoredBox(
-          color: context.cs.colors.backgroundLayoutMain,
-          child: DefaultTextStyle.merge(style: context.cs.body, child: body),
+        // The app layout is the page frame: it fills the space it is given,
+        // even under loose constraints (a Column, a Center), instead of
+        // shrinking around its Stack to nothing.
+        return SizedBox(
+          width: constraints.hasBoundedWidth ? constraints.maxWidth : null,
+          height: constraints.hasBoundedHeight ? constraints.maxHeight : null,
+          child: ColoredBox(
+            color: context.cs.colors.backgroundLayoutMain,
+            child: DefaultTextStyle.merge(style: context.cs.body, child: body),
+          ),
         );
       },
     );

@@ -1,11 +1,18 @@
 name: cloudscape_flutter
 description: >-
-  Unofficial Flutter port of AWS Cloudscape Design System: every visual-refresh token in light, dark and compact density, 148 Cloudscape icons and 100+ accessible, touch-ready components.
+  Unofficial Flutter port of AWS Cloudscape Design System: every visual-refresh token in light, dark and compact density, 148 Cloudscape icons and 100+ touch-ready components.
 version: 0.1.0
 homepage: https://github.com/mralifakbar/cloudscape_flutter
 repository: https://github.com/mralifakbar/cloudscape_flutter
 issue_tracker: https://github.com/mralifakbar/cloudscape_flutter/issues
 documentation: https://github.com/mralifakbar/cloudscape_flutter/tree/main/doc
+screenshots:
+  - description: Sample console listing instances as cards on a phone, light mode.
+    path: doc/images/console-light.png
+  - description: Sample dashboard with key-value pairs and a CPU chart, dark mode.
+    path: doc/images/dashboard-dark.png
+  - description: Form inputs with prefix, suffix and validation states, dark mode.
+    path: doc/images/forms-dark.png
 topics:
   - design-system
   - ui

@@ -73,7 +73,7 @@ class _AvatarDemoState extends State<_AvatarDemo> {
             runSpacing: CsSpace.m,
             children: [
               CsAvatar(ariaLabel: 'Avatar of a user'),
-              CsAvatar(ariaLabel: 'Avatar of Jane Doe', initials: 'JD', tooltipText: 'Jane Doe'),
+              CsAvatar(ariaLabel: 'Avatar of the sample user', initials: 'SU', tooltipText: 'Account'),
               CsAvatar(ariaLabel: 'Avatar of Mateo Jackson', initials: 'MJ', tooltipText: 'Mateo Jackson'),
             ],
           ),
@@ -105,7 +105,7 @@ class _AvatarDemoState extends State<_AvatarDemo> {
                     loading: _loading,
                     ariaLabel: 'Generative AI assistant, generating',
                   ),
-                  CsAvatar(initials: 'JD', loading: _loading, ariaLabel: 'Jane Doe, typing'),
+                  CsAvatar(initials: 'SU', loading: _loading, ariaLabel: 'Sample user, typing'),
                 ],
               ),
               CsCheckbox(checked: _loading, label: 'Loading', onChange: (v) => setState(() => _loading = v)),
@@ -119,8 +119,8 @@ class _AvatarDemoState extends State<_AvatarDemo> {
             spacing: CsSpace.m,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
-              CsAvatar(ariaLabel: 'Jane Doe', initials: 'JD'),
-              CsAvatar(ariaLabel: 'Jane Doe', initials: 'JD', width: 36),
+              CsAvatar(ariaLabel: 'Account', initials: 'SU'),
+              CsAvatar(ariaLabel: 'Account', initials: 'SU', width: 36),
               CsAvatar(ariaLabel: 'Assistant', color: CsAvatarColor.genAi, icon: CsIcons.genAi, width: 48),
             ],
           ),
@@ -180,10 +180,10 @@ class _ChatBubbleDemoState extends State<_ChatBubbleDemo> {
     final sameAuthor = i > 0 && _messages[i - 1].outgoing == m.outgoing;
     return CsChatBubble(
       type: m.outgoing ? CsChatBubbleType.outgoing : CsChatBubbleType.incoming,
-      ariaLabel: '${m.outgoing ? 'Jane Doe' : 'Generative AI assistant'} at ${m.time}',
+      ariaLabel: '${m.outgoing ? 'Account' : 'Generative AI assistant'} at ${m.time}',
       hideAvatar: sameAuthor,
       stretch: _stretch && !m.outgoing,
-      avatar: m.outgoing ? const CsAvatar(ariaLabel: 'Jane Doe', initials: 'JD', tooltipText: 'Jane Doe') : _assistant,
+      avatar: m.outgoing ? const CsAvatar(ariaLabel: 'Account', initials: 'SU', tooltipText: 'Account') : _assistant,
       actions: m.outgoing || i != _messages.length - 1
           ? null
           : Wrap(
@@ -255,8 +255,8 @@ class _ChatBubbleDemoState extends State<_ChatBubbleDemo> {
           child: CsChatBubble(
             type: CsChatBubbleType.outgoing,
             align: CsChatBubbleAlign.end,
-            ariaLabel: 'Jane Doe at 3:45pm',
-            avatar: CsAvatar(ariaLabel: 'Jane Doe', initials: 'JD'),
+            ariaLabel: 'Sample user at 3:45pm',
+            avatar: CsAvatar(ariaLabel: 'Account', initials: 'SU'),
             child: Text('Thanks, that is all for now.'),
           ),
         ),

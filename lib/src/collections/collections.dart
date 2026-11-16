@@ -7,3 +7,4 @@ export 'cs_collection_types.dart';
 export 'cs_item_card.dart';
 export 'cs_s3_resource_selector.dart';
 export 'cs_table.dart';
+export 'cs_table_parts.dart';

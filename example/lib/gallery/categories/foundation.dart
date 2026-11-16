@@ -52,6 +52,18 @@ final CsDemoCategory foundationCategory = CsDemoCategory(
       docPath: 'doc/components/CsVisualContext.md',
       builder: (_) => const _VisualContextDemo(),
     ),
+    CsDemo(
+      title: 'CsIconProvider',
+      description: 'Replaces built-in icons by name for a subtree, including the icons inside components.',
+      docPath: 'doc/components/CsIconProvider.md',
+      builder: (_) => const _IconProviderDemo(),
+    ),
+    CsDemo(
+      title: 'CsNavigableGroup',
+      description: 'A toolbar that is one Tab stop, with the arrow keys moving between its buttons.',
+      docPath: 'doc/components/CsNavigableGroup.md',
+      builder: (_) => const _NavigableGroupDemo(),
+    ),
   ],
 );
 
@@ -445,6 +457,179 @@ class _VisualContextDemo extends StatelessWidget {
                   ],
                 ),
               ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _IconProviderDemo extends StatefulWidget {
+  const _IconProviderDemo();
+
+  @override
+  State<_IconProviderDemo> createState() => _IconProviderDemoState();
+}
+
+class _IconProviderDemoState extends State<_IconProviderDemo> {
+  bool _override = true;
+
+  static const _icons = {
+    'close': CsIcons.arrowLeft,
+    'status-positive': CsIcons.check,
+    'caret-down-filled': CsIcons.angleDown,
+    'settings': CsIcons.sliders,
+  };
+
+  Widget _sample() => Wrap(
+    spacing: CsSpace.m,
+    runSpacing: CsSpace.s,
+    crossAxisAlignment: WrapCrossAlignment.center,
+    children: [
+      const CsIcon(CsIcons.close, semanticLabel: 'close'),
+      const CsIcon(CsIcons.settings, semanticLabel: 'settings'),
+      const CsStatusIndicator(type: CsStatusType.success, text: 'Available'),
+      CsButton(icon: CsIcons.settings, variant: CsButtonVariant.icon, semanticLabel: 'Preferences', onPress: () {}),
+    ],
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return DemoColumn(
+      children: [
+        DemoSection(
+          title: 'Overrides by name',
+          caption: 'close, status-positive, caret-down-filled and settings are replaced below the provider.',
+          child: CsSpaceBetween(
+            size: CsSpacingSize.s,
+            children: [
+              CsToggle(
+                checked: _override,
+                onChange: (v) => setState(() => _override = v),
+                child: const Text('Apply the icon overrides'),
+              ),
+              CsIconProvider(icons: _override ? _icons : const {}, child: _sample()),
+            ],
+          ),
+        ),
+        const DemoSection(
+          title: 'Nested reset',
+          caption: 'An inner provider resets close to the built-in icon; CsIconProvider.reset clears every override.',
+          child: CsIconProvider(
+            icons: _icons,
+            child: Row(
+              spacing: CsSpace.l,
+              children: [
+                CsIcon(CsIcons.close, semanticLabel: 'Overridden'),
+                CsIconProvider(
+                  icons: {'close': null},
+                  child: CsIcon(CsIcons.close, semanticLabel: 'Reset by name'),
+                ),
+                CsIconProvider.reset(child: CsIcon(CsIcons.settings, semanticLabel: 'Reset all')),
+              ],
+            ),
+          ),
+        ),
+        DemoSection(
+          title: 'Widget override',
+          caption: 'Any widget, sized like the icon it replaces.',
+          child: CsIconProvider(
+            iconWidgets: {
+              'user-profile': DecoratedBox(
+                decoration: BoxDecoration(color: context.cs.colors.backgroundBadgeIcon, shape: BoxShape.circle),
+                child: const SizedBox.square(dimension: 16),
+              ),
+            },
+            child: const Row(
+              spacing: CsSpace.s,
+              children: [
+                CsIcon(CsIcons.userProfile, size: CsIconSize.medium),
+                Flexible(child: Text('Signed in as sample-user')),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _NavigableGroupDemo extends StatefulWidget {
+  const _NavigableGroupDemo();
+
+  @override
+  State<_NavigableGroupDemo> createState() => _NavigableGroupDemoState();
+}
+
+class _NavigableGroupDemoState extends State<_NavigableGroupDemo> {
+  final GlobalKey<CsNavigableGroupState> _toolbar = GlobalKey();
+  String _last = 'none';
+  bool _loop = false;
+  bool _bold = false;
+  bool _italic = false;
+
+  void _act(String name) => setState(() => _last = name);
+
+  @override
+  Widget build(BuildContext context) {
+    return DemoColumn(
+      children: [
+        DemoSection(
+          title: 'Instance actions toolbar',
+          caption:
+              'Tab once into the group, then use the left and right arrows, Home and End. '
+              'Terminate is disabled and skipped. Last action: $_last.',
+          child: CsSpaceBetween(
+            size: CsSpacingSize.s,
+            children: [
+              CsToggle(
+                checked: _loop,
+                onChange: (v) => setState(() => _loop = v),
+                child: const Text('Wrap around at the ends'),
+              ),
+              CsNavigableGroup(
+                key: _toolbar,
+                loop: _loop,
+                semanticLabel: 'Instance actions',
+                child: Wrap(
+                  spacing: CsSpace.xs,
+                  runSpacing: CsSpace.xs,
+                  children: [
+                    CsButton(text: 'Start', onPress: () => _act('Start')),
+                    CsButton(text: 'Stop', onPress: () => _act('Stop')),
+                    CsButton(text: 'Reboot', onPress: () => _act('Reboot')),
+                    const CsButton(text: 'Terminate', disabled: true),
+                    CsButton(
+                      icon: CsIcons.refresh,
+                      variant: CsButtonVariant.icon,
+                      semanticLabel: 'Refresh',
+                      onPress: () => _act('Refresh'),
+                    ),
+                  ],
+                ),
+              ),
+              CsButton(
+                text: 'Focus the toolbar',
+                variant: CsButtonVariant.link,
+                onPress: () => _toolbar.currentState?.focus(),
+              ),
+            ],
+          ),
+        ),
+        DemoSection(
+          title: 'Vertical toggle buttons',
+          caption: 'navigationDirection vertical: up and down move between the toggles.',
+          child: CsNavigableGroup(
+            navigationDirection: CsNavigationDirection.vertical,
+            semanticLabel: 'Text style',
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: CsSpace.xs,
+              children: [
+                CsToggleButton(text: 'Bold', pressed: _bold, onChange: (v) => setState(() => _bold = v)),
+                CsToggleButton(text: 'Italic', pressed: _italic, onChange: (v) => setState(() => _italic = v)),
+              ],
             ),
           ),
         ),

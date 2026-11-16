@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import '../theme/theme.dart';
+import 'cs_grouped_control.dart';
 
 /// Validation state of a field, drawn by [CsFieldBox].
 enum CsFieldStatus {
@@ -71,6 +72,9 @@ class CsFieldBox extends StatelessWidget {
   Widget build(BuildContext context) {
     final cs = context.cs;
     final c = cs.colors;
+    // Inside a CsControlGroup the group's placement shapes the chrome.
+    final group = CsGroupedControl.maybeOf(context);
+    final status = group != null && group.status != CsFieldStatus.none ? group.status : this.status;
     final statusColor = switch (status) {
       CsFieldStatus.invalid => c.textStatusError,
       CsFieldStatus.warning => c.textStatusWarning,
@@ -78,20 +82,31 @@ class CsFieldBox extends StatelessWidget {
     };
     final Color borderColor = disabled || readOnly
         ? c.borderInputDisabled
-        : statusColor ?? (focused ? c.borderInputFocused : c.borderInputDefault);
+        : statusColor ??
+              (focused ? c.borderInputFocused : (group != null ? c.borderControlGroupDefault : c.borderInputDefault));
     final Color background = disabled ? c.backgroundInputDisabled : c.backgroundInputDefault;
-    final startWidth = statusColor != null ? CsBorderWidth.fieldStatusInlineStart : CsBorderWidth.field;
-    final radius = BorderRadius.circular(borderRadius);
+    final thickStart = statusColor != null && (group == null || group.leading);
+    final dir = Directionality.maybeOf(context) ?? TextDirection.ltr;
+    final joinStart = group != null && group.direction == Axis.horizontal && group.joinsPrevious;
+    final joinTop = group != null && group.direction == Axis.vertical && group.joinsPrevious;
+    final startWidth = joinStart
+        ? 0.0
+        : thickStart
+        ? CsBorderWidth.fieldStatusInlineStart
+        : CsBorderWidth.field;
+    final topWidth = joinTop ? 0.0 : CsBorderWidth.field;
+    final radius = group?.radius(borderRadius).resolve(dir) ?? BorderRadius.circular(borderRadius);
 
     final vertical = cs.space.fieldVertical;
     // The thick start border eats into the start padding so text stays put.
     final startPad = CsSpace.fieldHorizontal - (startWidth - CsBorderWidth.field);
+    final topPad = vertical + CsBorderWidth.field - topWidth;
     final resolvedPadding =
         padding ??
         EdgeInsetsDirectional.only(
           start: leading != null ? 0 : startPad,
           end: trailing != null ? 0 : CsSpace.fieldHorizontal,
-          top: vertical,
+          top: topPad,
           bottom: vertical,
         );
 
@@ -131,11 +146,11 @@ class CsFieldBox extends StatelessWidget {
       ),
       foregroundDecoration: BoxDecoration(
         borderRadius: radius,
-        border: _border(Directionality.maybeOf(context) ?? TextDirection.ltr, borderColor, startWidth),
+        border: _border(dir, borderColor, startWidth, topWidth),
       ),
       padding: EdgeInsetsDirectional.only(
         start: startWidth,
-        top: CsBorderWidth.field,
+        top: topWidth,
         end: CsBorderWidth.field,
         bottom: CsBorderWidth.field,
       ),
@@ -149,11 +164,13 @@ class CsFieldBox extends StatelessWidget {
     );
   }
 
-  static Border _border(TextDirection dir, Color color, double startWidth) {
+  static Border _border(TextDirection dir, Color color, double startWidth, double topWidth) {
     final side = BorderSide(color: color, width: CsBorderWidth.field);
-    final start = BorderSide(color: color, width: startWidth);
+    // A grouped control drops the edge its neighbor's border already draws.
+    final start = startWidth == 0 ? BorderSide.none : BorderSide(color: color, width: startWidth);
+    final top = topWidth == 0 ? BorderSide.none : side;
     return dir == TextDirection.rtl
-        ? Border(top: side, bottom: side, left: side, right: start)
-        : Border(top: side, bottom: side, left: start, right: side);
+        ? Border(top: top, bottom: side, left: side, right: start)
+        : Border(top: top, bottom: side, left: start, right: side);
   }
 }

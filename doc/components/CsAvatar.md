@@ -32,7 +32,7 @@ const CsAvatar(
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
-| `ariaLabel` | `String` | required | Accessible name, such as "Avatar of Jane Doe". Include `tooltipText` in it when both are set. |
+| `ariaLabel` | `String` | required | Accessible name, such as "Avatar of the sample user". Include `tooltipText` in it when both are set. |
 | `color` | `CsAvatarColor` | `defaultColor` | `defaultColor` (`color-background-avatar-default`) or `genAi` (the `colorBackgroundAvatarGenAi` radial gradient). |
 | `tooltipText` | `String?` | `null` | Tooltip shown on hover, keyboard focus and touch. |
 | `initials` | `String?` | `null` | One or two characters; later characters are ignored. Takes precedence over the icon. |
@@ -48,7 +48,7 @@ const CsAvatar(
 ### Person with initials and a tooltip
 
 ```dart
-const CsAvatar(ariaLabel: 'Avatar of Jane Doe', initials: 'JD', tooltipText: 'Jane Doe')
+const CsAvatar(ariaLabel: 'Avatar of the sample user', initials: 'SU', tooltipText: 'Account')
 ```
 
 ### Assistant generating a response
@@ -65,7 +65,7 @@ const CsAvatar(
 ### Larger avatar
 
 ```dart
-const CsAvatar(ariaLabel: 'Avatar of Jane Doe', initials: 'JD', width: 48)
+const CsAvatar(ariaLabel: 'Avatar of the sample user', initials: 'SU', width: 48)
 ```
 
 ## Accessibility
