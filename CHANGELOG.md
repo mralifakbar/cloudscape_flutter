@@ -1,6 +1,6 @@
 ## 0.1.1
 
-- Static analysis on the latest Flutter: `CsList` and `CsCollectionPreferences` no longer report the `ReorderableList.onReorder` deprecation from Flutter 3.41. Behavior is unchanged, and Flutter 3.38 is still supported.
+- Static analysis on the latest Flutter: `CsList` and `CsCollectionPreferences` no longer report the `ReorderableList.onReorder` deprecation (Flutter 3.41), and the Material import used by text fields and the Material theme bridge no longer reports the `material_ui` move (Flutter 3.47). Behavior is unchanged, and Flutter 3.38 is still supported.
 
 ## 0.1.0
 
