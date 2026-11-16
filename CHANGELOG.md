@@ -1,3 +1,7 @@
+## 0.1.1
+
+- Static analysis on the latest Flutter: `CsList` and `CsCollectionPreferences` no longer report the `ReorderableList.onReorder` deprecation from Flutter 3.41. Behavior is unchanged, and Flutter 3.38 is still supported.
+
 ## 0.1.0
 
 First release.

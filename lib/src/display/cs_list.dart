@@ -364,6 +364,10 @@ class _CsListState<T> extends State<CsList<T>> {
           _announce(widget.i18nStrings.liveAnnouncementDndStarted(index + 1, shown.length));
         },
         onReorderEnd: (_) => _dragStartIndex = null,
+        // `onReorderItem` replaces `onReorder` from Flutter 3.41, but this package
+        // still supports 3.38, which only has `onReorder`. Move to
+        // `onReorderItem` (it already adjusts the index) when the minimum is 3.41.
+        // ignore: deprecated_member_use
         onReorder: (from, to) {
           // ReorderableList reports the slot before removal.
           final target = to > from ? to - 1 : to;

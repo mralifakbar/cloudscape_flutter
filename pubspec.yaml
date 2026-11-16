@@ -1,7 +1,7 @@
 name: cloudscape_flutter
 description: >-
   Unofficial Flutter port of AWS Cloudscape Design System: every visual-refresh token in light, dark and compact density, 148 Cloudscape icons and 100+ touch-ready components.
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/mralifakbar/cloudscape_flutter
 repository: https://github.com/mralifakbar/cloudscape_flutter
 issue_tracker: https://github.com/mralifakbar/cloudscape_flutter/issues

@@ -842,6 +842,10 @@ class _ContentDisplayState extends State<_ContentDisplay> {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemCount: shown.length,
+            // `onReorderItem` replaces `onReorder` from Flutter 3.41, but this package
+            // still supports 3.38, which only has `onReorder`. Move to
+            // `onReorderItem` (it already adjusts the index) when the minimum is 3.41.
+            // ignore: deprecated_member_use
             onReorder: (from, to) {
               if (!canReorder) return;
               _move(from, to > from ? to - 1 : to);
