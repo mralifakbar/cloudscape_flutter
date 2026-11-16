@@ -6,13 +6,7 @@ import 'settings_scope.dart';
 /// Frame for gallery pages: a top bar with a back button and the theme and
 /// density toggles, a page header, and content capped at a readable width.
 class PageFrame extends StatelessWidget {
-  const PageFrame({
-    super.key,
-    required this.title,
-    this.description,
-    required this.children,
-    this.maxWidth = 840,
-  });
+  const PageFrame({super.key, required this.title, this.description, required this.children, this.maxWidth = 840});
 
   final String title;
   final String? description;
@@ -74,11 +68,7 @@ class PageFrame extends StatelessWidget {
                       maxWidth: maxWidth,
                       child: Padding(
                         padding: EdgeInsets.fromLTRB(gutter, CsSpace.l, gutter, CsSpace.l),
-                        child: CsHeader(
-                          variant: CsHeaderVariant.h1,
-                          title: title,
-                          description: description,
-                        ),
+                        child: CsHeader(variant: CsHeaderVariant.h1, title: title, description: description),
                       ),
                     ),
                   ),

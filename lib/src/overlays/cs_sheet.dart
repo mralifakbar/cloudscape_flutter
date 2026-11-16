@@ -690,10 +690,7 @@ class CsSheetHandle extends StatelessWidget {
           child: Container(
             width: 36,
             height: 4,
-            decoration: BoxDecoration(
-              color: cs.colors.borderInputDefault,
-              borderRadius: BorderRadius.circular(2),
-            ),
+            decoration: BoxDecoration(color: cs.colors.borderInputDefault, borderRadius: BorderRadius.circular(2)),
           ),
         ),
       ),

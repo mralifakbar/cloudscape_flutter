@@ -1,0 +1,21 @@
+name: Feature or component request
+description: Ask for a missing Cloudscape component, prop or behavior.
+labels: [enhancement]
+body:
+  - type: input
+    id: cloudscape
+    attributes:
+      label: Cloudscape reference
+      description: Link to the Cloudscape docs page or source, if this exists in Cloudscape.
+      placeholder: https://cloudscape.design/components/...
+  - type: textarea
+    id: need
+    attributes:
+      label: What do you need, and why?
+    validations:
+      required: true
+  - type: textarea
+    id: api
+    attributes:
+      label: Proposed API
+      render: dart

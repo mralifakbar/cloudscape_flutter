@@ -184,7 +184,10 @@ class CsVisualContext extends StatelessWidget {
     final data = CsTheme.of(buildContext).withVisualContext(context);
     return CsTheme(
       data: data,
-      child: DefaultTextStyle.merge(style: TextStyle(color: data.colors.textBodyDefault), child: child),
+      child: DefaultTextStyle.merge(
+        style: TextStyle(color: data.colors.textBodyDefault),
+        child: child,
+      ),
     );
   }
 }
@@ -201,6 +204,8 @@ class CsDensityScope extends StatelessWidget {
   final Widget child;
 
   @override
-  Widget build(BuildContext context) =>
-      CsTheme(data: CsTheme.of(context).copyWith(density: density), child: child);
+  Widget build(BuildContext context) => CsTheme(
+    data: CsTheme.of(context).copyWith(density: density),
+    child: child,
+  );
 }

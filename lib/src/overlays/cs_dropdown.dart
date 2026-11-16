@@ -35,8 +35,9 @@ typedef CsDropdownBuilder = Widget Function(BuildContext context, bool inSheet);
 /// below. On phones it opens as a bottom sheet instead.
 ///
 /// It is controlled: set [open], and close it in [onDismiss] (outside tap,
-/// Escape, or the sheet being swiped away). In a sheet, content that closes
-/// on a pick calls `CsSheetScope.closeFrom(context)` as well.
+/// Escape, or the sheet being swiped away). Setting [open] to false closes
+/// the sheet too, and the sheet content rebuilds whenever the dropdown does,
+/// so a multiselect can toggle options while its sheet stays up.
 ///
 /// ```dart
 /// CsDropdown(
@@ -60,14 +61,23 @@ class CsDropdown extends StatefulWidget {
     this.trapFocus = false,
     this.sheetLabel,
     this.tapRegionGroupId,
+    this.dismissOnOutsideTap = true,
   });
 
+  /// Shows the dropdown (or the sheet on phones) while true.
   final bool open;
 
   /// The trigger the dropdown attaches to.
   final Widget child;
+
+  /// Builds the content; called again whenever the dropdown rebuilds.
   final CsDropdownBuilder contentBuilder;
+
+  /// Outside tap, Escape, or the sheet swiped away. Set [open] to false.
   final VoidCallback? onDismiss;
+
+  /// Anchored dropdown, bottom sheet, or [CsPresentation.auto] (sheet at or
+  /// below 688px).
   final CsPresentation presentation;
 
   /// Make the dropdown at least as wide as its trigger (Cloudscape default).
@@ -85,16 +95,36 @@ class CsDropdown extends StatefulWidget {
   final String? sheetLabel;
   final Object? tapRegionGroupId;
 
+  /// False keeps an anchored dropdown open on outside taps (content with
+  /// its own nested dropdowns, such as a filter editor); Escape still closes.
+  final bool dismissOnOutsideTap;
+
   @override
   State<CsDropdown> createState() => _CsDropdownState();
 }
 
 class _CsDropdownState extends State<CsDropdown> {
   bool _sheetShowing = false;
+  BuildContext? _sheetContext;
+  // Ticks after the dropdown rebuilds so sheet content, which lives in its
+  // own route, rebuilds with the owner's latest state.
+  final _SheetRefresh _refresh = _SheetRefresh();
 
   @override
   void didUpdateWidget(CsDropdown old) {
     super.didUpdateWidget(old);
+    if (_sheetShowing) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted || !_sheetShowing) return;
+        final sheet = _sheetContext;
+        // Controlled: the owner closed the dropdown (a pick), so close the sheet.
+        if (!widget.open && sheet != null && sheet.mounted) {
+          CsSheetScope.closeFrom(sheet);
+        } else {
+          _refresh.tick();
+        }
+      });
+    }
     _maybeOpenSheet();
   }
 
@@ -104,17 +134,34 @@ class _CsDropdownState extends State<CsDropdown> {
     _maybeOpenSheet();
   }
 
+  @override
+  void dispose() {
+    _refresh.dispose();
+    super.dispose();
+  }
+
   void _maybeOpenSheet() {
     if (!widget.open || _sheetShowing || !widget.presentation.usesSheet(context)) return;
     _sheetShowing = true;
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (!mounted) return;
+      if (!widget.open) {
+        _sheetShowing = false;
+        return;
+      }
       await showCsSheet<void>(
         context: context,
         semanticLabel: widget.sheetLabel,
-        builder: (context) => SafeArea(top: false, child: widget.contentBuilder(context, true)),
+        builder: (sheetContext) {
+          _sheetContext = sheetContext;
+          return ListenableBuilder(
+            listenable: _refresh,
+            builder: (context, _) => SafeArea(top: false, child: widget.contentBuilder(context, true)),
+          );
+        },
       );
       _sheetShowing = false;
+      _sheetContext = null;
       if (mounted && widget.open) widget.onDismiss?.call();
     });
   }
@@ -123,8 +170,7 @@ class _CsDropdownState extends State<CsDropdown> {
   Widget build(BuildContext context) {
     final sheet = widget.presentation.usesSheet(context);
     // On phones the trigger stays in place and the content opens in a sheet
-    // (see _maybeOpenSheet). Content closes the sheet after a pick with
-    // `CsSheetScope.closeFrom(context)`.
+    // (see _maybeOpenSheet); setting `open` to false closes it.
     if (sheet) return widget.child;
     return CsAnchoredOverlay(
       open: widget.open,
@@ -137,8 +183,13 @@ class _CsDropdownState extends State<CsDropdown> {
       trapFocus: widget.trapFocus,
       focusPopupWhenUnfocused: widget.trapFocus,
       tapRegionGroupId: widget.tapRegionGroupId,
+      dismissOnOutsideTap: widget.dismissOnOutsideTap,
       overlayBuilder: (context, placement) => widget.contentBuilder(context, false),
       child: widget.child,
     );
   }
+}
+
+class _SheetRefresh extends ChangeNotifier {
+  void tick() => notifyListeners();
 }

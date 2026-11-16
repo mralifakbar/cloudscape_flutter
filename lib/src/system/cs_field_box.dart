@@ -106,7 +106,11 @@ class CsFieldBox extends StatelessWidget {
               child: leading,
             ),
           Expanded(child: content),
-          if (trailing != null) Padding(padding: const EdgeInsetsDirectional.only(end: CsSpace.xxs), child: trailing),
+          if (trailing != null)
+            Padding(
+              padding: const EdgeInsetsDirectional.only(end: CsSpace.xxs),
+              child: trailing,
+            ),
         ],
       );
     }
@@ -135,8 +139,13 @@ class CsFieldBox extends StatelessWidget {
         end: CsBorderWidth.field,
         bottom: CsBorderWidth.field,
       ),
-      alignment: multiline ? AlignmentDirectional.topStart : AlignmentDirectional.centerStart,
-      child: content,
+      // Align with height factor 1 instead of Container.alignment, which would
+      // make the field fill any height limit from above.
+      child: Align(
+        alignment: multiline ? AlignmentDirectional.topStart : AlignmentDirectional.centerStart,
+        heightFactor: 1,
+        child: content,
+      ),
     );
   }
 

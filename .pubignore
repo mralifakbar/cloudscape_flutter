@@ -1,0 +1,10 @@
+.dart_tool/
+build/
+coverage/
+**/failures/
+.github/
+example/build/
+example/ios/Pods/
+*.iml
+tool/icons/
+.dart_tool/cloudscape_cache/

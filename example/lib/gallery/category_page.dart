@@ -46,7 +46,10 @@ class _DemoBlock extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(demo.title, style: context.cs.code(scale: CsTypeScale.headingS).copyWith(fontWeight: CsTypography.bold)),
+          Text(
+            demo.title,
+            style: context.cs.code(scale: CsTypeScale.headingS).copyWith(fontWeight: CsTypography.bold),
+          ),
           const SizedBox(height: CsSpace.xxs),
           CsBox(color: CsBoxColor.textBodySecondary, text: demo.description),
           const SizedBox(height: CsSpace.l),

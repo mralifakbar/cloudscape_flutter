@@ -21,8 +21,7 @@ class GallerySettings extends InheritedWidget {
       context.dependOnInheritedWidgetOfExactType<GallerySettings>();
 
   @override
-  bool updateShouldNotify(GallerySettings oldWidget) =>
-      mode != oldWidget.mode || density != oldWidget.density;
+  bool updateShouldNotify(GallerySettings oldWidget) => mode != oldWidget.mode || density != oldWidget.density;
 }
 
 /// Icon buttons that cycle the color mode (System, Light, Dark) and switch
@@ -47,7 +46,9 @@ class GalleryToggles extends StatelessWidget {
         CsButton(
           icon: compact ? CsIcons.viewFull : CsIcons.listView,
           variant: CsButtonVariant.icon,
-          semanticLabel: compact ? 'Density: compact. Switch to comfortable' : 'Density: comfortable. Switch to compact',
+          semanticLabel: compact
+              ? 'Density: compact. Switch to comfortable'
+              : 'Density: comfortable. Switch to compact',
           onPress: () => settings.onDensityChange(compact ? CsDensity.comfortable : CsDensity.compact),
         ),
         CsButton(

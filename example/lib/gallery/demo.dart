@@ -3,12 +3,7 @@ import 'package:flutter/widgets.dart';
 
 /// One live example in the gallery.
 class CsDemo {
-  const CsDemo({
-    required this.title,
-    required this.description,
-    required this.builder,
-    this.docPath,
-  });
+  const CsDemo({required this.title, required this.description, required this.builder, this.docPath});
 
   /// Component name as it appears in code, such as `CsButton`.
   final String title;
@@ -23,12 +18,7 @@ class CsDemo {
 
 /// A group of demos shown as one section of the gallery.
 class CsDemoCategory {
-  const CsDemoCategory({
-    required this.title,
-    required this.description,
-    required this.icon,
-    required this.demos,
-  });
+  const CsDemoCategory({required this.title, required this.description, required this.icon, required this.demos});
 
   final String title;
   final String description;
@@ -39,12 +29,7 @@ class CsDemoCategory {
 /// Standard frame for one scenario inside a demo: a heading, an optional
 /// caption and the live widget.
 class DemoSection extends StatelessWidget {
-  const DemoSection({
-    super.key,
-    required this.title,
-    required this.child,
-    this.caption,
-  });
+  const DemoSection({super.key, required this.title, required this.child, this.caption});
 
   final String title;
   final String? caption;
@@ -56,14 +41,14 @@ class DemoSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: MainAxisSize.min,
       children: [
-        CsBox(variant: CsBoxVariant.h4, text: title, padding: const CsBoxSpacing(top: CsSpacingSize.n, bottom: CsSpacingSize.n)),
+        CsBox(
+          variant: CsBoxVariant.h4,
+          text: title,
+          padding: const CsBoxSpacing(top: CsSpacingSize.n, bottom: CsSpacingSize.n),
+        ),
         if (caption != null) ...[
           const SizedBox(height: CsSpace.xxxs),
-          CsBox(
-            variant: CsBoxVariant.small,
-            color: CsBoxColor.textBodySecondary,
-            text: caption!,
-          ),
+          CsBox(variant: CsBoxVariant.small, color: CsBoxColor.textBodySecondary, text: caption!),
         ],
         const SizedBox(height: CsSpace.s),
         child,
@@ -79,9 +64,6 @@ class DemoColumn extends StatelessWidget {
   final List<Widget> children;
 
   @override
-  Widget build(BuildContext context) => Column(
-    crossAxisAlignment: CrossAxisAlignment.stretch,
-    spacing: CsSpace.xl,
-    children: children,
-  );
+  Widget build(BuildContext context) =>
+      Column(crossAxisAlignment: CrossAxisAlignment.stretch, spacing: CsSpace.xl, children: children);
 }

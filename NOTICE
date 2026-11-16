@@ -1,0 +1,24 @@
+cloudscape_flutter
+Copyright (c) 2026 Alif Akbar Kartadinata and the cloudscape_flutter contributors
+
+This product is an unofficial Flutter port of the Cloudscape Design System.
+It is not affiliated with, sponsored by, or endorsed by Amazon Web Services,
+Inc. or Amazon.com, Inc. "AWS", "Amazon Web Services" and "Cloudscape" are
+used only to describe what this package is a port of. The Apache License
+grants no rights to trade names, trademarks or logos; no AWS logo, service
+icon or the Amazon Ember font is included.
+
+Third-party material included in this product:
+
+  * Cloudscape Design System (https://github.com/cloudscape-design/components,
+    chat-components, code-view, board-components), Copyright Amazon.com, Inc.
+    or its affiliates, Apache License 2.0 (assets/licenses/Cloudscape-Apache-2.0.txt).
+    Derived material: the visual-refresh design tokens (colors, spacing,
+    density, typography, borders, shadows, motion), converted to Dart by
+    tool/generate_theme.dart; the 148 icons in tool/icons, converted to Dart
+    vector paths by tool/generate_icons.dart; component props, dimensions,
+    copy defaults and behavior, re-implemented in Dart.
+
+  * Open Sans, Copyright 2020 The Open Sans Project Authors, SIL Open Font
+    License 1.1 (assets/licenses/OpenSans-OFL.txt). Redistributed unmodified as
+    assets/fonts/OpenSans-Light.ttf, OpenSans-Regular.ttf and OpenSans-Bold.ttf.

@@ -149,11 +149,8 @@ class CsThemeData {
     );
   }
 
-  CsThemeData _darkBase() => copyWith(
-    brightness: Brightness.dark,
-    colors: CsColorSchemes.dark,
-    shadows: CsShadows.dark,
-  );
+  CsThemeData _darkBase() =>
+      copyWith(brightness: Brightness.dark, colors: CsColorSchemes.dark, shadows: CsShadows.dark);
 
   CsThemeData copyWith({
     Brightness? brightness,

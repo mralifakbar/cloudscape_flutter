@@ -24,7 +24,8 @@ class HomePage extends StatelessWidget {
     final demoCount = galleryCategories.fold<int>(0, (n, c) => n + c.demos.length);
     return PageFrame(
       title: 'Cloudscape for Flutter',
-      description: 'An unofficial port of the AWS Cloudscape Design System. $demoCount live demos in light, dark and compact.',
+      description:
+          'An unofficial port of the AWS Cloudscape Design System. $demoCount live demos in light, dark and compact.',
       children: [
         if (sampleApp != null) ...[
           const _SectionTitle('Sample app'),
@@ -81,7 +82,8 @@ class HomePage extends StatelessWidget {
         const CsBox(
           variant: CsBoxVariant.small,
           color: CsBoxColor.textBodySecondary,
-          text: 'Not affiliated with or endorsed by Amazon Web Services. All resource names and numbers in this app are sample data.',
+          text:
+              'Not affiliated with or endorsed by Amazon Web Services. All resource names and numbers in this app are sample data.',
         ),
       ],
     );

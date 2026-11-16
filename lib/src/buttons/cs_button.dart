@@ -180,7 +180,13 @@ class CsButton extends StatelessWidget {
       excludeChildSemantics: iconOnly || semanticLabel != null || (loading && loadingText != null),
       scaleOnPress: variant != CsButtonVariant.inlineLink,
       builder: (context, state) {
-        final s = _VariantStyle.of(variant, c, isDisabled ? _State.disabled : (state.pressed ? _State.active : (state.hovered ? _State.hover : _State.normal)));
+        final s = _VariantStyle.of(
+          variant,
+          c,
+          isDisabled
+              ? _State.disabled
+              : (state.pressed ? _State.active : (state.hovered ? _State.hover : _State.normal)),
+        );
         final textStyle = cs
             .text(CsTypeScale.bodyM, weight: CsTypography.bold)
             .copyWith(
@@ -224,7 +230,9 @@ class CsButton extends StatelessWidget {
         if (iconOnly) {
           content = SizedBox.square(
             dimension: 16,
-            child: Center(child: CsSwap(child: iconSlot ?? const SizedBox.shrink(key: ValueKey('empty')))),
+            child: Center(
+              child: CsSwap(child: iconSlot ?? const SizedBox.shrink(key: ValueKey('empty'))),
+            ),
           );
         } else {
           content = Row(
@@ -254,23 +262,18 @@ class CsButton extends StatelessWidget {
         }
 
         final padding = _padding(cs, iconOnly);
-        final border = s.border == null || variant == CsButtonVariant.inlineLink || variant == CsButtonVariant.inlineIcon
+        final border =
+            s.border == null || variant == CsButtonVariant.inlineLink || variant == CsButtonVariant.inlineIcon
             ? null
             : CsRing.inside(s.border!, width: CsBorderWidth.button);
         // Inline variants have no padding or border; keep the 2px border
         // space on boxed variants so every state is the same size.
-        final boxed =
-            variant != CsButtonVariant.inlineLink && variant != CsButtonVariant.inlineIcon;
+        final boxed = variant != CsButtonVariant.inlineLink && variant != CsButtonVariant.inlineIcon;
         return Container(
           width: fullWidth ? double.infinity : null,
           constraints: boxed ? BoxConstraints(minHeight: cs.space.sizeVerticalInput) : null,
-          padding: padding.add(
-            boxed ? const EdgeInsets.all(CsBorderWidth.button) : EdgeInsets.zero,
-          ),
-          decoration: BoxDecoration(
-            color: s.background,
-            borderRadius: radius,
-          ),
+          padding: padding.add(boxed ? const EdgeInsets.all(CsBorderWidth.button) : EdgeInsets.zero),
+          decoration: BoxDecoration(color: s.background, borderRadius: radius),
           foregroundDecoration: border == null ? null : BoxDecoration(borderRadius: radius, border: border),
           child: DefaultTextStyle(
             style: textStyle,
@@ -304,11 +307,12 @@ class CsButton extends StatelessWidget {
     return switch (variant) {
       CsButtonVariant.inlineLink => EdgeInsets.zero,
       CsButtonVariant.inlineIcon => const EdgeInsets.symmetric(horizontal: CsSpace.xxs),
-      CsButtonVariant.icon || CsButtonVariant.flashbarIcon => EdgeInsets.symmetric(
+      CsButtonVariant.icon ||
+      CsButtonVariant.flashbarIcon => EdgeInsets.symmetric(horizontal: CsSpace.xxs, vertical: d.buttonVertical),
+      CsButtonVariant.modalDismiss => EdgeInsets.symmetric(
         horizontal: CsSpace.xxs,
-        vertical: d.buttonVertical,
+        vertical: d.buttonModalDismissVertical,
       ),
-      CsButtonVariant.modalDismiss => EdgeInsets.symmetric(horizontal: CsSpace.xxs, vertical: d.buttonModalDismissVertical),
       _ when iconOnly => EdgeInsets.symmetric(horizontal: d.buttonIconOnlyHorizontal, vertical: d.buttonVertical),
       _ => EdgeInsets.symmetric(horizontal: d.buttonHorizontal, vertical: d.buttonVertical),
     };
@@ -329,24 +333,72 @@ class _VariantStyle {
     switch (variant) {
       case CsButtonVariant.normal:
         return switch (s) {
-          _State.normal => _VariantStyle(c.backgroundButtonNormalDefault, c.borderButtonNormalDefault, c.textButtonNormalDefault),
-          _State.hover => _VariantStyle(c.backgroundButtonNormalHover, c.borderButtonNormalHover, c.textButtonNormalHover),
-          _State.active => _VariantStyle(c.backgroundButtonNormalActive, c.borderButtonNormalActive, c.textButtonNormalActive),
-          _State.disabled => _VariantStyle(c.backgroundButtonNormalDisabled, c.borderButtonNormalDisabled, c.textButtonNormalDisabled),
+          _State.normal => _VariantStyle(
+            c.backgroundButtonNormalDefault,
+            c.borderButtonNormalDefault,
+            c.textButtonNormalDefault,
+          ),
+          _State.hover => _VariantStyle(
+            c.backgroundButtonNormalHover,
+            c.borderButtonNormalHover,
+            c.textButtonNormalHover,
+          ),
+          _State.active => _VariantStyle(
+            c.backgroundButtonNormalActive,
+            c.borderButtonNormalActive,
+            c.textButtonNormalActive,
+          ),
+          _State.disabled => _VariantStyle(
+            c.backgroundButtonNormalDisabled,
+            c.borderButtonNormalDisabled,
+            c.textButtonNormalDisabled,
+          ),
         };
       case CsButtonVariant.primary:
         return switch (s) {
-          _State.normal => _VariantStyle(c.backgroundButtonPrimaryDefault, c.borderButtonPrimaryDefault, c.textButtonPrimaryDefault),
-          _State.hover => _VariantStyle(c.backgroundButtonPrimaryHover, c.borderButtonPrimaryHover, c.textButtonPrimaryHover),
-          _State.active => _VariantStyle(c.backgroundButtonPrimaryActive, c.borderButtonPrimaryActive, c.textButtonPrimaryActive),
-          _State.disabled => _VariantStyle(c.backgroundButtonPrimaryDisabled, c.borderButtonPrimaryDisabled, c.textButtonPrimaryDisabled),
+          _State.normal => _VariantStyle(
+            c.backgroundButtonPrimaryDefault,
+            c.borderButtonPrimaryDefault,
+            c.textButtonPrimaryDefault,
+          ),
+          _State.hover => _VariantStyle(
+            c.backgroundButtonPrimaryHover,
+            c.borderButtonPrimaryHover,
+            c.textButtonPrimaryHover,
+          ),
+          _State.active => _VariantStyle(
+            c.backgroundButtonPrimaryActive,
+            c.borderButtonPrimaryActive,
+            c.textButtonPrimaryActive,
+          ),
+          _State.disabled => _VariantStyle(
+            c.backgroundButtonPrimaryDisabled,
+            c.borderButtonPrimaryDisabled,
+            c.textButtonPrimaryDisabled,
+          ),
         };
       case CsButtonVariant.link:
         return switch (s) {
-          _State.normal => _VariantStyle(c.backgroundButtonLinkDefault, c.backgroundButtonLinkDefault, c.textButtonLinkDefault),
-          _State.hover => _VariantStyle(c.backgroundButtonLinkHover, c.backgroundButtonLinkHover, c.textButtonLinkHover),
-          _State.active => _VariantStyle(c.backgroundButtonLinkActive, c.backgroundButtonLinkActive, c.textButtonLinkActive),
-          _State.disabled => _VariantStyle(c.backgroundButtonLinkDisabled, c.borderButtonLinkDisabled, c.textButtonLinkDisabled),
+          _State.normal => _VariantStyle(
+            c.backgroundButtonLinkDefault,
+            c.backgroundButtonLinkDefault,
+            c.textButtonLinkDefault,
+          ),
+          _State.hover => _VariantStyle(
+            c.backgroundButtonLinkHover,
+            c.backgroundButtonLinkHover,
+            c.textButtonLinkHover,
+          ),
+          _State.active => _VariantStyle(
+            c.backgroundButtonLinkActive,
+            c.backgroundButtonLinkActive,
+            c.textButtonLinkActive,
+          ),
+          _State.disabled => _VariantStyle(
+            c.backgroundButtonLinkDisabled,
+            c.borderButtonLinkDisabled,
+            c.textButtonLinkDisabled,
+          ),
         };
       case CsButtonVariant.icon:
         return switch (s) {

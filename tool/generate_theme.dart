@@ -40,9 +40,11 @@ Future<void> main(List<String> args) async {
   _contexts = theme['contexts'] as Map<String, dynamic>;
 
   final publicJson = jsonDecode(
-    await _fetch('https://cdn.jsdelivr.net/npm/@cloudscape-design/design-tokens@$_tokensVersion/index-visual-refresh.json'),
+    await _fetch(
+      'https://cdn.jsdelivr.net/npm/@cloudscape-design/design-tokens@$_tokensVersion/index-visual-refresh.json',
+    ),
   );
-  for (final e in (publicJson['tokens'] as Map<String, dynamic>).entries) {
+  for (final e in ((publicJson as Map<String, dynamic>)['tokens'] as Map<String, dynamic>).entries) {
     final d = (e.value as Map<String, dynamic>)[r'$description'] as String?;
     if (d != null) _descriptions[_camel(e.key)] = d;
   }
@@ -75,7 +77,7 @@ String _camel(String kebab) {
 
 /// Resolves [name] for a state such as {color: dark, density: compact, motion: default}.
 String _resolve(String name, Map<String, String> state, {String? context}) {
-  final ctxTokens = context == null ? null : (_contexts[context]['tokens'] as Map<String, dynamic>);
+  final ctxTokens = context == null ? null : ((_contexts[context] as Map<String, dynamic>)['tokens'] as Map<String, dynamic>);
   final raw = ctxTokens?[name] ?? _tokens[name];
   if (raw == null) throw StateError('unknown token $name');
   String value;
@@ -90,8 +92,11 @@ String _resolve(String name, Map<String, String> state, {String? context}) {
   return value.replaceAllMapped(RegExp(r'\{(\w+)\}'), (m) => _resolve(m[1]!, state, context: context));
 }
 
-Map<String, String> _state({String color = 'light', String density = 'comfortable', String motion = 'default'}) =>
-    {'color': color, 'density': density, 'motion': motion};
+Map<String, String> _state({String color = 'light', String density = 'comfortable', String motion = 'default'}) => {
+  'color': color,
+  'density': density,
+  'motion': motion,
+};
 
 // ---------------------------------------------------------------------------
 // Colors
@@ -192,7 +197,9 @@ String _colorsFile(String version) {
     ..writeln()
     ..writeln('  static CsColorScheme lerp(CsColorScheme a, CsColorScheme b, double t) {')
     ..writeln('    if (identical(a, b)) return a;')
-    ..writeln('    return CsColorScheme([for (var i = 0; i < a.values.length; i++) Color.lerp(a.values[i], b.values[i], t)!]);')
+    ..writeln(
+      '    return CsColorScheme([for (var i = 0; i < a.values.length; i++) Color.lerp(a.values[i], b.values[i], t)!]);',
+    )
     ..writeln('  }')
     ..writeln()
     ..writeln('  @override')
@@ -267,7 +274,7 @@ String _colorsFile(String version) {
   final contextOverrides = <String, Map<String, Map<int, int>>>{};
   for (final e in contextNames.entries) {
     for (final mode in ['light', 'dark']) {
-      final defaultMode = _contexts[e.key]['defaultMode'] as String?;
+      final defaultMode = (_contexts[e.key] as Map<String, dynamic>)['defaultMode'] as String?;
       final effective = defaultMode ?? mode;
       final ctx = scheme(effective, context: e.key);
       final base = mode == 'light' ? light : dark;
@@ -430,7 +437,11 @@ String _tokensFile(String version) {
       ..writeln();
   }
 
-  group('CsBorderRadius', 'borderRadius', 'Corner radii. Cloudscape rounds buttons fully (20px) and containers at 16px.');
+  group(
+    'CsBorderRadius',
+    'borderRadius',
+    'Corner radii. Cloudscape rounds buttons fully (20px) and containers at 16px.',
+  );
   group('CsBorderWidth', 'borderWidth', 'Border widths in logical pixels.');
   b
     ..writeln('/// Line widths that are not `borderWidth*` tokens (dividers, focus outlines).')
@@ -487,7 +498,9 @@ String _tokensFile(String version) {
     final ms = double.tryParse(raw.replaceAll('ms', ''));
     if (ms == null) continue;
     b.writeln('  /// `$n`: $raw.');
-    b.writeln('  static const Duration ${_lowerFirst(n.substring('motionDuration'.length))} = Duration(milliseconds: ${ms.round()});');
+    b.writeln(
+      '  static const Duration ${_lowerFirst(n.substring('motionDuration'.length))} = Duration(milliseconds: ${ms.round()});',
+    );
   }
   b
     ..writeln('}')

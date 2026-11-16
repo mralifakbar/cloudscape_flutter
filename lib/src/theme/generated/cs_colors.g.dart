@@ -2407,7 +2407,6 @@ enum CsColor {
 
   /// Cloudscape color token `colorTextVisualAccentAmber`.
   textVisualAccentAmber,
-
 }
 
 /// A resolved set of Cloudscape colors for one mode. Read a token with
@@ -2449,1602 +2448,2401 @@ class CsColorScheme {
 
   /// Cloudscape color token `colorPrimary50`.
   Color get primary50 => values[0];
+
   /// Cloudscape color token `colorPrimary100`.
   Color get primary100 => values[1];
+
   /// Cloudscape color token `colorPrimary200`.
   Color get primary200 => values[2];
+
   /// Cloudscape color token `colorPrimary300`.
   Color get primary300 => values[3];
+
   /// Cloudscape color token `colorPrimary400`.
   Color get primary400 => values[4];
+
   /// Cloudscape color token `colorPrimary500`.
   Color get primary500 => values[5];
+
   /// Cloudscape color token `colorPrimary600`.
   Color get primary600 => values[6];
+
   /// Cloudscape color token `colorPrimary700`.
   Color get primary700 => values[7];
+
   /// Cloudscape color token `colorPrimary800`.
   Color get primary800 => values[8];
+
   /// Cloudscape color token `colorPrimary900`.
   Color get primary900 => values[9];
+
   /// Cloudscape color token `colorPrimary950`.
   Color get primary950 => values[10];
+
   /// Cloudscape color token `colorPrimary1000`.
   Color get primary1000 => values[11];
+
   /// Cloudscape color token `colorNeutral50`.
   Color get neutral50 => values[12];
+
   /// Cloudscape color token `colorNeutral100`.
   Color get neutral100 => values[13];
+
   /// Cloudscape color token `colorNeutral150`.
   Color get neutral150 => values[14];
+
   /// Cloudscape color token `colorNeutral200`.
   Color get neutral200 => values[15];
+
   /// Cloudscape color token `colorNeutral250`.
   Color get neutral250 => values[16];
+
   /// Cloudscape color token `colorNeutral300`.
   Color get neutral300 => values[17];
+
   /// Cloudscape color token `colorNeutral350`.
   Color get neutral350 => values[18];
+
   /// Cloudscape color token `colorNeutral400`.
   Color get neutral400 => values[19];
+
   /// Cloudscape color token `colorNeutral450`.
   Color get neutral450 => values[20];
+
   /// Cloudscape color token `colorNeutral500`.
   Color get neutral500 => values[21];
+
   /// Cloudscape color token `colorNeutral550`.
   Color get neutral550 => values[22];
+
   /// Cloudscape color token `colorNeutral600`.
   Color get neutral600 => values[23];
+
   /// Cloudscape color token `colorNeutral650`.
   Color get neutral650 => values[24];
+
   /// Cloudscape color token `colorNeutral700`.
   Color get neutral700 => values[25];
+
   /// Cloudscape color token `colorNeutral750`.
   Color get neutral750 => values[26];
+
   /// Cloudscape color token `colorNeutral800`.
   Color get neutral800 => values[27];
+
   /// Cloudscape color token `colorNeutral850`.
   Color get neutral850 => values[28];
+
   /// Cloudscape color token `colorNeutral900`.
   Color get neutral900 => values[29];
+
   /// Cloudscape color token `colorNeutral950`.
   Color get neutral950 => values[30];
+
   /// Cloudscape color token `colorNeutral1000`.
   Color get neutral1000 => values[31];
+
   /// Cloudscape color token `colorError50`.
   Color get error50 => values[32];
+
   /// Cloudscape color token `colorError100`.
   Color get error100 => values[33];
+
   /// Cloudscape color token `colorError400`.
   Color get error400 => values[34];
+
   /// Cloudscape color token `colorError600`.
   Color get error600 => values[35];
+
   /// Cloudscape color token `colorError700`.
   Color get error700 => values[36];
+
   /// Cloudscape color token `colorError800`.
   Color get error800 => values[37];
+
   /// Cloudscape color token `colorError900`.
   Color get error900 => values[38];
+
   /// Cloudscape color token `colorError950`.
   Color get error950 => values[39];
+
   /// Cloudscape color token `colorError1000`.
   Color get error1000 => values[40];
+
   /// Cloudscape color token `colorSuccess50`.
   Color get success50 => values[41];
+
   /// Cloudscape color token `colorSuccess100`.
   Color get success100 => values[42];
+
   /// Cloudscape color token `colorSuccess200`.
   Color get success200 => values[43];
+
   /// Cloudscape color token `colorSuccess400`.
   Color get success400 => values[44];
+
   /// Cloudscape color token `colorSuccess500`.
   Color get success500 => values[45];
+
   /// Cloudscape color token `colorSuccess600`.
   Color get success600 => values[46];
+
   /// Cloudscape color token `colorSuccess800`.
   Color get success800 => values[47];
+
   /// Cloudscape color token `colorSuccess950`.
   Color get success950 => values[48];
+
   /// Cloudscape color token `colorSuccess1000`.
   Color get success1000 => values[49];
+
   /// Cloudscape color token `colorWarning50`.
   Color get warning50 => values[50];
+
   /// Cloudscape color token `colorWarning100`.
   Color get warning100 => values[51];
+
   /// Cloudscape color token `colorWarning200`.
   Color get warning200 => values[52];
+
   /// Cloudscape color token `colorWarning400`.
   Color get warning400 => values[53];
+
   /// Cloudscape color token `colorWarning500`.
   Color get warning500 => values[54];
+
   /// Cloudscape color token `colorWarning600`.
   Color get warning600 => values[55];
+
   /// Cloudscape color token `colorWarning800`.
   Color get warning800 => values[56];
+
   /// Cloudscape color token `colorWarning900`.
   Color get warning900 => values[57];
+
   /// Cloudscape color token `colorWarning950`.
   Color get warning950 => values[58];
+
   /// Cloudscape color token `colorWarning1000`.
   Color get warning1000 => values[59];
+
   /// Cloudscape color token `colorInfo50`.
   Color get info50 => values[60];
+
   /// Cloudscape color token `colorInfo100`.
   Color get info100 => values[61];
+
   /// Cloudscape color token `colorInfo300`.
   Color get info300 => values[62];
+
   /// Cloudscape color token `colorInfo400`.
   Color get info400 => values[63];
+
   /// Cloudscape color token `colorInfo600`.
   Color get info600 => values[64];
+
   /// Cloudscape color token `colorInfo700`.
   Color get info700 => values[65];
+
   /// Cloudscape color token `colorInfo800`.
   Color get info800 => values[66];
+
   /// Cloudscape color token `colorInfo950`.
   Color get info950 => values[67];
+
   /// Cloudscape color token `colorInfo1000`.
   Color get info1000 => values[68];
+
   /// Cloudscape color token `colorGrey50`.
   Color get grey50 => values[69];
+
   /// Cloudscape color token `colorGrey100`.
   Color get grey100 => values[70];
+
   /// Cloudscape color token `colorGrey150`.
   Color get grey150 => values[71];
+
   /// Cloudscape color token `colorGrey200`.
   Color get grey200 => values[72];
+
   /// Cloudscape color token `colorGrey250`.
   Color get grey250 => values[73];
+
   /// Cloudscape color token `colorGrey300`.
   Color get grey300 => values[74];
+
   /// Cloudscape color token `colorGrey350`.
   Color get grey350 => values[75];
+
   /// Cloudscape color token `colorGrey400`.
   Color get grey400 => values[76];
+
   /// Cloudscape color token `colorGrey450`.
   Color get grey450 => values[77];
+
   /// Cloudscape color token `colorGrey500`.
   Color get grey500 => values[78];
+
   /// Cloudscape color token `colorGrey600`.
   Color get grey600 => values[79];
+
   /// Cloudscape color token `colorGrey650`.
   Color get grey650 => values[80];
+
   /// Cloudscape color token `colorGrey700`.
   Color get grey700 => values[81];
+
   /// Cloudscape color token `colorGrey750`.
   Color get grey750 => values[82];
+
   /// Cloudscape color token `colorGrey800`.
   Color get grey800 => values[83];
+
   /// Cloudscape color token `colorGrey850`.
   Color get grey850 => values[84];
+
   /// Cloudscape color token `colorGrey900`.
   Color get grey900 => values[85];
+
   /// Cloudscape color token `colorGrey950`.
   Color get grey950 => values[86];
+
   /// Cloudscape color token `colorGrey1000`.
   Color get grey1000 => values[87];
+
   /// Cloudscape color token `colorBlue50`.
   Color get blue50 => values[88];
+
   /// Cloudscape color token `colorBlue100`.
   Color get blue100 => values[89];
+
   /// Cloudscape color token `colorBlue200`.
   Color get blue200 => values[90];
+
   /// Cloudscape color token `colorBlue300`.
   Color get blue300 => values[91];
+
   /// Cloudscape color token `colorBlue400`.
   Color get blue400 => values[92];
+
   /// Cloudscape color token `colorBlue600`.
   Color get blue600 => values[93];
+
   /// Cloudscape color token `colorBlue700`.
   Color get blue700 => values[94];
+
   /// Cloudscape color token `colorBlue900`.
   Color get blue900 => values[95];
+
   /// Cloudscape color token `colorBlue1000`.
   Color get blue1000 => values[96];
+
   /// Cloudscape color token `colorGreen50`.
   Color get green50 => values[97];
+
   /// Cloudscape color token `colorGreen500`.
   Color get green500 => values[98];
+
   /// Cloudscape color token `colorGreen600`.
   Color get green600 => values[99];
+
   /// Cloudscape color token `colorGreen900`.
   Color get green900 => values[100];
+
   /// Cloudscape color token `colorGreen1000`.
   Color get green1000 => values[101];
+
   /// Cloudscape color token `colorRed50`.
   Color get red50 => values[102];
+
   /// Cloudscape color token `colorRed400`.
   Color get red400 => values[103];
+
   /// Cloudscape color token `colorRed600`.
   Color get red600 => values[104];
+
   /// Cloudscape color token `colorRed900`.
   Color get red900 => values[105];
+
   /// Cloudscape color token `colorRed1000`.
   Color get red1000 => values[106];
+
   /// Cloudscape color token `colorYellow50`.
   Color get yellow50 => values[107];
+
   /// Cloudscape color token `colorYellow400`.
   Color get yellow400 => values[108];
+
   /// Cloudscape color token `colorYellow500`.
   Color get yellow500 => values[109];
+
   /// Cloudscape color token `colorYellow900`.
   Color get yellow900 => values[110];
+
   /// Cloudscape color token `colorYellow1000`.
   Color get yellow1000 => values[111];
+
   /// Cloudscape color token `colorPurple400`.
   Color get purple400 => values[112];
+
   /// Cloudscape color token `colorPurple700`.
   Color get purple700 => values[113];
+
   /// Cloudscape color token `colorAmber400`.
   Color get amber400 => values[114];
+
   /// Cloudscape color token `colorAmber500`.
   Color get amber500 => values[115];
+
   /// Cloudscape color token `colorRed950`.
   Color get red950 => values[116];
+
   /// Cloudscape color token `colorOrange50`.
   Color get orange50 => values[117];
+
   /// Cloudscape color token `colorOrange100`.
   Color get orange100 => values[118];
+
   /// Cloudscape color token `colorOrange400`.
   Color get orange400 => values[119];
+
   /// Cloudscape color token `colorOrange700`.
   Color get orange700 => values[120];
+
   /// Cloudscape color token `colorOrange800`.
   Color get orange800 => values[121];
+
   /// Cloudscape color token `colorOrange950`.
   Color get orange950 => values[122];
+
   /// Cloudscape color token `colorYellow600`.
   Color get yellow600 => values[123];
+
   /// Cloudscape color token `colorYellow950`.
   Color get yellow950 => values[124];
+
   /// Cloudscape color token `colorLime50`.
   Color get lime50 => values[125];
+
   /// Cloudscape color token `colorLime100`.
   Color get lime100 => values[126];
+
   /// Cloudscape color token `colorLime400`.
   Color get lime400 => values[127];
+
   /// Cloudscape color token `colorLime700`.
   Color get lime700 => values[128];
+
   /// Cloudscape color token `colorLime800`.
   Color get lime800 => values[129];
+
   /// Cloudscape color token `colorLime950`.
   Color get lime950 => values[130];
+
   /// Cloudscape color token `colorGreen400`.
   Color get green400 => values[131];
+
   /// Cloudscape color token `colorGreen950`.
   Color get green950 => values[132];
+
   /// Cloudscape color token `colorMint50`.
   Color get mint50 => values[133];
+
   /// Cloudscape color token `colorMint100`.
   Color get mint100 => values[134];
+
   /// Cloudscape color token `colorMint400`.
   Color get mint400 => values[135];
+
   /// Cloudscape color token `colorMint700`.
   Color get mint700 => values[136];
+
   /// Cloudscape color token `colorMint800`.
   Color get mint800 => values[137];
+
   /// Cloudscape color token `colorMint950`.
   Color get mint950 => values[138];
+
   /// Cloudscape color token `colorIndigo50`.
   Color get indigo50 => values[139];
+
   /// Cloudscape color token `colorIndigo400`.
   Color get indigo400 => values[140];
+
   /// Cloudscape color token `colorIndigo600`.
   Color get indigo600 => values[141];
+
   /// Cloudscape color token `colorIndigo950`.
   Color get indigo950 => values[142];
+
   /// Cloudscape color token `colorPurple50`.
   Color get purple50 => values[143];
+
   /// Cloudscape color token `colorPurple100`.
   Color get purple100 => values[144];
+
   /// Cloudscape color token `colorPurple600`.
   Color get purple600 => values[145];
+
   /// Cloudscape color token `colorPurple800`.
   Color get purple800 => values[146];
+
   /// Cloudscape color token `colorPurple950`.
   Color get purple950 => values[147];
+
   /// Cloudscape color token `colorTeal50`.
   Color get teal50 => values[148];
+
   /// Cloudscape color token `colorTeal100`.
   Color get teal100 => values[149];
+
   /// Cloudscape color token `colorTeal400`.
   Color get teal400 => values[150];
+
   /// Cloudscape color token `colorTeal700`.
   Color get teal700 => values[151];
+
   /// Cloudscape color token `colorTeal800`.
   Color get teal800 => values[152];
+
   /// Cloudscape color token `colorTeal950`.
   Color get teal950 => values[153];
+
   /// Cloudscape color token `colorCyan50`.
   Color get cyan50 => values[154];
+
   /// Cloudscape color token `colorCyan100`.
   Color get cyan100 => values[155];
+
   /// Cloudscape color token `colorCyan400`.
   Color get cyan400 => values[156];
+
   /// Cloudscape color token `colorCyan700`.
   Color get cyan700 => values[157];
+
   /// Cloudscape color token `colorCyan800`.
   Color get cyan800 => values[158];
+
   /// Cloudscape color token `colorCyan950`.
   Color get cyan950 => values[159];
+
   /// Cloudscape color token `colorBlue950`.
   Color get blue950 => values[160];
+
   /// Cloudscape color token `colorViolet50`.
   Color get violet50 => values[161];
+
   /// Cloudscape color token `colorViolet100`.
   Color get violet100 => values[162];
+
   /// Cloudscape color token `colorViolet400`.
   Color get violet400 => values[163];
+
   /// Cloudscape color token `colorViolet700`.
   Color get violet700 => values[164];
+
   /// Cloudscape color token `colorViolet800`.
   Color get violet800 => values[165];
+
   /// Cloudscape color token `colorViolet950`.
   Color get violet950 => values[166];
+
   /// Cloudscape color token `colorFuchsia50`.
   Color get fuchsia50 => values[167];
+
   /// Cloudscape color token `colorFuchsia100`.
   Color get fuchsia100 => values[168];
+
   /// Cloudscape color token `colorFuchsia400`.
   Color get fuchsia400 => values[169];
+
   /// Cloudscape color token `colorFuchsia700`.
   Color get fuchsia700 => values[170];
+
   /// Cloudscape color token `colorFuchsia800`.
   Color get fuchsia800 => values[171];
+
   /// Cloudscape color token `colorFuchsia950`.
   Color get fuchsia950 => values[172];
+
   /// Cloudscape color token `colorMagenta50`.
   Color get magenta50 => values[173];
+
   /// Cloudscape color token `colorMagenta100`.
   Color get magenta100 => values[174];
+
   /// Cloudscape color token `colorMagenta400`.
   Color get magenta400 => values[175];
+
   /// Cloudscape color token `colorMagenta700`.
   Color get magenta700 => values[176];
+
   /// Cloudscape color token `colorMagenta800`.
   Color get magenta800 => values[177];
+
   /// Cloudscape color token `colorMagenta950`.
   Color get magenta950 => values[178];
+
   /// Cloudscape color token `colorPink50`.
   Color get pink50 => values[179];
+
   /// Cloudscape color token `colorPink100`.
   Color get pink100 => values[180];
+
   /// Cloudscape color token `colorPink400`.
   Color get pink400 => values[181];
+
   /// Cloudscape color token `colorPink700`.
   Color get pink700 => values[182];
+
   /// Cloudscape color token `colorPink800`.
   Color get pink800 => values[183];
+
   /// Cloudscape color token `colorPink950`.
   Color get pink950 => values[184];
+
   /// Cloudscape color token `colorRose50`.
   Color get rose50 => values[185];
+
   /// Cloudscape color token `colorRose100`.
   Color get rose100 => values[186];
+
   /// Cloudscape color token `colorRose400`.
   Color get rose400 => values[187];
+
   /// Cloudscape color token `colorRose700`.
   Color get rose700 => values[188];
+
   /// Cloudscape color token `colorRose800`.
   Color get rose800 => values[189];
+
   /// Cloudscape color token `colorRose950`.
   Color get rose950 => values[190];
+
   /// Cloudscape color token `colorAmber50`.
   Color get amber50 => values[191];
+
   /// Cloudscape color token `colorAmber100`.
   Color get amber100 => values[192];
+
   /// Cloudscape color token `colorAmber700`.
   Color get amber700 => values[193];
+
   /// Cloudscape color token `colorAmber800`.
   Color get amber800 => values[194];
+
   /// Cloudscape color token `colorAmber950`.
   Color get amber950 => values[195];
+
   /// Cloudscape color token `colorAwsSquidInk`.
   Color get awsSquidInk => values[196];
+
   /// Cloudscape color token `colorTransparent`.
   Color get transparent => values[197];
+
   /// Cloudscape color token `colorBlack`.
   Color get black => values[198];
+
   /// Cloudscape color token `colorWhite`.
   Color get white => values[199];
+
   /// Color from the 'red' data visualization palette at a contrast ratio of 3:1
   Color get chartsRed300 => values[200];
+
   /// Color from the 'red' data visualization palette at a contrast ratio of 4:1
   Color get chartsRed400 => values[201];
+
   /// Color from the 'red' data visualization palette at a contrast ratio of 5:1
   Color get chartsRed500 => values[202];
+
   /// Color from the 'red' data visualization palette at a contrast ratio of 6:1
   Color get chartsRed600 => values[203];
+
   /// Color from the 'red' data visualization palette at a contrast ratio of 7:1
   Color get chartsRed700 => values[204];
+
   /// Color from the 'red' data visualization palette at a contrast ratio of 8:1
   Color get chartsRed800 => values[205];
+
   /// Color from the 'red' data visualization palette at a contrast ratio of 9:1
   Color get chartsRed900 => values[206];
+
   /// Color from the 'red' data visualization palette at a contrast ratio of 10:1
   Color get chartsRed1000 => values[207];
+
   /// Color from the 'red' data visualization palette at a contrast ratio of 11:1
   Color get chartsRed1100 => values[208];
+
   /// Color from the 'red' data visualization palette at a contrast ratio of 12:1
   Color get chartsRed1200 => values[209];
+
   /// Color from the 'orange' data visualization palette at a contrast ratio of 3:1
   Color get chartsOrange300 => values[210];
+
   /// Color from the 'orange' data visualization palette at a contrast ratio of 4:1
   Color get chartsOrange400 => values[211];
+
   /// Color from the 'orange' data visualization palette at a contrast ratio of 5:1
   Color get chartsOrange500 => values[212];
+
   /// Color from the 'orange' data visualization palette at a contrast ratio of 6:1
   Color get chartsOrange600 => values[213];
+
   /// Color from the 'orange' data visualization palette at a contrast ratio of 7:1
   Color get chartsOrange700 => values[214];
+
   /// Color from the 'orange' data visualization palette at a contrast ratio of 8:1
   Color get chartsOrange800 => values[215];
+
   /// Color from the 'orange' data visualization palette at a contrast ratio of 9:1
   Color get chartsOrange900 => values[216];
+
   /// Color from the 'orange' data visualization palette at a contrast ratio of 10:1
   Color get chartsOrange1000 => values[217];
+
   /// Color from the 'orange' data visualization palette at a contrast ratio of 11:1
   Color get chartsOrange1100 => values[218];
+
   /// Color from the 'orange' data visualization palette at a contrast ratio of 12:1
   Color get chartsOrange1200 => values[219];
+
   /// Color from the 'yellow' data visualization palette at a contrast ratio of 3:1
   Color get chartsYellow300 => values[220];
+
   /// Color from the 'yellow' data visualization palette at a contrast ratio of 4:1
   Color get chartsYellow400 => values[221];
+
   /// Color from the 'yellow' data visualization palette at a contrast ratio of 5:1
   Color get chartsYellow500 => values[222];
+
   /// Color from the 'yellow' data visualization palette at a contrast ratio of 6:1
   Color get chartsYellow600 => values[223];
+
   /// Color from the 'yellow' data visualization palette at a contrast ratio of 7:1
   Color get chartsYellow700 => values[224];
+
   /// Color from the 'yellow' data visualization palette at a contrast ratio of 8:1
   Color get chartsYellow800 => values[225];
+
   /// Color from the 'yellow' data visualization palette at a contrast ratio of 9:1
   Color get chartsYellow900 => values[226];
+
   /// Color from the 'yellow' data visualization palette at a contrast ratio of 10:1
   Color get chartsYellow1000 => values[227];
+
   /// Color from the 'yellow' data visualization palette at a contrast ratio of 11:1
   Color get chartsYellow1100 => values[228];
+
   /// Color from the 'yellow' data visualization palette at a contrast ratio of 12:1
   Color get chartsYellow1200 => values[229];
+
   /// Color from the 'green' data visualization palette at a contrast ratio of 3:1
   Color get chartsGreen300 => values[230];
+
   /// Color from the 'green' data visualization palette at a contrast ratio of 4:1
   Color get chartsGreen400 => values[231];
+
   /// Color from the 'green' data visualization palette at a contrast ratio of 5:1
   Color get chartsGreen500 => values[232];
+
   /// Color from the 'green' data visualization palette at a contrast ratio of 6:1
   Color get chartsGreen600 => values[233];
+
   /// Color from the 'green' data visualization palette at a contrast ratio of 7:1
   Color get chartsGreen700 => values[234];
+
   /// Color from the 'green' data visualization palette at a contrast ratio of 8:1
   Color get chartsGreen800 => values[235];
+
   /// Color from the 'green' data visualization palette at a contrast ratio of 9:1
   Color get chartsGreen900 => values[236];
+
   /// Color from the 'green' data visualization palette at a contrast ratio of 10:1
   Color get chartsGreen1000 => values[237];
+
   /// Color from the 'green' data visualization palette at a contrast ratio of 11:1
   Color get chartsGreen1100 => values[238];
+
   /// Color from the 'green' data visualization palette at a contrast ratio of 12:1
   Color get chartsGreen1200 => values[239];
+
   /// Color from the 'teal' data visualization palette at a contrast ratio of 3:1
   Color get chartsTeal300 => values[240];
+
   /// Color from the 'teal' data visualization palette at a contrast ratio of 4:1
   Color get chartsTeal400 => values[241];
+
   /// Color from the 'teal' data visualization palette at a contrast ratio of 5:1
   Color get chartsTeal500 => values[242];
+
   /// Color from the 'teal' data visualization palette at a contrast ratio of 6:1
   Color get chartsTeal600 => values[243];
+
   /// Color from the 'teal' data visualization palette at a contrast ratio of 7:1
   Color get chartsTeal700 => values[244];
+
   /// Color from the 'teal' data visualization palette at a contrast ratio of 8:1
   Color get chartsTeal800 => values[245];
+
   /// Color from the 'teal' data visualization palette at a contrast ratio of 9:1
   Color get chartsTeal900 => values[246];
+
   /// Color from the 'teal' data visualization palette at a contrast ratio of 10:1
   Color get chartsTeal1000 => values[247];
+
   /// Color from the 'teal' data visualization palette at a contrast ratio of 11:1
   Color get chartsTeal1100 => values[248];
+
   /// Color from the 'teal' data visualization palette at a contrast ratio of 12:1
   Color get chartsTeal1200 => values[249];
+
   /// Color from the 'blue-1' data visualization palette at a contrast ratio of 3:1
   Color get chartsBlue1300 => values[250];
+
   /// Color from the 'blue-1' data visualization palette at a contrast ratio of 4:1
   Color get chartsBlue1400 => values[251];
+
   /// Color from the 'blue-1' data visualization palette at a contrast ratio of 5:1
   Color get chartsBlue1500 => values[252];
+
   /// Color from the 'blue-1' data visualization palette at a contrast ratio of 6:1
   Color get chartsBlue1600 => values[253];
+
   /// Color from the 'blue-1' data visualization palette at a contrast ratio of 7:1
   Color get chartsBlue1700 => values[254];
+
   /// Color from the 'blue-1' data visualization palette at a contrast ratio of 8:1
   Color get chartsBlue1800 => values[255];
+
   /// Color from the 'blue-1' data visualization palette at a contrast ratio of 9:1
   Color get chartsBlue1900 => values[256];
+
   /// Color from the 'blue-1' data visualization palette at a contrast ratio of 10:1
   Color get chartsBlue11000 => values[257];
+
   /// Color from the 'blue-1' data visualization palette at a contrast ratio of 11:1
   Color get chartsBlue11100 => values[258];
+
   /// Color from the 'blue-1' data visualization palette at a contrast ratio of 12:1
   Color get chartsBlue11200 => values[259];
+
   /// Color from the 'blue-2' data visualization palette at a contrast ratio of 3:1
   Color get chartsBlue2300 => values[260];
+
   /// Color from the 'blue-2' data visualization palette at a contrast ratio of 4:1
   Color get chartsBlue2400 => values[261];
+
   /// Color from the 'blue-2' data visualization palette at a contrast ratio of 5:1
   Color get chartsBlue2500 => values[262];
+
   /// Color from the 'blue-2' data visualization palette at a contrast ratio of 6:1
   Color get chartsBlue2600 => values[263];
+
   /// Color from the 'blue-2' data visualization palette at a contrast ratio of 7:1
   Color get chartsBlue2700 => values[264];
+
   /// Color from the 'blue-2' data visualization palette at a contrast ratio of 8:1
   Color get chartsBlue2800 => values[265];
+
   /// Color from the 'blue-2' data visualization palette at a contrast ratio of 9:1
   Color get chartsBlue2900 => values[266];
+
   /// Color from the 'blue-2' data visualization palette at a contrast ratio of 10:1
   Color get chartsBlue21000 => values[267];
+
   /// Color from the 'blue-2' data visualization palette at a contrast ratio of 11:1
   Color get chartsBlue21100 => values[268];
+
   /// Color from the 'blue-2' data visualization palette at a contrast ratio of 12:1
   Color get chartsBlue21200 => values[269];
+
   /// Color from the 'purple' data visualization palette at a contrast ratio of 3:1
   Color get chartsPurple300 => values[270];
+
   /// Color from the 'purple' data visualization palette at a contrast ratio of 4:1
   Color get chartsPurple400 => values[271];
+
   /// Color from the 'purple' data visualization palette at a contrast ratio of 5:1
   Color get chartsPurple500 => values[272];
+
   /// Color from the 'purple' data visualization palette at a contrast ratio of 6:1
   Color get chartsPurple600 => values[273];
+
   /// Color from the 'purple' data visualization palette at a contrast ratio of 7:1
   Color get chartsPurple700 => values[274];
+
   /// Color from the 'purple' data visualization palette at a contrast ratio of 8:1
   Color get chartsPurple800 => values[275];
+
   /// Color from the 'purple' data visualization palette at a contrast ratio of 9:1
   Color get chartsPurple900 => values[276];
+
   /// Color from the 'purple' data visualization palette at a contrast ratio of 10:1
   Color get chartsPurple1000 => values[277];
+
   /// Color from the 'purple' data visualization palette at a contrast ratio of 11:1
   Color get chartsPurple1100 => values[278];
+
   /// Color from the 'purple' data visualization palette at a contrast ratio of 12:1
   Color get chartsPurple1200 => values[279];
+
   /// Color from the 'pink' data visualization palette at a contrast ratio of 3:1
   Color get chartsPink300 => values[280];
+
   /// Color from the 'pink' data visualization palette at a contrast ratio of 4:1
   Color get chartsPink400 => values[281];
+
   /// Color from the 'pink' data visualization palette at a contrast ratio of 5:1
   Color get chartsPink500 => values[282];
+
   /// Color from the 'pink' data visualization palette at a contrast ratio of 6:1
   Color get chartsPink600 => values[283];
+
   /// Color from the 'pink' data visualization palette at a contrast ratio of 7:1
   Color get chartsPink700 => values[284];
+
   /// Color from the 'pink' data visualization palette at a contrast ratio of 8:1
   Color get chartsPink800 => values[285];
+
   /// Color from the 'pink' data visualization palette at a contrast ratio of 9:1
   Color get chartsPink900 => values[286];
+
   /// Color from the 'pink' data visualization palette at a contrast ratio of 10:1
   Color get chartsPink1000 => values[287];
+
   /// Color from the 'pink' data visualization palette at a contrast ratio of 11:1
   Color get chartsPink1100 => values[288];
+
   /// Color from the 'pink' data visualization palette at a contrast ratio of 12:1
   Color get chartsPink1200 => values[289];
+
   /// Color to represent a critical error or a critically high-level of severity. For example: "Sev-1"
   Color get chartsStatusCritical => values[290];
+
   /// Color to represent an error status or a high-level of severity. Use this color to represent a default error status when there is only one applicable to a chart. For example: "Failed" or "Sev-2"
   Color get chartsStatusHigh => values[291];
+
   /// Color to represent a medium-level of severity. For example: "Sev-3"
   Color get chartsStatusMedium => values[292];
+
   /// Color to represent a warning or a low-level of severity. For example: "Warning" or "Sev-4"
   Color get chartsStatusLow => values[293];
+
   /// Color to represent a positive status. *For example: "Success" or "Running"
   Color get chartsStatusPositive => values[294];
+
   /// Color to represent an informational status. For example: "In-progress" or "Updating"
   Color get chartsStatusInfo => values[295];
+
   /// Color to represent a neutral status, a severity level of no impact, or the lowest-level of severity. For example: "Pending" or "Sev-5"
   Color get chartsStatusNeutral => values[296];
+
   /// The color to represent a threshold with a negative outcome. For example: A maximum limit
   Color get chartsThresholdNegative => values[297];
+
   /// The color to represent a threshold with a positive outcome. For example: A designated pass rate
   Color get chartsThresholdPositive => values[298];
+
   /// The color to represent an informational threshold to highlight special circumstances that may have or will occur. For example: A forecasted estimate
   Color get chartsThresholdInfo => values[299];
+
   /// The color to represent a threshold with a neutral outcome. For example: An average or baseline
   Color get chartsThresholdNeutral => values[300];
+
   /// Color of the grid lines in a chart.
   Color get chartsLineGrid => values[301];
+
   /// Color of the tick marks in a chart.
   Color get chartsLineTick => values[302];
+
   /// Color of the axis lines in a chart.
   Color get chartsLineAxis => values[303];
+
   /// Color #1 on the categorical data visualization palette.
   Color get chartsPaletteCategorical1 => values[304];
+
   /// Color #2 on the categorical data visualization palette.
   Color get chartsPaletteCategorical2 => values[305];
+
   /// Color #3 on the categorical data visualization palette.
   Color get chartsPaletteCategorical3 => values[306];
+
   /// Color #4 on the categorical data visualization palette.
   Color get chartsPaletteCategorical4 => values[307];
+
   /// Color #5 on the categorical data visualization palette.
   Color get chartsPaletteCategorical5 => values[308];
+
   /// Color #6 on the categorical data visualization palette.
   Color get chartsPaletteCategorical6 => values[309];
+
   /// Color #7 on the categorical data visualization palette.
   Color get chartsPaletteCategorical7 => values[310];
+
   /// Color #8 on the categorical data visualization palette.
   Color get chartsPaletteCategorical8 => values[311];
+
   /// Color #9 on the categorical data visualization palette.
   Color get chartsPaletteCategorical9 => values[312];
+
   /// Color #10 on the categorical data visualization palette.
   Color get chartsPaletteCategorical10 => values[313];
+
   /// Color #11 on the categorical data visualization palette.
   Color get chartsPaletteCategorical11 => values[314];
+
   /// Color #12 on the categorical data visualization palette.
   Color get chartsPaletteCategorical12 => values[315];
+
   /// Color #13 on the categorical data visualization palette.
   Color get chartsPaletteCategorical13 => values[316];
+
   /// Color #14 on the categorical data visualization palette.
   Color get chartsPaletteCategorical14 => values[317];
+
   /// Color #15 on the categorical data visualization palette.
   Color get chartsPaletteCategorical15 => values[318];
+
   /// Color #16 on the categorical data visualization palette.
   Color get chartsPaletteCategorical16 => values[319];
+
   /// Color #17 on the categorical data visualization palette.
   Color get chartsPaletteCategorical17 => values[320];
+
   /// Color #18 on the categorical data visualization palette.
   Color get chartsPaletteCategorical18 => values[321];
+
   /// Color #19 on the categorical data visualization palette.
   Color get chartsPaletteCategorical19 => values[322];
+
   /// Color #20 on the categorical data visualization palette.
   Color get chartsPaletteCategorical20 => values[323];
+
   /// Color #21 on the categorical data visualization palette.
   Color get chartsPaletteCategorical21 => values[324];
+
   /// Color #22 on the categorical data visualization palette.
   Color get chartsPaletteCategorical22 => values[325];
+
   /// Color #23 on the categorical data visualization palette.
   Color get chartsPaletteCategorical23 => values[326];
+
   /// Color #24 on the categorical data visualization palette.
   Color get chartsPaletteCategorical24 => values[327];
+
   /// Color #25 on the categorical data visualization palette.
   Color get chartsPaletteCategorical25 => values[328];
+
   /// Color #26 on the categorical data visualization palette.
   Color get chartsPaletteCategorical26 => values[329];
+
   /// Color #27 on the categorical data visualization palette.
   Color get chartsPaletteCategorical27 => values[330];
+
   /// Color #28 on the categorical data visualization palette.
   Color get chartsPaletteCategorical28 => values[331];
+
   /// Color #29 on the categorical data visualization palette.
   Color get chartsPaletteCategorical29 => values[332];
+
   /// Color #30 on the categorical data visualization palette.
   Color get chartsPaletteCategorical30 => values[333];
+
   /// Color #31 on the categorical data visualization palette.
   Color get chartsPaletteCategorical31 => values[334];
+
   /// Color #32 on the categorical data visualization palette.
   Color get chartsPaletteCategorical32 => values[335];
+
   /// Color #33 on the categorical data visualization palette.
   Color get chartsPaletteCategorical33 => values[336];
+
   /// Color #34 on the categorical data visualization palette.
   Color get chartsPaletteCategorical34 => values[337];
+
   /// Color #35 on the categorical data visualization palette.
   Color get chartsPaletteCategorical35 => values[338];
+
   /// Color #36 on the categorical data visualization palette.
   Color get chartsPaletteCategorical36 => values[339];
+
   /// Color #37 on the categorical data visualization palette.
   Color get chartsPaletteCategorical37 => values[340];
+
   /// Color #38 on the categorical data visualization palette.
   Color get chartsPaletteCategorical38 => values[341];
+
   /// Color #39 on the categorical data visualization palette.
   Color get chartsPaletteCategorical39 => values[342];
+
   /// Color #40 on the categorical data visualization palette.
   Color get chartsPaletteCategorical40 => values[343];
+
   /// Color #41 on the categorical data visualization palette.
   Color get chartsPaletteCategorical41 => values[344];
+
   /// Color #42 on the categorical data visualization palette.
   Color get chartsPaletteCategorical42 => values[345];
+
   /// Color #43 on the categorical data visualization palette.
   Color get chartsPaletteCategorical43 => values[346];
+
   /// Color #44 on the categorical data visualization palette.
   Color get chartsPaletteCategorical44 => values[347];
+
   /// Color #45 on the categorical data visualization palette.
   Color get chartsPaletteCategorical45 => values[348];
+
   /// Color #46 on the categorical data visualization palette.
   Color get chartsPaletteCategorical46 => values[349];
+
   /// Color #47 on the categorical data visualization palette.
   Color get chartsPaletteCategorical47 => values[350];
+
   /// Color #48 on the categorical data visualization palette.
   Color get chartsPaletteCategorical48 => values[351];
+
   /// Color #49 on the categorical data visualization palette.
   Color get chartsPaletteCategorical49 => values[352];
+
   /// Color #50 on the categorical data visualization palette.
   Color get chartsPaletteCategorical50 => values[353];
+
   /// Color for the error bar marker in charts.
   Color get chartsErrorBarMarker => values[354];
+
   /// Cloudscape color token `colorSeverityDarkRed`.
   Color get severityDarkRed => values[355];
+
   /// Cloudscape color token `colorSeverityRed`.
   Color get severityRed => values[356];
+
   /// Cloudscape color token `colorSeverityOrange`.
   Color get severityOrange => values[357];
+
   /// Cloudscape color token `colorSeverityYellow`.
   Color get severityYellow => values[358];
+
   /// Cloudscape color token `colorSeverityGrey`.
   Color get severityGrey => values[359];
+
   /// Background color in a notification to represent a critical error or a critically high-level of severity. For example: "Sev-1"
   Color get backgroundNotificationSeverityCritical => values[360];
+
   /// Background color in a notification to represent an error status or a high-level of severity. For example: "Failed" or "Sev-2"
   Color get backgroundNotificationSeverityHigh => values[361];
+
   /// Background color in a notification to represent a medium-level of severity. For example: "Sev-3"
   Color get backgroundNotificationSeverityMedium => values[362];
+
   /// Background color in a notification to represent a warning or a low-level of severity. For example: "Warning" or "Sev-4"
   Color get backgroundNotificationSeverityLow => values[363];
+
   /// Background color in a notification to represent a neutral status, a severity level of no impact, or the lowest-level of severity. For example: "Pending" or "Sev-5"
   Color get backgroundNotificationSeverityNeutral => values[364];
+
   /// Text color in a notification to represent a critical error or a critically high-level of severity. For example: "Sev-1"
   Color get textNotificationSeverityCritical => values[365];
+
   /// Text color in a notification to represent an error status or a high-level of severity. For example: "Failed" or "Sev-2"
   Color get textNotificationSeverityHigh => values[366];
+
   /// Text color in a notification to represent a medium-level of severity. For example: "Sev-3"
   Color get textNotificationSeverityMedium => values[367];
+
   /// Text color in a notification to represent a warning or a low-level of severity. For example: "Warning" or "Sev-4"
   Color get textNotificationSeverityLow => values[368];
+
   /// Text color in a notification to represent a neutral status, a severity level of no impact, or the lowest-level of severity. For example: "Pending" or "Sev-5"
   Color get textNotificationSeverityNeutral => values[369];
+
   /// The border color of badges representing a critical severity level.
   Color get borderBadgeSeverityCritical => values[370];
+
   /// The border color of badges representing a high severity level.
   Color get borderBadgeSeverityHigh => values[371];
+
   /// The border color of badges representing a medium severity level.
   Color get borderBadgeSeverityMedium => values[372];
+
   /// The border color of badges representing a low severity level.
   Color get borderBadgeSeverityLow => values[373];
+
   /// The border color of badges representing a neutral severity level.
   Color get borderBadgeSeverityNeutral => values[374];
+
   /// The text color of badges representing a critical severity level.
   Color get textBadgeSeverityCritical => values[375];
+
   /// The text color of badges representing a high severity level.
   Color get textBadgeSeverityHigh => values[376];
+
   /// The text color of badges representing a medium severity level.
   Color get textBadgeSeverityMedium => values[377];
+
   /// The text color of badges representing a low severity level.
   Color get textBadgeSeverityLow => values[378];
+
   /// The text color of badges representing a neutral severity level.
   Color get textBadgeSeverityNeutral => values[379];
+
   /// Cloudscape color token `colorGreyOpaque10`.
   Color get greyOpaque10 => values[380];
+
   /// Cloudscape color token `colorGreyOpaque25`.
   Color get greyOpaque25 => values[381];
+
   /// Cloudscape color token `colorGreyOpaque40`.
   Color get greyOpaque40 => values[382];
+
   /// Cloudscape color token `colorGreyOpaque50`.
   Color get greyOpaque50 => values[383];
+
   /// Cloudscape color token `colorGreyOpaque70`.
   Color get greyOpaque70 => values[384];
+
   /// Cloudscape color token `colorGreyOpaque80`.
   Color get greyOpaque80 => values[385];
+
   /// Cloudscape color token `colorGreyOpaque90`.
   Color get greyOpaque90 => values[386];
+
   /// Cloudscape color token `colorGreyTransparent`.
   Color get greyTransparent => values[387];
+
   /// Cloudscape color token `colorGreyTransparentHeavy`.
   Color get greyTransparentHeavy => values[388];
+
   /// Cloudscape color token `colorGreyTransparentLight`.
   Color get greyTransparentLight => values[389];
+
   /// The background color of the badge indicator on navigation and panel buttons.
   Color get backgroundBadgeIcon => values[390];
+
   /// The background color of link buttons in active state.
   Color get backgroundButtonLinkActive => values[391];
+
   /// The background color of link buttons in default state.
   Color get backgroundButtonLinkDefault => values[392];
+
   /// The background color of link buttons in disabled state.
   Color get backgroundButtonLinkDisabled => values[393];
+
   /// The background color of link buttons in hover state.
   Color get backgroundButtonLinkHover => values[394];
+
   /// The background color of normal buttons in active state.
   Color get backgroundButtonNormalActive => values[395];
+
   /// The default background color of normal buttons.
   Color get backgroundButtonNormalDefault => values[396];
+
   /// The background color of normal buttons in disabled state.
   Color get backgroundButtonNormalDisabled => values[397];
+
   /// The background color of normal buttons in hover state.
   Color get backgroundButtonNormalHover => values[398];
+
   /// The background color of normal toggle buttons in pressed state.
   Color get backgroundToggleButtonNormalPressed => values[399];
+
   /// The default background color of normal toggle buttons.
   Color get backgroundToggleButtonNormalDefault => values[400];
+
   /// The background color of normal toggle buttons in hover state.
   Color get backgroundToggleButtonNormalHover => values[401];
+
   /// The background color of primary buttons in active state.
   Color get backgroundButtonPrimaryActive => values[402];
+
   /// The default background color of primary buttons.
   Color get backgroundButtonPrimaryDefault => values[403];
+
   /// The background color of primary buttons in disabled state.
   Color get backgroundButtonPrimaryDisabled => values[404];
+
   /// The background color of primary buttons in hover state.
   Color get backgroundButtonPrimaryHover => values[405];
+
   /// Cloudscape color token `colorBackgroundDirectionButtonActive`.
   Color get backgroundDirectionButtonActive => values[406];
+
   /// Cloudscape color token `colorBackgroundDirectionButtonDefault`.
   Color get backgroundDirectionButtonDefault => values[407];
+
   /// Cloudscape color token `colorBackgroundDirectionButtonDisabled`.
   Color get backgroundDirectionButtonDisabled => values[408];
+
   /// Cloudscape color token `colorBackgroundDirectionButtonHover`.
   Color get backgroundDirectionButtonHover => values[409];
+
   /// Cloudscape color token `colorTextDirectionButtonDefault`.
   Color get textDirectionButtonDefault => values[410];
+
   /// Cloudscape color token `colorTextDirectionButtonDisabled`.
   Color get textDirectionButtonDisabled => values[411];
+
   /// Cloudscape color token `colorBackgroundCalendarCurrentDate`.
   Color get backgroundCalendarCurrentDate => values[412];
+
   /// The background color of shaded table cells.
   Color get backgroundCellShaded => values[413];
+
   /// Cloudscape color token `colorBackgroundCodeEditorGutterActiveLineDefault`.
   Color get backgroundCodeEditorGutterActiveLineDefault => values[414];
+
   /// Cloudscape color token `colorBackgroundCodeEditorGutterActiveLineError`.
   Color get backgroundCodeEditorGutterActiveLineError => values[415];
+
   /// Cloudscape color token `colorBackgroundCodeEditorGutterDefault`.
   Color get backgroundCodeEditorGutterDefault => values[416];
+
   /// Cloudscape color token `colorBackgroundCodeEditorLoading`.
   Color get backgroundCodeEditorLoading => values[417];
+
   /// Cloudscape color token `colorBackgroundCodeEditorPaneItemHover`.
   Color get backgroundCodeEditorPaneItemHover => values[418];
+
   /// Cloudscape color token `colorBackgroundCodeEditorStatusBar`.
   Color get backgroundCodeEditorStatusBar => values[419];
+
   /// The background color of a card.
   Color get backgroundCard => values[420];
+
   /// Cloudscape color token `colorBackgroundItemCard`.
   Color get backgroundItemCard => values[421];
+
   /// The background color of container main content areas. For example: content areas of form sections, containers, tables, and cards.
   Color get backgroundContainerContent => values[422];
+
   /// The background color of container headers. For example: headers of form sections, containers, tables, and card collections.
   Color get backgroundContainerHeader => values[423];
+
   /// The background color of a checked form control. For example: background fill of a selected radio button, checked checkbox, and toggle that is switched on.
   Color get backgroundControlChecked => values[424];
+
   /// The default background color of form controls. For example: radio buttons and checkboxes default background fill color.
   Color get backgroundControlDefault => values[425];
+
   /// The background color of a disabled form control. For example: background fill of a disabled radio button and checkbox.
   Color get backgroundControlDisabled => values[426];
+
   /// The default background color of dropdown items. For example: select, multiselect, autosuggest, and datepicker dropdown backgrounds.
   Color get backgroundDropdownItemDefault => values[427];
+
   /// Cloudscape color token `colorBackgroundDropdownItemDimmed`.
   Color get backgroundDropdownItemDimmed => values[428];
+
   /// The background color of text that matches a user's query. For example: the background of text matching a query entered into a table filter, select, multiselect, or autosuggest.
   Color get backgroundDropdownItemFilterMatch => values[429];
+
   /// The background color of dropdown items on hover. For example: background of hovered items in select, multiselect, autosuggest, and datepicker dropdowns.
   Color get backgroundDropdownItemHover => values[430];
+
   /// The background color of selected dropdown items. For example: background of selected items in select, multiselect, autosuggest, and datepicker dropdowns.
   Color get backgroundDropdownItemSelected => values[431];
+
   /// The background color of the home header, displayed on the Service's home page.
   Color get backgroundHomeHeader => values[432];
+
   /// Cloudscape color token `colorBackgroundInlineCode`.
   Color get backgroundInlineCode => values[433];
+
   /// The default background color of form inputs. For example: background fill of an input, textarea, autosuggest, and trigger of a select and multiselect.
   Color get backgroundInputDefault => values[434];
+
   /// The background color of a disabled form input. For example: background fill of a disabled input, textarea, autosuggest, and trigger of a select and multiselect.
   Color get backgroundInputDisabled => values[435];
+
   /// The background color of a selected item. For example: tokens, selected table rows, cards, and tile backgrounds.
   Color get backgroundItemSelected => values[436];
+
   /// The background color of an active (highlighted) side navigation item.
   Color get backgroundSideNavigationItemActive => values[437];
+
   /// Cloudscape color token `colorBackgroundSideNavigationItemActiveCollapsed`.
   Color get backgroundSideNavigationItemActiveCollapsed => values[438];
+
   /// Cloudscape color token `colorBackgroundSideNavigationItemIconHover`.
   Color get backgroundSideNavigationItemIconHover => values[439];
+
   /// The background color of the main content area on a page. For example: content area in app layout.
   Color get backgroundLayoutMain => values[440];
+
   /// Cloudscape color token `colorBackgroundLayoutAiDrawer`.
   Color get backgroundLayoutAiDrawer => values[441];
+
   /// Cloudscape color token `colorBackgroundDrawer`.
   Color get backgroundDrawer => values[442];
+
   /// The background color of the backdrop shown behind overlay surfaces such as modals and drawers.
   Color get backgroundBackdrop => values[443];
+
   /// Cloudscape color token `colorBackgroundDrawerBackdrop`.
   Color get backgroundDrawerBackdrop => values[444];
+
   /// Cloudscape color token `colorBackgroundLayoutMobilePanel`.
   Color get backgroundLayoutMobilePanel => values[445];
+
   /// The background color of the selected (active) drawer panel in the app layout. Use this token to theme the background of the open drawer.
   Color get backgroundLayoutPanel => values[446];
+
   /// The background color of app layout panel content area. For example: The side navigation and tools panel content background color.
   Color get backgroundLayoutPanelContent => values[447];
+
   /// Cloudscape color token `colorBackgroundLayoutPanelHover`.
   Color get backgroundLayoutPanelHover => values[448];
+
   /// The background color of the app layout's toolbar. For example: The toolbar bar containing breadcrumbs and toggle buttons.
   Color get backgroundLayoutToolbar => values[449];
+
   /// The background color of the app layout toggle button when it's active.
   Color get backgroundLayoutToggleActive => values[450];
+
   /// The default background color of the app layout toggle button.
   Color get backgroundLayoutToggleDefault => values[451];
+
   /// The background color of the app layout toggle button on hover.
   Color get backgroundLayoutToggleHover => values[452];
+
   /// The background color of the app layout toggle button when it's selected and active.
   Color get backgroundLayoutToggleSelectedActive => values[453];
+
   /// The default background color of the app layout toggle button when it's selected.
   Color get backgroundLayoutToggleSelectedDefault => values[454];
+
   /// The background color of the app layout toggle button on hover when it's selected.
   Color get backgroundLayoutToggleSelectedHover => values[455];
+
   /// Cloudscape color token `colorBackgroundModalOverlay`.
   Color get backgroundModalOverlay => values[456];
+
   /// Background color for blue notifications. For example: blue badges and info flash messages.
   Color get backgroundNotificationBlue => values[457];
+
   /// Background color for green notifications. For example: green badges and success flash messages.
   Color get backgroundNotificationGreen => values[458];
+
   /// Background color for grey notifications. For example: grey badges.
   Color get backgroundNotificationGrey => values[459];
+
   /// Background color for red notifications. For example: red badges and error flash messages.
   Color get backgroundNotificationRed => values[460];
+
   /// Background color for yellow notifications. For example: yellow badges and warning flash messages.
   Color get backgroundNotificationYellow => values[461];
+
   /// The background color of success flash messages.
   Color get backgroundFlashbarSuccess => values[462];
+
   /// The background color of error flash messages.
   Color get backgroundFlashbarError => values[463];
+
   /// The background color of info and in-progress flash messages.
   Color get backgroundFlashbarInfo => values[464];
+
   /// The background color of warning flash messages.
   Color get backgroundFlashbarWarning => values[465];
+
   /// Cloudscape color token `colorBackgroundNotificationStackBar`.
   Color get backgroundNotificationStackBar => values[466];
+
   /// Cloudscape color token `colorBackgroundNotificationStackBarActive`.
   Color get backgroundNotificationStackBarActive => values[467];
+
   /// Cloudscape color token `colorBackgroundNotificationStackBarHover`.
   Color get backgroundNotificationStackBarHover => values[468];
+
   /// Background color for the popover container.
   Color get backgroundPopover => values[469];
+
   /// The default background color of the progress bar value.
   Color get backgroundProgressBarValueDefault => values[470];
+
   /// Cloudscape color token `colorBackgroundProgressBarValueFlash`.
   Color get backgroundProgressBarValueFlash => values[471];
+
   /// Cloudscape color token `colorBackgroundProgressBarFlash`.
   Color get backgroundProgressBarFlash => values[472];
+
   /// The default background color of the progress bar.
   Color get backgroundProgressBarDefault => values[473];
+
   /// The background color of the active segment in a segmented control.
   Color get backgroundSegmentActive => values[474];
+
   /// The background color of inactive segments in a segmented control.
   Color get backgroundSegmentDefault => values[475];
+
   /// The background color of disabled segments in a segmented control.
   Color get backgroundSegmentDisabled => values[476];
+
   /// The background color of inactive segments in a segmented control on hover.
   Color get backgroundSegmentHover => values[477];
+
   /// The background color of segmented control wrapper.
   Color get backgroundSegmentWrapper => values[478];
+
   /// The default background color of the slider range.
   Color get backgroundSliderRangeDefault => values[479];
+
   /// The background color of the slider range in active state.
   Color get backgroundSliderRangeActive => values[480];
+
   /// The default background color of the slider handle.
   Color get backgroundSliderHandleDefault => values[481];
+
   /// The background color of the slider handle in active state.
   Color get backgroundSliderHandleActive => values[482];
+
   /// The default background color of the slider track.
   Color get backgroundSliderTrackDefault => values[483];
+
   /// Cloudscape color token `colorBackgroundSliderHandleRing`.
   Color get backgroundSliderHandleRing => values[484];
+
   /// Cloudscape color token `colorBackgroundSliderHandleErrorDefault`.
   Color get backgroundSliderHandleErrorDefault => values[485];
+
   /// Cloudscape color token `colorBackgroundSliderHandleErrorActive`.
   Color get backgroundSliderHandleErrorActive => values[486];
+
   /// Cloudscape color token `colorBackgroundSliderHandleWarningDefault`.
   Color get backgroundSliderHandleWarningDefault => values[487];
+
   /// Cloudscape color token `colorBackgroundSliderHandleWarningActive`.
   Color get backgroundSliderHandleWarningActive => values[488];
+
   /// Cloudscape color token `colorBackgroundSliderRangeErrorDefault`.
   Color get backgroundSliderRangeErrorDefault => values[489];
+
   /// Cloudscape color token `colorBackgroundSliderRangeErrorActive`.
   Color get backgroundSliderRangeErrorActive => values[490];
+
   /// Cloudscape color token `colorBackgroundSliderRangeWarningDefault`.
   Color get backgroundSliderRangeWarningDefault => values[491];
+
   /// Cloudscape color token `colorBackgroundSliderRangeWarningActive`.
   Color get backgroundSliderRangeWarningActive => values[492];
+
   /// The background color of an item in error state. For example: error alerts.
   Color get backgroundStatusError => values[493];
+
   /// The background color of an informational item. For example: information alerts.
   Color get backgroundStatusInfo => values[494];
+
   /// Cloudscape color token `colorBackgroundAlertError`.
   Color get backgroundAlertError => values[495];
+
   /// Cloudscape color token `colorBackgroundAlertInfo`.
   Color get backgroundAlertInfo => values[496];
+
   /// Cloudscape color token `colorBackgroundAlertSuccess`.
   Color get backgroundAlertSuccess => values[497];
+
   /// Cloudscape color token `colorBackgroundAlertWarning`.
   Color get backgroundAlertWarning => values[498];
+
   /// The background color of the feedback/input dialogue box.
   Color get backgroundDialog => values[499];
+
   /// Cloudscape color token `colorBackgroundDialogDefault`.
   Color get backgroundDialogDefault => values[500];
+
   /// The background color of an item in success state. For example: success alerts.
   Color get backgroundStatusSuccess => values[501];
+
   /// The background color of an item in warning state. For example: warning alerts.
   Color get backgroundStatusWarning => values[502];
+
   /// Cloudscape color token `colorBackgroundTableHeader`.
   Color get backgroundTableHeader => values[503];
+
   /// The background color of disabled tiles.
   Color get backgroundTilesDisabled => values[504];
+
   /// The background color of checked toggles in disabled state.
   Color get backgroundToggleCheckedDisabled => values[505];
+
   /// The default background color of the toggle track in its unchecked state.
   Color get backgroundToggleDefault => values[506];
+
   /// The default background color of avatars.
   Color get backgroundAvatarDefault => values[507];
+
   /// The text and icon color of avatars.
   Color get textAvatar => values[508];
+
   /// Cloudscape color token `colorBackgroundStatusIndicatorError`.
   Color get backgroundStatusIndicatorError => values[509];
+
   /// Cloudscape color token `colorBackgroundStatusIndicatorWarning`.
   Color get backgroundStatusIndicatorWarning => values[510];
+
   /// Cloudscape color token `colorBackgroundStatusIndicatorSuccess`.
   Color get backgroundStatusIndicatorSuccess => values[511];
+
   /// Cloudscape color token `colorBackgroundStatusIndicatorInfo`.
   Color get backgroundStatusIndicatorInfo => values[512];
+
   /// Cloudscape color token `colorBackgroundStatusIndicatorNeutral`.
   Color get backgroundStatusIndicatorNeutral => values[513];
+
   /// The background color of `outgoing` chat bubble.
   Color get backgroundChatBubbleOutgoing => values[514];
+
   /// The background color of `incoming` chat bubble.
   Color get backgroundChatBubbleIncoming => values[515];
+
   /// Text color of `outgoing` chat bubble.
   Color get textChatBubbleOutgoing => values[516];
+
   /// Text color of `incoming` chat bubble.
   Color get textChatBubbleIncoming => values[517];
+
   /// The border color of link buttons in disabled state.
   Color get borderButtonLinkDisabled => values[518];
+
   /// The border color of normal buttons in active state.
   Color get borderButtonNormalActive => values[519];
+
   /// The border color of normal buttons.
   Color get borderButtonNormalDefault => values[520];
+
   /// The border color of normal toggle buttons in pressed state.
   Color get borderToggleButtonNormalPressed => values[521];
+
   /// The default border color of normal toggle buttons.
   Color get borderToggleButtonNormalDefault => values[522];
+
   /// The border color of normal toggle buttons in hover state.
   Color get borderToggleButtonNormalHover => values[523];
+
   /// The border color of normal buttons in disabled state.
   Color get borderButtonNormalDisabled => values[524];
+
   /// The text color of normal buttons in disabled state.
   Color get textButtonNormalDisabled => values[525];
+
   /// The border color of normal buttons in hover state.
   Color get borderButtonNormalHover => values[526];
+
   /// The color of icon buttons in disabled state.
   Color get textButtonIconDisabled => values[527];
+
   /// The border color of primary buttons in active state.
   Color get borderButtonPrimaryActive => values[528];
+
   /// The border color of primary buttons.
   Color get borderButtonPrimaryDefault => values[529];
+
   /// The border color of primary buttons in disabled state.
   Color get borderButtonPrimaryDisabled => values[530];
+
   /// The border color of primary buttons in hover state.
   Color get borderButtonPrimaryHover => values[531];
+
   /// The text color of primary buttons in disabled state.
   Color get textButtonPrimaryDisabled => values[532];
+
   /// The highlight color for selected items. For example: borders of tokens and selected table rows, and check icons in selected dropdown items.
   Color get itemSelected => values[533];
+
   /// The text color of an active (highlighted) side navigation item.
   Color get textSideNavigationItemActive => values[534];
+
   /// Cloudscape color token `colorTextSideNavigationItemActiveCollapsed`.
   Color get textSideNavigationItemActiveCollapsed => values[535];
+
   /// Cloudscape color token `colorTextSideNavigationItemDefault`.
   Color get textSideNavigationItemDefault => values[536];
+
   /// Cloudscape color token `colorBorderCalendarGrid`.
   Color get borderCalendarGrid => values[537];
+
   /// Cloudscape color token `colorBorderCalendarGridSelectedFocusRing`.
   Color get borderCalendarGridSelectedFocusRing => values[538];
+
   /// Cloudscape color token `colorBorderCellShaded`.
   Color get borderCellShaded => values[539];
+
   /// Cloudscape color token `colorBorderCodeEditorAceActiveLineLightTheme`.
   Color get borderCodeEditorAceActiveLineLightTheme => values[540];
+
   /// Cloudscape color token `colorBorderCodeEditorAceActiveLineDarkTheme`.
   Color get borderCodeEditorAceActiveLineDarkTheme => values[541];
+
   /// Cloudscape color token `colorBorderCodeEditorDefault`.
   Color get borderCodeEditorDefault => values[542];
+
   /// Cloudscape color token `colorBorderCodeEditorPaneItemHover`.
   Color get borderCodeEditorPaneItemHover => values[543];
+
   /// The border color of a card.
   Color get borderCard => values[544];
+
   /// Cloudscape color token `colorBorderCardHighlighted`.
   Color get borderCardHighlighted => values[545];
+
   /// Cloudscape color token `colorBorderItemCard`.
   Color get borderItemCard => values[546];
+
   /// Cloudscape color token `colorBorderItemCardHighlighted`.
   Color get borderItemCardHighlighted => values[547];
+
   /// Cloudscape color token `colorBorderContainerDivider`.
   Color get borderContainerDivider => values[548];
+
   /// The top border color for containers and first item in dropdowns. For example: the top border of a card, dropdown, and table.
   Color get borderContainerTop => values[549];
+
   /// Cloudscape color token `colorBorderControlChecked`.
   Color get borderControlChecked => values[550];
+
   /// The default border color of form controls. For example: radio buttons and checkboxes.
   Color get borderControlDefault => values[551];
+
   /// Cloudscape color token `colorBorderControlDisabled`.
   Color get borderControlDisabled => values[552];
+
   /// Cloudscape color token `colorBorderDividerActive`.
   Color get borderDividerActive => values[553];
+
   /// The default color for dividers. For example: dividers in column layout, expanding sections, side nav, help panel, between table rows and dropdown items, and inside containers.
   Color get borderDividerDefault => values[554];
+
   /// Cloudscape color token `colorBorderDividerNotification`.
   Color get borderDividerNotification => values[555];
+
   /// Cloudscape color token `colorBorderDividerPanelBottom`.
   Color get borderDividerPanelBottom => values[556];
+
   /// Cloudscape color token `colorBorderDividerPanelSide`.
   Color get borderDividerPanelSide => values[557];
+
   /// The border color for row dividers. For example: row dividers for table and collection preferences.
   Color get borderDividerSecondary => values[558];
+
   /// Cloudscape color token `colorBorderDividerTableGroup`.
   Color get borderDividerTableGroup => values[559];
+
   /// The border color of the dropdown container. For example: border color of the dropdown container in button dropdown, select, and multi-select.
   Color get borderDropdownContainer => values[560];
+
   /// Cloudscape color token `colorBorderDropdownGroup`.
   Color get borderDropdownGroup => values[561];
+
   /// Cloudscape color token `colorBorderDropdownItemDefault`.
   Color get borderDropdownItemDefault => values[562];
+
   /// The border color of dropdown items on hover. For example: border of hovered items in select, multiselect, autosuggest, and hovered days in datepicker.
   Color get borderDropdownItemHover => values[563];
+
   /// Cloudscape color token `colorBorderDropdownItemDimmedHover`.
   Color get borderDropdownItemDimmedHover => values[564];
+
   /// Cloudscape color token `colorBorderDropdownItemSelected`.
   Color get borderDropdownItemSelected => values[565];
+
   /// Cloudscape color token `colorBorderDropdownItemTop`.
   Color get borderDropdownItemTop => values[566];
+
   /// Cloudscape color token `colorBorderEditableCellHover`.
   Color get borderEditableCellHover => values[567];
+
   /// Cloudscape color token `colorBorderControlGroupDefault`.
   Color get borderControlGroupDefault => values[568];
+
   /// The default border color of form inputs. For example: input, textarea, autosuggest, datepicker, select, and multiselect.
   Color get borderInputDefault => values[569];
+
   /// Cloudscape color token `colorBorderInputDisabled`.
   Color get borderInputDisabled => values[570];
+
   /// The color of focus states for form inputs. For example: input, textarea, autosuggest, datepicker, select, and multiselect.
   Color get borderInputFocused => values[571];
+
   /// The color of focus states. For example: the focus ring around interactive elements.
   Color get borderItemFocused => values[572];
+
   /// The color of focus states for dropdown items. For example: the focus ring around selectable elements in the dropdown of button dropdown, select, and multi-select.
   Color get borderDropdownItemFocused => values[573];
+
   /// Cloudscape color token `colorBorderItemPlaceholder`.
   Color get borderItemPlaceholder => values[574];
+
   /// The border color of a selected item. For example: tokens, selected table rows, selected cards, and selected tile borders.
   Color get borderItemSelected => values[575];
+
   /// Cloudscape color token `colorBorderLayout`.
   Color get borderLayout => values[576];
+
   /// The border color of the side navigation divider in the app layout.
   Color get borderLayoutSideNavigation => values[577];
+
   /// Cloudscape color token `colorBorderNotificationStackBar`.
   Color get borderNotificationStackBar => values[578];
+
   /// Cloudscape color token `colorBorderNotificationStackBarHover`.
   Color get borderNotificationStackBarHover => values[579];
+
   /// Cloudscape color token `colorBorderNotificationStackBarActive`.
   Color get borderNotificationStackBarActive => values[580];
+
   /// Cloudscape color token `colorBorderNotificationStackBarFocused`.
   Color get borderNotificationStackBarFocused => values[581];
+
   /// Cloudscape color token `colorBorderPanelHeader`.
   Color get borderPanelHeader => values[582];
+
   /// The border color of the popover.
   Color get borderPopover => values[583];
+
   /// Deprecated - this token is no longer in use.
   Color get borderSegmentActive => values[584];
+
   /// Deprecated - this token is no longer in use.
   Color get borderSegmentDefault => values[585];
+
   /// Deprecated - this token is no longer in use.
   Color get borderSegmentDisabled => values[586];
+
   /// The color of the dividers between segments in a segmented control.
   Color get borderSegmentDivider => values[587];
+
   /// Deprecated - this token is no longer in use.
   Color get borderSegmentHover => values[588];
+
   /// The border color of the segmented control wrapper.
   Color get borderSegmentWrapper => values[589];
+
   /// The border color of an item in error state. For example: error alerts.
   Color get borderStatusError => values[590];
+
   /// The border color of an informational item. For example: information alerts.
   Color get borderStatusInfo => values[591];
+
   /// The border color of an item in success state. For example: success alerts.
   Color get borderStatusSuccess => values[592];
+
   /// The border color of an item in warning state. For example: warning alerts.
   Color get borderStatusWarning => values[593];
+
   /// The border color of the feedback/input dialogue box.
   Color get borderDialog => values[594];
+
   /// Cloudscape color token `colorBorderDialogDefault`.
   Color get borderDialogDefault => values[595];
+
   /// Cloudscape color token `colorBorderDividerInteractiveDefault`.
   Color get borderDividerInteractiveDefault => values[596];
+
   /// Cloudscape color token `colorBorderTabsDivider`.
   Color get borderTabsDivider => values[597];
+
   /// Cloudscape color token `colorBorderTabsShadow`.
   Color get borderTabsShadow => values[598];
+
   /// Cloudscape color token `colorBorderTabsUnderline`.
   Color get borderTabsUnderline => values[599];
+
   /// Cloudscape color token `colorBorderTilesDisabled`.
   Color get borderTilesDisabled => values[600];
+
   /// Cloudscape color token `colorBorderTutorial`.
   Color get borderTutorial => values[601];
+
   /// The color used to mark enabled form controls. For example: the checkmark on checkboxes, inner circle on radio buttons, and handle on toggles.
   Color get foregroundControlDefault => values[602];
+
   /// The color used to mark disabled form controls. For example: the checkmark on checkboxes, inner circle on radio buttons, and handle on toggles.
   Color get foregroundControlDisabled => values[603];
+
   /// The color used to mark readonly form controls. For example: the checkmark on checkboxes, inner circle on radio buttons, and handle on toggles.
   Color get foregroundControlReadOnly => values[604];
+
   /// Cloudscape color token `colorShadowDefault`.
   Color get shadowDefault => values[605];
+
   /// Cloudscape color token `colorShadowMedium`.
   Color get shadowMedium => values[606];
+
   /// Cloudscape color token `colorShadowSide`.
   Color get shadowSide => values[607];
+
   /// The color of the drop shadow under the toggle handle.
   Color get shadowToggleHandle => values[608];
+
   /// Cloudscape color token `colorStrokeChartLine`.
   Color get strokeChartLine => values[609];
+
   /// Cloudscape color token `colorStrokeCodeEditorGutterActiveLineDefault`.
   Color get strokeCodeEditorGutterActiveLineDefault => values[610];
+
   /// Cloudscape color token `colorStrokeCodeEditorGutterActiveLineHover`.
   Color get strokeCodeEditorGutterActiveLineHover => values[611];
+
   /// The accent text color used to guide a user. For example: the highlighted page in the side navigation, active tab text, selected day text color in date picker, and hover state in expandable section.
   Color get textAccent => values[612];
+
   /// The default color of non-heading text and body content. For example: text in a paragraph tag, table cell data, form field labels and values.
   Color get textBodyDefault => values[613];
+
   /// The color of text that is secondary to base text. For example: text in the navigation and tools panels.
   Color get textBodySecondary => values[614];
+
   /// The text color that marks the breadcrumb item for the page the user is currently viewing.
   Color get textBreadcrumbCurrent => values[615];
+
   /// The color used for the icon delimiter between breadcrumb items.
   Color get textBreadcrumbIcon => values[616];
+
   /// The default color of inline button icons.
   Color get textButtonInlineIconDefault => values[617];
+
   /// The color of inline button icons in disabled state.
   Color get textButtonInlineIconDisabled => values[618];
+
   /// The color of inline button icons in hover state.
   Color get textButtonInlineIconHover => values[619];
+
   /// Cloudscape color token `colorTextButtonInlineLinkHover`.
   Color get textButtonInlineLinkHover => values[620];
+
   /// Cloudscape color token `colorTextButtonIconHover`.
   Color get textButtonIconHover => values[621];
+
   /// The active text color of normal buttons. For example: Active text color in normal and link buttons.
   Color get textButtonNormalActive => values[622];
+
   /// The pressed text color of normal toggle buttons.
   Color get textToggleButtonNormalPressed => values[623];
+
   /// The default text color of normal buttons.
   Color get textButtonNormalDefault => values[624];
+
   /// The hover text color of normal buttons.
   Color get textButtonNormalHover => values[625];
+
   /// Cloudscape color token `colorTextLinkButtonNormalDefault`.
   Color get textLinkButtonNormalDefault => values[626];
+
   /// Cloudscape color token `colorTextLinkButtonNormalHover`.
   Color get textLinkButtonNormalHover => values[627];
+
   /// Cloudscape color token `colorTextLinkButtonNormalActive`.
   Color get textLinkButtonNormalActive => values[628];
+
   /// The text color of link buttons in active state.
   Color get textButtonLinkActive => values[629];
+
   /// The default text color of link buttons.
   Color get textButtonLinkDefault => values[630];
+
   /// The text color of link buttons in disabled state.
   Color get textButtonLinkDisabled => values[631];
+
   /// The text color of link buttons in hover state.
   Color get textButtonLinkHover => values[632];
+
   /// The active text color of primary buttons.
   Color get textButtonPrimaryActive => values[633];
+
   /// The default text color of primary buttons.
   Color get textButtonPrimaryDefault => values[634];
+
   /// The hover text color of primary buttons.
   Color get textButtonPrimaryHover => values[635];
+
   /// Cloudscape color token `colorTextCalendarDateHover`.
   Color get textCalendarDateHover => values[636];
+
   /// The text color of selected dates in the calendar.
   Color get textCalendarDateSelected => values[637];
+
   /// Cloudscape color token `colorTextCalendarMonth`.
   Color get textCalendarMonth => values[638];
+
   /// Cloudscape color token `colorTextCodeEditorGutterActiveLine`.
   Color get textCodeEditorGutterActiveLine => values[639];
+
   /// Cloudscape color token `colorTextCodeEditorGutterDefault`.
   Color get textCodeEditorGutterDefault => values[640];
+
   /// Cloudscape color token `colorTextCodeEditorStatusBarDisabled`.
   Color get textCodeEditorStatusBarDisabled => values[641];
+
   /// Cloudscape color token `colorTextCodeEditorTabButtonError`.
   Color get textCodeEditorTabButtonError => values[642];
+
   /// Cloudscape color token `colorTextColumnHeader`.
   Color get textColumnHeader => values[643];
+
   /// Cloudscape color token `colorTextColumnSortingIcon`.
   Color get textColumnSortingIcon => values[644];
+
   /// Cloudscape color token `colorTextControlDisabled`.
   Color get textControlDisabled => values[645];
+
   /// The default color for counters. For example: counters in table headers
   Color get textCounter => values[646];
+
   /// Cloudscape color token `colorTextDisabled`.
   Color get textDisabled => values[647];
+
   /// Cloudscape color token `colorTextDisabledInlineEdit`.
   Color get textDisabledInlineEdit => values[648];
+
   /// Cloudscape color token `colorTextDropdownFooter`.
   Color get textDropdownFooter => values[649];
+
   /// Cloudscape color token `colorTextDropdownGroupLabel`.
   Color get textDropdownGroupLabel => values[650];
+
   /// The default text color of dropdown items. For example: label and label tag text color for autosuggest, select, and multiselect.
   Color get textDropdownItemDefault => values[651];
+
   /// Cloudscape color token `colorTextDropdownItemDimmed`.
   Color get textDropdownItemDimmed => values[652];
+
   /// The text color of disabled dropdown items. For example: label, label tag, description, and tag text color of a disabled item in a select, multiselect, and autosuggest.
   Color get textDropdownItemDisabled => values[653];
+
   /// The color of text matching a user's query. For example: the text matching a query entered into a table filter, select, multiselect, or autosuggest.
   Color get textDropdownItemFilterMatch => values[654];
+
   /// The text color of hovered or selected dropdown items. For example: label text color of the item on hover in a select, multiselect, and autosuggest.
   Color get textDropdownItemHighlighted => values[655];
+
   /// The text color of secondary information in dropdown items. For example: descriptions and tags text color in a select, multiselect, and autosuggest.
   Color get textDropdownItemSecondary => values[656];
+
   /// Cloudscape color token `colorTextDropdownItemSecondaryHover`.
   Color get textDropdownItemSecondaryHover => values[657];
+
   /// The color of text in non-dropdown empty states. For example: tables, card collections, and attribute editor empty state text.
   Color get textEmpty => values[658];
+
   /// The default color of the expandable section header text.
   Color get textExpandableSectionDefault => values[659];
+
   /// The color of the expandable section header text in hover state.
   Color get textExpandableSectionHover => values[660];
+
   /// The default color of the expand icon in the navigation variant of the expandable section.
   Color get textExpandableSectionNavigationIconDefault => values[661];
+
   /// Cloudscape color token `colorBorderExpandableSectionDefault`.
   Color get borderExpandableSectionDefault => values[662];
+
   /// The default color of form field labels and values. For example: the label in form fields, checkboxes, radio buttons, toggles, and the value in inputs and text areas.
   Color get textFormDefault => values[663];
+
   /// Cloudscape color token `colorTextFormLabel`.
   Color get textFormLabel => values[664];
+
   /// The color of secondary text in form fields and controls. For example: the description and constraint text in form fields, the descriptions in checkboxes, radio buttons, toggles, and any additional info in an attribute editor.
   Color get textFormSecondary => values[665];
+
   /// The default color for group labels. For example: group label in dropdown part of button dropdown, select, and multiselect, and group label in table and cards' preferences content selector.
   Color get textGroupLabel => values[666];
+
   /// The default color for labels indicating that content is produced by generative AI.
   Color get textLabelGenAi => values[667];
+
   /// The default color for headings 2-5. For example: headings in containers, form sections, forms, and app layout panels.
   Color get textHeadingDefault => values[668];
+
   /// The default color for secondary heading text such as page and container descriptions. For example: descriptions in containers such as form sections, tables, and card collections, as well as form page descriptions.
   Color get textHeadingSecondary => values[669];
+
   /// The color of the home header's text, displayed on the Service's home page.
   Color get textHomeHeaderDefault => values[670];
+
   /// The color of the home header's secondary text, displayed on the Service's home page.
   Color get textHomeHeaderSecondary => values[671];
+
   /// Cloudscape color token `colorTextIconCaret`.
   Color get textIconCaret => values[672];
+
   /// The color of subtle icons. For example: secondary icons with lower visual emphasis.
   Color get textIconSubtle => values[673];
+
   /// The color of the text value in a disabled input. For example: text in a disabled input, autosuggest, datepicker, and the trigger of a select and multiselect.
   Color get textInputDisabled => values[674];
+
   /// The color of placeholder text in an input. For example: placeholder text in an input, autosuggest, datepicker, and the trigger of a select and multiselect.
   Color get textInputPlaceholder => values[675];
+
   /// Cloudscape color token `colorTextInputPlaceholderDisabled`.
   Color get textInputPlaceholderDisabled => values[676];
+
   /// The color of clickable elements in their active state. For example: tabs and icons.
   Color get textInteractiveActive => values[677];
+
   /// The color of clickable elements in their default state. For example: tabs, and icons.
   Color get textInteractiveDefault => values[678];
+
   /// The color of clickable elements in their disabled state. For example: disabled tabs, button text, and icons.
   Color get textInteractiveDisabled => values[679];
+
   /// The color of clickable elements on hover. For example: icons on hover.
   Color get textInteractiveHover => values[680];
+
   /// The pressed text color of icon toggle buttons.
   Color get textToggleButtonIconPressed => values[681];
+
   /// The default color of clickable elements in the flashbar. For example: The dismiss icon button in a flashbar.
   Color get textInteractiveInvertedDefault => values[682];
+
   /// The hover color of clickable elements in the flashbar. For example: The dismiss icon button in a flashbar.
   Color get textInteractiveInvertedHover => values[683];
+
   /// Cloudscape color token `colorTextInverted`.
   Color get textInverted => values[684];
+
   /// The default color for non-form labels. For example: the key in key/value pairs and card's sections labels.
   Color get textLabel => values[685];
+
   /// Cloudscape color token `colorTextKeyValuePairsValue`.
   Color get textKeyValuePairsValue => values[686];
+
   /// The default color of the app layout toggle.
   Color get textLayoutToggle => values[687];
+
   /// The color of the app layout toggle button when it's active.
   Color get textLayoutToggleActive => values[688];
+
   /// The color of the app layout toggle button on hover.
   Color get textLayoutToggleHover => values[689];
+
   /// The color of the app layout toggle button when it's selected.
   Color get textLayoutToggleSelected => values[690];
+
   /// The default color for links. For example: text in an anchor tag, info links, breadcrumb links, and icon links.
   Color get textLinkDefault => values[691];
+
   /// The hover color for links. For example: text in an anchor tag, info links, breadcrumb links, and icon links.
   Color get textLinkHover => values[692];
+
   /// The default color for secondary links. For example: links with lower visual emphasis or supplementary content.
   Color get textLinkSecondaryDefault => values[693];
+
   /// The hover color for secondary links. For example: links with lower visual emphasis or supplementary content.
   Color get textLinkSecondaryHover => values[694];
+
   /// Cloudscape color token `colorTextLinkSecondaryDecorationDefault`.
   Color get textLinkSecondaryDecorationDefault => values[695];
+
   /// The default color for info links.
   Color get textLinkInfoDefault => values[696];
+
   /// The hover color for info links.
   Color get textLinkInfoHover => values[697];
+
   /// Cloudscape color token `colorTextLinkInvertedDefault`.
   Color get textLinkInvertedDefault => values[698];
+
   /// Cloudscape color token `colorTextLinkInvertedHover`.
   Color get textLinkInvertedHover => values[699];
+
   /// Cloudscape color token `colorTextLinkButtonUnderline`.
   Color get textLinkButtonUnderline => values[700];
+
   /// Cloudscape color token `colorTextLinkButtonUnderlineHover`.
   Color get textLinkButtonUnderlineHover => values[701];
+
   /// Default text color for notifications. For example: the text on badges and flashes.
   Color get textNotificationDefault => values[702];
+
   /// Cloudscape color token `colorTextAlertDefault`.
   Color get textAlertDefault => values[703];
+
   /// Cloudscape color token `colorTextNotificationLinkDefault`.
   Color get textNotificationLinkDefault => values[704];
+
   /// Cloudscape color token `colorTextNotificationLinkHover`.
   Color get textNotificationLinkHover => values[705];
+
   /// Cloudscape color token `colorTextNotificationStackBar`.
   Color get textNotificationStackBar => values[706];
+
   /// The text and foreground color used on warning flash messages (yellow notification surface).
   Color get textNotificationYellow => values[707];
+
   /// Cloudscape color token `colorTextPaginationPageNumberActiveDisabled`.
   Color get textPaginationPageNumberActiveDisabled => values[708];
+
   /// Cloudscape color token `colorTextPaginationPageNumberDefault`.
   Color get textPaginationPageNumberDefault => values[709];
+
   /// The text color of the active segment in a segmented control.
   Color get textSegmentActive => values[710];
+
   /// The text color of inactive segments in a segmented control.
   Color get textSegmentDefault => values[711];
+
   /// The text color of inactive segments in a segmented control on hover.
   Color get textSegmentHover => values[712];
+
   /// Cloudscape color token `colorTextSmall`.
   Color get textSmall => values[713];
+
   /// Cloudscape color token `colorTextFlashbarIconError`.
   Color get textFlashbarIconError => values[714];
+
   /// Cloudscape color token `colorTextFlashbarIconInfo`.
   Color get textFlashbarIconInfo => values[715];
+
   /// Cloudscape color token `colorTextFlashbarIconSuccess`.
   Color get textFlashbarIconSuccess => values[716];
+
   /// Cloudscape color token `colorTextFlashbarIconWarning`.
   Color get textFlashbarIconWarning => values[717];
+
   /// Cloudscape color token `colorTextAlertIconError`.
   Color get textAlertIconError => values[718];
+
   /// Cloudscape color token `colorTextAlertIconInfo`.
   Color get textAlertIconInfo => values[719];
+
   /// Cloudscape color token `colorTextAlertIconSuccess`.
   Color get textAlertIconSuccess => values[720];
+
   /// Cloudscape color token `colorTextAlertIconWarning`.
   Color get textAlertIconWarning => values[721];
+
   /// The color of error text and icons. For example: form field error text and error status indicators.
   Color get textStatusError => values[722];
+
   /// The color of inactive and loading text and icons. For example: table and card collection loading states icon and text and inactive and pending status indicators.
   Color get textStatusInactive => values[723];
+
   /// The color of info text and icons. For example: info status indicators and info alert icon.
   Color get textStatusInfo => values[724];
+
   /// The color of success text and icons. For example: success status indicators and success alert icon.
   Color get textStatusSuccess => values[725];
+
   /// The color of warning icons.
   Color get textStatusWarning => values[726];
+
   /// The color of the title in the top navigation.
   Color get textTopNavigationTitle => values[727];
+
   /// Cloudscape color token `colorTextTutorialHotspotDefault`.
   Color get textTutorialHotspotDefault => values[728];
+
   /// Cloudscape color token `colorTextTutorialHotspotHover`.
   Color get textTutorialHotspotHover => values[729];
+
   /// The color of board placeholder in active state.
   Color get boardPlaceholderActive => values[730];
+
   /// The color of board placeholder in hovered state.
   Color get boardPlaceholderHover => values[731];
+
   /// The color of drag placeholder in active state.
   Color get dragPlaceholderActive => values[732];
+
   /// The color of drag placeholder in hovered state.
   Color get dragPlaceholderHover => values[733];
+
   /// The default color of file upload dropzone background.
   Color get dropzoneBackgroundDefault => values[734];
+
   /// The color of file upload dropzone background in hovered state.
   Color get dropzoneBackgroundHover => values[735];
+
   /// The default color of file upload dropzone text.
   Color get dropzoneTextDefault => values[736];
+
   /// The color of file upload dropzone text in hovered state.
   Color get dropzoneTextHover => values[737];
+
   /// The default color of file upload dropzone border.
   Color get dropzoneBorderDefault => values[738];
+
   /// The color of file upload dropzone border in hovered state.
   Color get dropzoneBorderHover => values[739];
+
   /// Cloudscape color token `colorGapGlobalDrawer`.
   Color get gapGlobalDrawer => values[740];
+
   /// The color of the tree view connector lines.
   Color get treeViewConnectorLine => values[741];
+
   /// The default background color of action cards.
   Color get backgroundActionCardDefault => values[742];
+
   /// The background color of action cards in hover state.
   Color get backgroundActionCardHover => values[743];
+
   /// The background color of action cards in active state.
   Color get backgroundActionCardActive => values[744];
+
   /// The default border color of action cards.
   Color get borderActionCardDefault => values[745];
+
   /// The border color of action cards in hover state.
   Color get borderActionCardHover => values[746];
+
   /// The border color of action cards in active state.
   Color get borderActionCardActive => values[747];
+
   /// The border color of action cards in disabled state.
   Color get borderActionCardDisabled => values[748];
+
   /// The background color of action cards in disabled state.
   Color get backgroundActionCardDisabled => values[749];
+
   /// The text color of action cards in disabled state.
   Color get textActionCardDisabled => values[750];
+
   /// The default color of icons in action cards.
   Color get textActionCardIconDefault => values[751];
+
   /// The color of icons in action cards in hover state.
   Color get textActionCardIconHover => values[752];
+
   /// The color of icons in action cards in active state.
   Color get textActionCardIconActive => values[753];
+
   /// The color of icons in action cards in disabled state.
   Color get textActionCardIconDisabled => values[754];
+
   /// Cloudscape color token `colorBackgroundSkeleton`.
   Color get backgroundSkeleton => values[755];
+
   /// Cloudscape color token `colorBackgroundSkeletonWave`.
   Color get backgroundSkeletonWave => values[756];
+
   /// The background color of green badges.
   Color get backgroundBadgeGreen => values[757];
+
   /// The background color of blue badges.
   Color get backgroundBadgeBlue => values[758];
+
   /// The background color of red badges.
   Color get backgroundBadgeRed => values[759];
+
   /// The background color of yellow badges.
   Color get backgroundBadgeYellow => values[760];
+
   /// The background color of grey badges.
   Color get backgroundBadgeGrey => values[761];
+
   /// The default border color of badges.
   Color get borderBadge => values[762];
+
   /// The border color of grey badges.
   Color get borderBadgeGrey => values[763];
+
   /// The border color of green badges.
   Color get borderBadgeGreen => values[764];
+
   /// The border color of blue badges.
   Color get borderBadgeBlue => values[765];
+
   /// The border color of red badges.
   Color get borderBadgeRed => values[766];
+
   /// The text color of grey badges.
   Color get textBadgeGrey => values[767];
+
   /// The text color of green badges.
   Color get textBadgeGreen => values[768];
+
   /// The text color of blue badges.
   Color get textBadgeBlue => values[769];
+
   /// The text color of red badges.
   Color get textBadgeRed => values[770];
+
   /// The background color of the code view component.
   Color get backgroundCodeView => values[771];
+
   /// Cloudscape color token `colorBackgroundVisualAccentRed`.
   Color get backgroundVisualAccentRed => values[772];
+
   /// Cloudscape color token `colorBackgroundVisualAccentYellow`.
   Color get backgroundVisualAccentYellow => values[773];
+
   /// Cloudscape color token `colorBackgroundVisualAccentIndigo`.
   Color get backgroundVisualAccentIndigo => values[774];
+
   /// Cloudscape color token `colorBackgroundVisualAccentGreen`.
   Color get backgroundVisualAccentGreen => values[775];
+
   /// Cloudscape color token `colorBackgroundVisualAccentOrange`.
   Color get backgroundVisualAccentOrange => values[776];
+
   /// Cloudscape color token `colorBackgroundVisualAccentPurple`.
   Color get backgroundVisualAccentPurple => values[777];
+
   /// Cloudscape color token `colorBackgroundVisualAccentLime`.
   Color get backgroundVisualAccentLime => values[778];
+
   /// Cloudscape color token `colorBackgroundVisualAccentGrey`.
   Color get backgroundVisualAccentGrey => values[779];
+
   /// Cloudscape color token `colorBackgroundVisualAccentTeal`.
   Color get backgroundVisualAccentTeal => values[780];
+
   /// Cloudscape color token `colorBackgroundVisualAccentBlue`.
   Color get backgroundVisualAccentBlue => values[781];
+
   /// Cloudscape color token `colorBackgroundVisualAccentViolet`.
   Color get backgroundVisualAccentViolet => values[782];
+
   /// Cloudscape color token `colorBackgroundVisualAccentMagenta`.
   Color get backgroundVisualAccentMagenta => values[783];
+
   /// Cloudscape color token `colorBackgroundVisualAccentPink`.
   Color get backgroundVisualAccentPink => values[784];
+
   /// Cloudscape color token `colorBackgroundVisualAccentAmber`.
   Color get backgroundVisualAccentAmber => values[785];
+
   /// Cloudscape color token `colorTextVisualAccentRed`.
   Color get textVisualAccentRed => values[786];
+
   /// Cloudscape color token `colorTextVisualAccentYellow`.
   Color get textVisualAccentYellow => values[787];
+
   /// Cloudscape color token `colorTextVisualAccentIndigo`.
   Color get textVisualAccentIndigo => values[788];
+
   /// Cloudscape color token `colorTextVisualAccentGreen`.
   Color get textVisualAccentGreen => values[789];
+
   /// Cloudscape color token `colorTextVisualAccentOrange`.
   Color get textVisualAccentOrange => values[790];
+
   /// Cloudscape color token `colorTextVisualAccentPurple`.
   Color get textVisualAccentPurple => values[791];
+
   /// Cloudscape color token `colorTextVisualAccentLime`.
   Color get textVisualAccentLime => values[792];
+
   /// Cloudscape color token `colorTextVisualAccentGrey`.
   Color get textVisualAccentGrey => values[793];
+
   /// Cloudscape color token `colorTextVisualAccentTeal`.
   Color get textVisualAccentTeal => values[794];
+
   /// Cloudscape color token `colorTextVisualAccentBlue`.
   Color get textVisualAccentBlue => values[795];
+
   /// Cloudscape color token `colorTextVisualAccentViolet`.
   Color get textVisualAccentViolet => values[796];
+
   /// Cloudscape color token `colorTextVisualAccentMagenta`.
   Color get textVisualAccentMagenta => values[797];
+
   /// Cloudscape color token `colorTextVisualAccentPink`.
   Color get textVisualAccentPink => values[798];
+
   /// Cloudscape color token `colorTextVisualAccentAmber`.
   Color get textVisualAccentAmber => values[799];
 }
@@ -4055,16 +4853,22 @@ class CsColorScheme {
 enum CsVisualContextName {
   /// The top navigation bar: always dark.
   topNavigation,
+
   /// The high-contrast page header (`ContentLayout headerVariant="high-contrast"`): always dark.
   header,
+
   /// The app layout toolbar background.
   appLayoutToolbar,
+
   /// Inside a flash message on a colored background.
   flashbar,
+
   /// Inside a warning flash message (dark text on yellow).
   flashbarWarning,
+
   /// Inside an alert.
   alert,
+
   /// The header of an alert.
   alertHeader,
 }
@@ -6179,9 +6983,7 @@ abstract final class CsColorSchemes {
     CsColor.textVisualAccentPink: Color(0xFFFF99CC),
     CsColor.textVisualAccentAmber: Color(0xFFFFBB45),
   };
-  static const Map<CsColor, Color> _topNavigationDark = {
-    CsColor.backgroundDropdownItemDefault: Color(0xFF161D26),
-  };
+  static const Map<CsColor, Color> _topNavigationDark = {CsColor.backgroundDropdownItemDefault: Color(0xFF161D26)};
   static const Map<CsColor, Color> _headerLight = {
     CsColor.chartsRed300: Color(0xFFD63F38),
     CsColor.chartsRed400: Color(0xFFED5958),
@@ -6695,12 +7497,8 @@ abstract final class CsColorSchemes {
     CsColor.backgroundTableHeader: Color(0xFF0F141A),
     CsColor.textCalendarDateSelected: Color(0xFF0F141A),
   };
-  static const Map<CsColor, Color> _appLayoutToolbarLight = {
-    CsColor.backgroundLayoutMain: Color(0xFFFCFCFD),
-  };
-  static const Map<CsColor, Color> _appLayoutToolbarDark = {
-    CsColor.backgroundLayoutMain: Color(0xFF131920),
-  };
+  static const Map<CsColor, Color> _appLayoutToolbarLight = {CsColor.backgroundLayoutMain: Color(0xFFFCFCFD)};
+  static const Map<CsColor, Color> _appLayoutToolbarDark = {CsColor.backgroundLayoutMain: Color(0xFF131920)};
   static const Map<CsColor, Color> _flashbarLight = {
     CsColor.backgroundButtonNormalActive: Color(0x33000716),
     CsColor.backgroundButtonNormalDefault: Color(0x00000000),

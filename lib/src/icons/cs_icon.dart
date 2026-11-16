@@ -112,7 +112,9 @@ class CsIcon extends StatelessWidget {
   /// aligns with a line of text (Cloudscape's mapped height).
   final bool mapHeight;
 
-  /// Raw color override. Prefer [variant].
+  /// Raw color override. Prefer [variant]. Without either, the icon takes
+  /// the surrounding text color (Cloudscape's `currentColor`), so it ignores
+  /// Material's default icon theme.
   final Color? dangerouslySetColor;
 
   @override
@@ -122,13 +124,21 @@ class CsIcon extends StatelessWidget {
         dangerouslySetColor ??
         (variant.token != null
             ? cs.colors[variant.token!]
-            : (IconTheme.of(context).color ?? DefaultTextStyle.of(context).style.color ?? cs.colors.textBodyDefault));
+            : (DefaultTextStyle.of(context).style.color ?? IconTheme.of(context).color ?? cs.colors.textBodyDefault));
     final d = size.dimension;
     Widget glyph = custom != null
-        ? SizedBox.square(dimension: d, child: FittedBox(child: custom))
+        ? SizedBox.square(
+            dimension: d,
+            child: FittedBox(child: custom),
+          )
         : CustomPaint(
             size: Size.square(d),
-            painter: CsIconPainter(icon: icon!, color: color, stroke: size.stroke, textDirection: Directionality.maybeOf(context)),
+            painter: CsIconPainter(
+              icon: icon!,
+              color: color,
+              stroke: size.stroke,
+              textDirection: Directionality.maybeOf(context),
+            ),
           );
     if (badge) {
       glyph = Stack(
@@ -155,7 +165,11 @@ class CsIcon extends StatelessWidget {
       );
     }
     if (semanticLabel == null) return ExcludeSemantics(child: glyph);
-    return Semantics(label: semanticLabel, image: true, child: ExcludeSemantics(child: glyph));
+    return Semantics(
+      label: semanticLabel,
+      image: true,
+      child: ExcludeSemantics(child: glyph),
+    );
   }
 }
 

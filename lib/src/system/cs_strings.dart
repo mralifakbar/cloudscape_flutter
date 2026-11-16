@@ -116,6 +116,7 @@ class CsStrings {
   final String cancel;
   final String confirm;
   final String dismiss;
+
   /// Status names, used as the accessible names of status icons.
   final String error;
   final String warning;

@@ -59,9 +59,25 @@ void main() {
 
 // Icons Cloudscape flips in right-to-left layouts (src/icon/styles.scss).
 const _mirrored = {
-  'angle-left-double', 'angle-left', 'angle-right-double', 'angle-right', 'arrow-left', 'arrow-right',
-  'caret-left-filled', 'caret-right-filled', 'audio-full', 'audio-half', 'audio-off', 'external', 'redo',
-  'resize-area', 'send', 'shrink', 'undo', 'view-vertical', 'view-vertical-start',
+  'angle-left-double',
+  'angle-left',
+  'angle-right-double',
+  'angle-right',
+  'arrow-left',
+  'arrow-right',
+  'caret-left-filled',
+  'caret-right-filled',
+  'audio-full',
+  'audio-half',
+  'audio-off',
+  'external',
+  'redo',
+  'resize-area',
+  'send',
+  'shrink',
+  'undo',
+  'view-vertical',
+  'view-vertical-start',
 };
 
 String _camel(String kebab) {
@@ -103,11 +119,13 @@ List<String> _parts(String svg) {
         d = attrs['d']!;
       case 'circle':
         final cx = n('cx'), cy = n('cy'), r = n('r');
-        d = 'M${_f(cx - r)} ${_f(cy)}A${_f(r)} ${_f(r)} 0 1 0 ${_f(cx + r)} ${_f(cy)}'
+        d =
+            'M${_f(cx - r)} ${_f(cy)}A${_f(r)} ${_f(r)} 0 1 0 ${_f(cx + r)} ${_f(cy)}'
             'A${_f(r)} ${_f(r)} 0 1 0 ${_f(cx - r)} ${_f(cy)}Z';
       case 'ellipse':
         final cx = n('cx'), cy = n('cy'), rx = n('rx'), ry = n('ry');
-        d = 'M${_f(cx - rx)} ${_f(cy)}A${_f(rx)} ${_f(ry)} 0 1 0 ${_f(cx + rx)} ${_f(cy)}'
+        d =
+            'M${_f(cx - rx)} ${_f(cy)}A${_f(rx)} ${_f(ry)} 0 1 0 ${_f(cx + rx)} ${_f(cy)}'
             'A${_f(rx)} ${_f(ry)} 0 1 0 ${_f(cx - rx)} ${_f(cy)}Z';
       case 'rect':
         final x = n('x'), y = n('y'), w = n('width'), h = n('height');

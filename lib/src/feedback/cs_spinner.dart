@@ -110,17 +110,15 @@ class _CsSpinnerState extends State<CsSpinner> with TickerProviderStateMixin {
     final spinner = RepaintBoundary(
       child: CustomPaint(
         size: Size.square(widget.size.dimension),
-        painter: _SpinnerPainter(
-          rotation: _rotate,
-          pulse: _pulse,
-          color: color,
-          stroke: widget.size.stroke,
-          rtl: rtl,
-        ),
+        painter: _SpinnerPainter(rotation: _rotate, pulse: _pulse, color: color, stroke: widget.size.stroke, rtl: rtl),
       ),
     );
     if (label.isEmpty) return ExcludeSemantics(child: spinner);
-    return Semantics(label: label, liveRegion: true, child: ExcludeSemantics(child: spinner));
+    return Semantics(
+      label: label,
+      liveRegion: true,
+      child: ExcludeSemantics(child: spinner),
+    );
   }
 }
 

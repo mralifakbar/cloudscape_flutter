@@ -103,11 +103,7 @@ class _ButtonDemoState extends State<_ButtonDemo> {
                 onPress: () {},
               ),
               CsButton(text: 'Documentation', external: true, variant: CsButtonVariant.link, onPress: () {}),
-              CsButton(
-                icon: CsIcons.refresh,
-                semanticLabel: 'Refresh instances',
-                onPress: () {},
-              ),
+              CsButton(icon: CsIcons.refresh, semanticLabel: 'Refresh instances', onPress: () {}),
               CsButton(
                 icon: CsIcons.settings,
                 variant: CsButtonVariant.icon,
@@ -157,7 +153,11 @@ class _ButtonDemoState extends State<_ButtonDemo> {
                 spacing: CsSpace.xxs,
                 children: [
                   CsBox(text: 'Edit pressed $_presses ${_presses == 1 ? 'time' : 'times'}.'),
-                  CsButton(text: 'Reset', variant: CsButtonVariant.inlineLink, onPress: () => setState(() => _presses = 0)),
+                  CsButton(
+                    text: 'Reset',
+                    variant: CsButtonVariant.inlineLink,
+                    onPress: () => setState(() => _presses = 0),
+                  ),
                 ],
               ),
               CsButton(text: 'Continue', variant: CsButtonVariant.primary, fullWidth: true, onPress: () {}),
@@ -197,9 +197,9 @@ class _BoxDemo extends StatelessWidget {
         ),
         DemoSection(
           title: 'Key-value and large values',
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Wrap(
             spacing: CsSpace.xxl,
+            runSpacing: CsSpace.s,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -245,7 +245,10 @@ class _BoxDemo extends StatelessWidget {
               CsVisualAccent(color: CsVisualAccentColor.indigo, equalAspect: true, child: CsIcon(CsIcons.globe)),
               CsVisualAccent(color: CsVisualAccentColor.green, equalAspect: true, child: CsIcon(CsIcons.security)),
               CsVisualAccent(color: CsVisualAccentColor.orange, equalAspect: true, child: CsIcon(CsIcons.key)),
-              CsVisualAccent(color: CsVisualAccentColor.purple, child: CsBox(variant: CsBoxVariant.strong, text: 'New')),
+              CsVisualAccent(
+                color: CsVisualAccentColor.purple,
+                child: CsBox(variant: CsBoxVariant.strong, text: 'New'),
+              ),
             ],
           ),
         ),
@@ -297,9 +300,7 @@ class _IconDemo extends StatelessWidget {
             direction: CsSpaceBetweenDirection.horizontal,
             size: CsSpacingSize.m,
             alignItems: CsSpaceBetweenAlign.end,
-            children: [
-              for (final s in CsIconSize.values) CsIcon(CsIcons.settings, size: s),
-            ],
+            children: [for (final s in CsIconSize.values) CsIcon(CsIcons.settings, size: s)],
           ),
         ),
         const DemoSection(
@@ -348,7 +349,10 @@ class _SpinnerDemo extends StatelessWidget {
           title: 'Inline with text',
           child: Row(
             spacing: CsSpace.xxs,
-            children: [CsSpinner(semanticLabel: ''), CsBox(text: 'Loading instances')],
+            children: [
+              CsSpinner(semanticLabel: ''),
+              CsBox(text: 'Loading instances'),
+            ],
           ),
         ),
       ],
@@ -368,7 +372,12 @@ class _TooltipDemo extends StatelessWidget {
         children: [
           CsTooltip(
             content: 'Copy the bucket ARN',
-            child: CsButton(icon: CsIcons.copy, variant: CsButtonVariant.icon, semanticLabel: 'Copy ARN', onPress: () {}),
+            child: CsButton(
+              icon: CsIcons.copy,
+              variant: CsButtonVariant.icon,
+              semanticLabel: 'Copy ARN',
+              onPress: () {},
+            ),
           ),
         ],
       ),
@@ -421,8 +430,18 @@ class _VisualContextDemo extends StatelessWidget {
                         style: context.cs.text(CsTypeScale.headingS, color: CsColor.textTopNavigationTitle),
                       ),
                     ),
-                    CsButton(icon: CsIcons.notification, variant: CsButtonVariant.icon, semanticLabel: 'Notifications', onPress: () {}),
-                    CsButton(icon: CsIcons.userProfile, variant: CsButtonVariant.icon, semanticLabel: 'Account', onPress: () {}),
+                    CsButton(
+                      icon: CsIcons.notification,
+                      variant: CsButtonVariant.icon,
+                      semanticLabel: 'Notifications',
+                      onPress: () {},
+                    ),
+                    CsButton(
+                      icon: CsIcons.userProfile,
+                      variant: CsButtonVariant.icon,
+                      semanticLabel: 'Account',
+                      onPress: () {},
+                    ),
                   ],
                 ),
               ),

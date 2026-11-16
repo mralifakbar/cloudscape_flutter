@@ -15,13 +15,7 @@ void main() {
           Wrap(
             children: [
               for (final v in CsButtonVariant.values)
-                CsButton(
-                  text: v.name,
-                  icon: CsIcons.settings,
-                  semanticLabel: v.name,
-                  variant: v,
-                  onPress: () {},
-                ),
+                CsButton(text: v.name, icon: CsIcons.settings, semanticLabel: v.name, variant: v, onPress: () {}),
             ],
           ),
           brightness: b,
@@ -45,7 +39,11 @@ void main() {
   });
 
   testWidgets('is 32px tall comfortable and 28px compact', (tester) async {
-    await pumpCs(tester, CsButton(text: 'Go', onPress: () {}), tapTargetSize: CsTapTargetSize.shrinkWrap);
+    await pumpCs(
+      tester,
+      CsButton(text: 'Go', onPress: () {}),
+      tapTargetSize: CsTapTargetSize.shrinkWrap,
+    );
     expect(tester.getSize(find.byType(Container).first).height, 32);
     await pumpCs(
       tester,

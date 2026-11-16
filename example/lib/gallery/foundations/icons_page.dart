@@ -53,7 +53,10 @@ class _IconsPageState extends State<IconsPage> {
                   child: Column(
                     spacing: CsSpace.xxs,
                     children: [
-                      SizedBox(height: 36, child: Center(child: CsIcon(icon, size: _size))),
+                      SizedBox(
+                        height: 36,
+                        child: Center(child: CsIcon(icon, size: _size)),
+                      ),
                       Text(
                         icon.name,
                         textAlign: TextAlign.center,

@@ -64,7 +64,10 @@ class _ColorsPageState extends State<ColorsPage> {
               if (tokens.length > 300)
                 const Padding(
                   padding: EdgeInsets.all(CsSpace.l),
-                  child: CsBox(color: CsBoxColor.textBodySecondary, text: 'Showing the first 300 matches. Refine the search.'),
+                  child: CsBox(
+                    color: CsBoxColor.textBodySecondary,
+                    text: 'Showing the first 300 matches. Refine the search.',
+                  ),
                 ),
             ],
           ),

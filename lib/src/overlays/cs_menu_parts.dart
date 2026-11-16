@@ -229,8 +229,7 @@ class CsMenuRow extends StatelessWidget {
             : (lit || isSelected)
             ? c.textDropdownItemHighlighted
             : c.textDropdownItemDefault;
-        final lead =
-            leading ?? (icon != null ? CsIcon(icon!, dangerouslySetColor: fgColor) : null);
+        final lead = leading ?? (icon != null ? CsIcon(icon!, dangerouslySetColor: fgColor) : null);
         // Cloudscape draws the outline as inset box-shadows: selected first,
         // then the hover or keyboard outline inside it.
         final outline = isSelected
@@ -282,10 +281,7 @@ class CsMenuRow extends StatelessWidget {
                   ),
                 ),
                 if (shortcut != null)
-                  Text(
-                    shortcut!,
-                    style: cs.text(CsTypeScale.bodyS, color: CsColor.textDropdownItemSecondary),
-                  ),
+                  Text(shortcut!, style: cs.text(CsTypeScale.bodyS, color: CsColor.textDropdownItemSecondary)),
                 ?trailing,
               ],
             ),

@@ -91,7 +91,10 @@ class CsFormField extends StatelessWidget {
         labelRow = Wrap(
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
-            Padding(padding: const EdgeInsetsDirectional.only(end: CsSpace.xs), child: labelRow),
+            Padding(
+              padding: const EdgeInsetsDirectional.only(end: CsSpace.xs),
+              child: labelRow,
+            ),
             Container(
               padding: const EdgeInsetsDirectional.only(start: CsSpace.xs),
               decoration: BoxDecoration(
@@ -117,19 +120,21 @@ class CsFormField extends StatelessWidget {
           ? Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               spacing: CsSpace.xs,
-              children: [child, Align(alignment: AlignmentDirectional.centerStart, child: secondaryControl)],
+              children: [
+                child,
+                Align(alignment: AlignmentDirectional.centerStart, child: secondaryControl),
+              ],
             )
           : Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: CsSpace.l,
-              children: [Expanded(flex: 2, child: child), Flexible(child: secondaryControl!)],
+              children: [
+                Expanded(flex: 2, child: child),
+                Flexible(child: secondaryControl!),
+              ],
             );
     } else if (!stretch && !narrow) {
-      control = FractionallySizedBox(
-        alignment: AlignmentDirectional.centerStart,
-        widthFactor: 0.66,
-        child: child,
-      );
+      control = FractionallySizedBox(alignment: AlignmentDirectional.centerStart, widthFactor: 0.66, child: child);
     }
 
     final hints = <Widget>[];
@@ -155,12 +160,7 @@ class CsFormField extends StatelessWidget {
       );
     }
     if (constraintText != null || characterCountText != null) {
-      hints.add(
-        Text(
-          [?constraintText, ?characterCountText].join(' '),
-          style: secondaryStyle,
-        ),
-      );
+      hints.add(Text([?constraintText, ?characterCountText].join(' '), style: secondaryStyle));
     }
 
     return Semantics(
@@ -204,6 +204,7 @@ class _Message extends StatelessWidget {
   Widget build(BuildContext context) {
     final style = context.cs.text(CsTypeScale.bodyS, color: color);
     return Semantics(
+      container: true,
       liveRegion: true,
       label: '$iconLabel. $text',
       child: ExcludeSemantics(

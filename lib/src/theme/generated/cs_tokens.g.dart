@@ -12,144 +12,214 @@ import 'package:flutter/painting.dart';
 abstract final class CsSpace {
   /// `spaceAlertActionLeft`.
   static const double alertActionLeft = 12;
+
   /// `spaceAlertHorizontal`.
   static const double alertHorizontal = 16;
+
   /// `spaceAlertMessageRight`.
   static const double alertMessageRight = 4;
+
   /// `spaceButtonFocusOutlineGutter`.
   static const double buttonFocusOutlineGutter = 4;
+
   /// `spaceExpandToggleFocusOutlineGutter`.
   static const double expandToggleFocusOutlineGutter = 4;
+
   /// `spaceButtonInlineLinkFocusOutlineGutter`.
   static const double buttonInlineLinkFocusOutlineGutter = 4;
+
   /// `spaceButtonIconFocusOutlineGutterVertical`.
   static const double buttonIconFocusOutlineGutterVertical = 0;
+
   /// `spaceButtonInlineIconFocusOutlineGutter`.
   static const double buttonInlineIconFocusOutlineGutter = 0;
+
   /// `spaceCalendarGridFocusOutlineGutter`.
   static const double calendarGridFocusOutlineGutter = -5;
+
   /// `spaceCalendarGridSelectedFocusOutlineGutter`.
   static const double calendarGridSelectedFocusOutlineGutter = -5;
+
   /// `spaceCalendarGridGutter`.
   static const double calendarGridGutter = 6;
+
   /// `spaceCardHorizontalDefault`.
   static const double cardHorizontalDefault = 20;
+
   /// `spaceItemCardHorizontalDefault`.
   static const double itemCardHorizontalDefault = 20;
+
   /// `spaceDialogActionInline`.
   static const double dialogActionInline = 4;
+
   /// `spaceDialogHeaderGap`.
   static const double dialogHeaderGap = 8;
+
   /// `spaceDialogSectionGap`.
   static const double dialogSectionGap = 4;
+
   /// `spaceCodeEditorStatusFocusOutlineGutter`.
   static const double codeEditorStatusFocusOutlineGutter = -7;
+
   /// `spaceContainerContentTop`.
   static const double containerContentTop = 4;
+
   /// `spaceContainerHeaderTop`.
   static const double containerHeaderTop = 12;
+
   /// `spaceContainerHorizontal`.
   static const double containerHorizontal = 20;
+
   /// `spaceFieldHorizontal`.
   static const double fieldHorizontal = 12;
+
   /// `spaceFieldIconOffset`.
   static const double fieldIconOffset = 36;
+
   /// `spaceFilteringTokenDismissButtonFocusOutlineGutter`.
   static const double filteringTokenDismissButtonFocusOutlineGutter = -5;
+
   /// `spaceFilteringTokenOperationSelectFocusOutlineGutter`.
   static const double filteringTokenOperationSelectFocusOutlineGutter = -5;
+
   /// `spaceFlashbarActionLeft`.
   static const double flashbarActionLeft = 12;
+
   /// `spaceFlashbarDismissRight`.
   static const double flashbarDismissRight = 0;
+
   /// `spaceFlashbarHorizontal`.
   static const double flashbarHorizontal = 16;
+
   /// `spaceKeyValueGap`.
   static const double keyValueGap = 0;
+
   /// `spaceLayoutToggleDiameter`.
   static const double layoutToggleDiameter = 36;
+
   /// `spaceLayoutTogglePadding`.
   static const double layoutTogglePadding = 12;
+
   /// `spaceModalHorizontal`.
   static const double modalHorizontal = 20;
+
   /// `spacePanelDividerMarginHorizontal`.
   static const double panelDividerMarginHorizontal = 8;
+
   /// `spacePanelNavLeft`.
   static const double panelNavLeft = 28;
+
   /// `spacePanelSideLeft`.
   static const double panelSideLeft = 28;
+
   /// `spaceSegmentedControlFocusOutlineGutter`.
   static const double segmentedControlFocusOutlineGutter = 6;
+
   /// `spaceTabsFocusOutlineGutter`.
   static const double tabsFocusOutlineGutter = -8;
+
   /// `spaceTableContentBottom`.
   static const double tableContentBottom = 4;
+
   /// `spaceTableEmbeddedHeaderTop`.
   static const double tableEmbeddedHeaderTop = 0;
+
   /// `spaceTableFooterHorizontal`.
   static const double tableFooterHorizontal = 0;
+
   /// `spaceTableHeaderHorizontal`.
   static const double tableHeaderHorizontal = 0;
+
   /// `spaceTableHeaderToolsBottom`.
   static const double tableHeaderToolsBottom = 0;
+
   /// `spaceTableHeaderToolsFullPageBottom`.
   static const double tableHeaderToolsFullPageBottom = 4;
+
   /// `spaceTableHorizontal`.
   static const double tableHorizontal = 20;
+
   /// `spaceTreeViewIndentation`.
   static const double treeViewIndentation = 24;
+
   /// `spaceSideNavigationItemDefaultGap`.
   static const double sideNavigationItemDefaultGap = 0;
+
   /// `spaceSideNavigationItemIconGap`.
   static const double sideNavigationItemIconGap = 4;
+
   /// `spaceActionCardHorizontalDefault`.
   static const double actionCardHorizontalDefault = 20;
+
   /// `spaceOptionPaddingVertical`.
   static const double optionPaddingVertical = 4;
+
   /// `spaceOptionPaddingHorizontal`.
   static const double optionPaddingHorizontal = 20;
+
   /// `spaceStatusIndicatorPaddingHorizontal`.
   static const double statusIndicatorPaddingHorizontal = 0;
+
   /// `spaceScaled2xNone`.
   static const double scaled2xNone = 0;
+
   /// `spaceScaledNone`.
   static const double scaledNone = 0;
+
   /// `spaceStaticXxxs`.
   static const double staticXxxs = 2;
+
   /// `spaceStaticXxs`.
   static const double staticXxs = 4;
+
   /// `spaceStaticXs`.
   static const double staticXs = 8;
+
   /// `spaceStaticS`.
   static const double staticS = 12;
+
   /// `spaceStaticM`.
   static const double staticM = 16;
+
   /// `spaceStaticL`.
   static const double staticL = 20;
+
   /// `spaceStaticXl`.
   static const double staticXl = 24;
+
   /// `spaceStaticXxl`.
   static const double staticXxl = 32;
+
   /// `spaceStaticXxxl`.
   static const double staticXxxl = 40;
+
   /// `spaceNone`.
   static const double none = 0;
+
   /// `spaceXxxs`.
   static const double xxxs = 2;
+
   /// `spaceXxs`.
   static const double xxs = 4;
+
   /// `spaceXs`.
   static const double xs = 8;
+
   /// `spaceS`.
   static const double s = 12;
+
   /// `spaceM`.
   static const double m = 16;
+
   /// `spaceL`.
   static const double l = 20;
+
   /// `spaceXl`.
   static const double xl = 24;
+
   /// `spaceXxl`.
   static const double xxl = 32;
+
   /// `spaceXxxl`.
   static const double xxxl = 40;
 }
@@ -158,18 +228,25 @@ abstract final class CsSpace {
 abstract final class CsSize {
   /// `sizeCalendarGridWidth`.
   static const double calendarGridWidth = 238;
+
   /// `sizeControl`.
   static const double control = 16;
+
   /// `sizeIconBig`.
   static const double iconBig = 32;
+
   /// `sizeIconLarge`.
   static const double iconLarge = 48;
+
   /// `sizeIconMedium`.
   static const double iconMedium = 20;
+
   /// `sizeIconNormal`.
   static const double iconNormal = 16;
+
   /// `sizeTableSelectionHorizontal`.
   static const double tableSelectionHorizontal = 40;
+
   /// `sizeSideNavigationCollapsedWidth`.
   static const double sideNavigationCollapsedWidth = 52;
 }
@@ -247,130 +324,193 @@ class CsDensityTokens {
 
   /// `sizeVerticalInput`: 32px comfortable, 28px compact, 28px in compact tables.
   final double sizeVerticalInput;
+
   /// `sizeVerticalPanelIconOffset`: 15px comfortable, 13px compact, 15px in compact tables.
   final double sizeVerticalPanelIconOffset;
+
   /// `sizeSideNavigationItemHeight`: 28px comfortable, 24px compact, 28px in compact tables.
   final double sizeSideNavigationItemHeight;
+
   /// `sizeSideNavigationItemCollapsed`: 30px comfortable, 28px compact, 30px in compact tables.
   final double sizeSideNavigationItemCollapsed;
+
   /// `spaceAlertVertical`: 8px comfortable, 4px compact, 4px in compact tables.
   final double alertVertical;
+
   /// `spaceButtonHorizontal`: 20px comfortable, 16px compact, 16px in compact tables.
   final double buttonHorizontal;
+
   /// `spaceButtonVertical`: 4px comfortable, 2px compact, 2px in compact tables.
   final double buttonVertical;
+
   /// `spaceTokenVertical`: 4px comfortable, 2px compact, 2px in compact tables.
   final double tokenVertical;
+
   /// `spaceFieldVertical`: 5px comfortable, 3px compact, 5px in compact tables.
   final double fieldVertical;
+
   /// `spaceButtonIconOnlyHorizontal`: 6px comfortable, 4px compact, 6px in compact tables.
   final double buttonIconOnlyHorizontal;
+
   /// `spaceButtonModalDismissVertical`: 2px comfortable, 0px compact, 0px in compact tables.
   final double buttonModalDismissVertical;
+
   /// `spaceCardHorizontalEmbedded`: 12px comfortable, 10px compact, 12px in compact tables.
   final double cardHorizontalEmbedded;
+
   /// `spaceCardVerticalDefault`: 16px comfortable, 12px compact, 12px in compact tables.
   final double cardVerticalDefault;
+
   /// `spaceCardVerticalEmbedded`: 10px comfortable, 8px compact, 10px in compact tables.
   final double cardVerticalEmbedded;
+
   /// `spaceItemCardHorizontalEmbedded`: 12px comfortable, 10px compact, 12px in compact tables.
   final double itemCardHorizontalEmbedded;
+
   /// `spaceItemCardVerticalDefault`: 16px comfortable, 12px compact, 12px in compact tables.
   final double itemCardVerticalDefault;
+
   /// `spaceItemCardVerticalEmbedded`: 10px comfortable, 8px compact, 10px in compact tables.
   final double itemCardVerticalEmbedded;
+
   /// `spaceDialogHorizontal`: 12px comfortable, 10px compact, 12px in compact tables.
   final double dialogHorizontal;
+
   /// `spaceDialogVertical`: 10px comfortable, 8px compact, 10px in compact tables.
   final double dialogVertical;
+
   /// `spaceDialogActionBlock`: 4px comfortable, 2px compact, 2px in compact tables.
   final double dialogActionBlock;
+
   /// `spaceContainerContentVertical`: 20px comfortable, 16px compact, 16px in compact tables.
   final double containerContentVertical;
+
   /// `spaceContainerHeaderBottom`: 8px comfortable, 4px compact, 4px in compact tables.
   final double containerHeaderBottom;
+
   /// `spaceContentHeaderPaddingBottom`: 16px comfortable, 12px compact, 12px in compact tables.
   final double contentHeaderPaddingBottom;
+
   /// `spaceDarkHeaderOverlapDistance`: 36px comfortable, 32px compact, 36px in compact tables.
   final double darkHeaderOverlapDistance;
+
   /// `spaceExpandableSectionIconOffsetTop`: 4px comfortable, 0px compact, 4px in compact tables.
   final double expandableSectionIconOffsetTop;
+
   /// `spaceFlashbarVertical`: 8px comfortable, 4px compact, 4px in compact tables.
   final double flashbarVertical;
+
   /// `spaceGridGutter`: 20px comfortable, 16px compact, 20px in compact tables.
   final double gridGutter;
+
   /// `spaceLayoutContentBottom`: 40px comfortable, 24px compact, 40px in compact tables.
   final double layoutContentBottom;
+
   /// `spaceLayoutContentHorizontal`: 24px comfortable, 16px compact, 24px in compact tables.
   final double layoutContentHorizontal;
+
   /// `spaceModalContentBottom`: 16px comfortable, 8px compact, 16px in compact tables.
   final double modalContentBottom;
+
   /// `spacePanelContentBottom`: 40px comfortable, 32px compact, 32px in compact tables.
   final double panelContentBottom;
+
   /// `spacePanelContentTop`: 20px comfortable, 16px compact, 16px in compact tables.
   final double panelContentTop;
+
   /// `spacePanelHeaderVertical`: 20px comfortable, 16px compact, 16px in compact tables.
   final double panelHeaderVertical;
+
   /// `spacePanelSideRight`: 24px comfortable, 20px compact, 20px in compact tables.
   final double panelSideRight;
+
   /// `spacePanelSplitTop`: 20px comfortable, 16px compact, 16px in compact tables.
   final double panelSplitTop;
+
   /// `spacePanelSplitBottom`: 20px comfortable, 16px compact, 16px in compact tables.
   final double panelSplitBottom;
+
   /// `spaceTabsContentTop`: 12px comfortable, 8px compact, 8px in compact tables.
   final double tabsContentTop;
+
   /// `spaceTabsVertical`: 4px comfortable, 2px compact, 2px in compact tables.
   final double tabsVertical;
+
   /// `spaceTableHeaderFocusOutlineGutter`: 0px comfortable, -1px compact, 0px in compact tables.
   final double tableHeaderFocusOutlineGutter;
+
   /// `spaceTableCellVertical`: 8px comfortable, 4px compact, 4px in compact tables.
   final double tableCellVertical;
+
   /// `spaceTileGutter`: 24px comfortable, 16px compact, 24px in compact tables.
   final double tileGutter;
+
   /// `spaceActionCardHorizontalEmbedded`: 12px comfortable, 10px compact, 12px in compact tables.
   final double actionCardHorizontalEmbedded;
+
   /// `spaceActionCardVerticalDefault`: 16px comfortable, 12px compact, 12px in compact tables.
   final double actionCardVerticalDefault;
+
   /// `spaceActionCardVerticalEmbedded`: 10px comfortable, 8px compact, 10px in compact tables.
   final double actionCardVerticalEmbedded;
+
   /// `spaceActionCardDescriptionPaddingTop`: 4px comfortable, 2px compact, 2px in compact tables.
   final double actionCardDescriptionPaddingTop;
+
   /// `spaceActionCardContentPaddingTop`: 8px comfortable, 4px compact, 4px in compact tables.
   final double actionCardContentPaddingTop;
+
   /// `spaceScaled2xXxxs`: 2px comfortable, 0px compact, 2px in compact tables.
   final double scaled2xXxxs;
+
   /// `spaceScaled2xXxs`: 4px comfortable, 0px compact, 4px in compact tables.
   final double scaled2xXxs;
+
   /// `spaceScaled2xXs`: 8px comfortable, 0px compact, 8px in compact tables.
   final double scaled2xXs;
+
   /// `spaceScaled2xS`: 12px comfortable, 4px compact, 12px in compact tables.
   final double scaled2xS;
+
   /// `spaceScaled2xM`: 16px comfortable, 8px compact, 16px in compact tables.
   final double scaled2xM;
+
   /// `spaceScaled2xL`: 20px comfortable, 12px compact, 20px in compact tables.
   final double scaled2xL;
+
   /// `spaceScaled2xXl`: 24px comfortable, 16px compact, 24px in compact tables.
   final double scaled2xXl;
+
   /// `spaceScaled2xXxl`: 32px comfortable, 20px compact, 32px in compact tables.
   final double scaled2xXxl;
+
   /// `spaceScaled2xXxxl`: 40px comfortable, 24px compact, 40px in compact tables.
   final double scaled2xXxxl;
+
   /// `spaceScaledXxxs`: 2px comfortable, 0px compact, 0px in compact tables.
   final double scaledXxxs;
+
   /// `spaceScaledXxs`: 4px comfortable, 2px compact, 2px in compact tables.
   final double scaledXxs;
+
   /// `spaceScaledXs`: 8px comfortable, 4px compact, 4px in compact tables.
   final double scaledXs;
+
   /// `spaceScaledS`: 12px comfortable, 8px compact, 8px in compact tables.
   final double scaledS;
+
   /// `spaceScaledM`: 16px comfortable, 12px compact, 12px in compact tables.
   final double scaledM;
+
   /// `spaceScaledL`: 20px comfortable, 16px compact, 16px in compact tables.
   final double scaledL;
+
   /// `spaceScaledXl`: 24px comfortable, 20px compact, 20px in compact tables.
   final double scaledXl;
+
   /// `spaceScaledXxl`: 32px comfortable, 24px compact, 24px in compact tables.
   final double scaledXxl;
+
   /// `spaceScaledXxxl`: 40px comfortable, 32px compact, 32px in compact tables.
   final double scaledXxxl;
 
@@ -583,64 +723,94 @@ class CsDensityTokens {
 abstract final class CsBorderRadius {
   /// `borderRadiusActionCardDefault`.
   static const double actionCardDefault = 16;
+
   /// `borderRadiusActionCardEmbedded`.
   static const double actionCardEmbedded = 8;
+
   /// `borderRadiusAlert`.
   static const double alert = 12;
+
   /// `borderRadiusBadge`.
   static const double badge = 4;
+
   /// `borderRadiusButton`.
   static const double button = 20;
+
   /// `borderRadiusCalendarDayFocusRing`.
   static const double calendarDayFocusRing = 3;
+
   /// `borderRadiusCardDefault`.
   static const double cardDefault = 16;
+
   /// `borderRadiusCardEmbedded`.
   static const double cardEmbedded = 8;
+
   /// `borderRadiusChatBubble`.
   static const double chatBubble = 8;
+
   /// `borderRadiusSupportPrompt`.
   static const double supportPrompt = 8;
+
   /// `borderRadiusCodeEditor`.
   static const double codeEditor = 8;
+
   /// `borderRadiusContainer`.
   static const double container = 16;
+
   /// `borderRadiusControlCircularFocusRing`.
   static const double controlCircularFocusRing = 4;
+
   /// `borderRadiusControlDefaultFocusRing`.
   static const double controlDefaultFocusRing = 4;
+
   /// `borderRadiusDropdown`.
   static const double dropdown = 8;
+
   /// `borderRadiusDropzone`.
   static const double dropzone = 12;
+
   /// `borderRadiusFlashbar`.
   static const double flashbar = 12;
+
   /// `borderRadiusInput`.
   static const double input = 8;
+
   /// `borderRadiusItem`.
   static const double item = 8;
+
   /// `borderRadiusSideNavigationItem`.
   static const double sideNavigationItem = 8;
+
   /// `borderRadiusItemCardDefault`.
   static const double itemCardDefault = 16;
+
   /// `borderRadiusItemCardEmbedded`.
   static const double itemCardEmbedded = 8;
+
   /// `borderRadiusDialog`.
   static const double dialog = 8;
+
   /// `borderRadiusPopover`.
   static const double popover = 8;
+
   /// `borderRadiusSkeleton`.
   static const double skeleton = 8;
+
   /// `borderRadiusStatusIndicator`.
   static const double statusIndicator = 4;
+
   /// `borderRadiusTabsFocusRing`.
   static const double tabsFocusRing = 20;
+
   /// `borderRadiusTiles`.
   static const double tiles = 8;
+
   /// `borderRadiusToken`.
   static const double token = 8;
+
   /// `borderRadiusTokenInline`.
   static const double tokenInline = 4;
+
   /// `borderRadiusTutorialPanelItem`.
   static const double tutorialPanelItem = 8;
 }
@@ -649,64 +819,94 @@ abstract final class CsBorderRadius {
 abstract final class CsBorderWidth {
   /// `borderWidthFieldStatusInlineStart`.
   static const double fieldStatusInlineStart = 8;
+
   /// `borderWidthActionCardActive`.
   static const double actionCardActive = 1;
+
   /// `borderWidthActionCardDefault`.
   static const double actionCardDefault = 1;
+
   /// `borderWidthActionCardDisabled`.
   static const double actionCardDisabled = 1;
+
   /// `borderWidthActionCardHover`.
   static const double actionCardHover = 1;
+
   /// `borderWidthAlert`.
   static const double alert = 2;
+
   /// `borderWidthAlertBlockEnd`.
   static const double alertBlockEnd = 2;
+
   /// `borderWidthAlertBlockStart`.
   static const double alertBlockStart = 2;
+
   /// `borderWidthAlertInlineEnd`.
   static const double alertInlineEnd = 2;
+
   /// `borderWidthAlertInlineStart`.
   static const double alertInlineStart = 2;
+
   /// `borderWidthFlashbarInlineStart`.
   static const double flashbarInlineStart = 0;
+
   /// `borderWidthButton`.
   static const double button = 2;
+
   /// `borderWidthCard`.
   static const double card = 1;
+
   /// `borderWidthCardSelected`.
   static const double cardSelected = 2;
+
   /// `borderWidthDropdown`.
   static const double dropdown = 2;
+
   /// `borderWidthField`.
   static const double field = 1;
+
   /// `borderWidthIconBig`.
   static const double iconBig = 3;
+
   /// `borderWidthIconLarge`.
   static const double iconLarge = 4;
+
   /// `borderWidthIconMedium`.
   static const double iconMedium = 2;
+
   /// `borderWidthIconNormal`.
   static const double iconNormal = 2;
+
   /// `borderWidthIconSmall`.
   static const double iconSmall = 2;
+
   /// `borderWidthIconXSmall`.
   static const double iconXSmall = 1.5;
+
   /// `borderWidthItemCard`.
   static const double itemCard = 1;
+
   /// `borderWidthItemCardHighlighted`.
   static const double itemCardHighlighted = 2;
+
   /// `borderWidthDialog`.
   static const double dialog = 1;
+
   /// `borderWidthItemSelected`.
   static const double itemSelected = 2;
+
   /// `borderWidthLayoutSideNavigation`.
   static const double layoutSideNavigation = 1;
+
   /// `borderWidthNotificationStackBar`.
   static const double notificationStackBar = 2;
+
   /// `borderWidthBadge`.
   static const double badge = 0;
+
   /// `borderWidthPopover`.
   static const double popover = 2;
+
   /// `borderWidthToken`.
   static const double token = 2;
 }
@@ -715,34 +915,49 @@ abstract final class CsBorderWidth {
 abstract final class CsBorderLine {
   /// `borderActiveWidth`.
   static const double activeWidth = 4;
+
   /// `borderCodeEditorStatusDividerWidth`.
   static const double codeEditorStatusDividerWidth = 1;
+
   /// `borderContainerStickyWidth`.
   static const double containerStickyWidth = 0;
+
   /// `borderContainerTopWidth`.
   static const double containerTopWidth = 0;
+
   /// `borderControlFocusRingShadowSpread`.
   static const double controlFocusRingShadowSpread = 1;
+
   /// `borderControlInvalidFocusRingShadowSpread`.
   static const double controlInvalidFocusRingShadowSpread = 2;
+
   /// `borderDividerListWidth`.
   static const double dividerListWidth = 1;
+
   /// `borderDividerSectionWidth`.
   static const double dividerSectionWidth = 1;
+
   /// `borderDropdownVirtualOffsetWidth`.
   static const double dropdownVirtualOffsetWidth = 2;
+
   /// `borderItemWidth`.
   static const double itemWidth = 2;
+
   /// `borderLineChartWidth`.
   static const double lineChartWidth = 2;
+
   /// `borderLinkFocusRingOutline`.
   static const double linkFocusRingOutline = 0;
+
   /// `borderLinkFocusRingShadowSpread`.
   static const double linkFocusRingShadowSpread = 2;
+
   /// `borderPanelHeaderWidth`.
   static const double panelHeaderWidth = 1;
+
   /// `borderPanelTopWidth`.
   static const double panelTopWidth = 1;
+
   /// `borderTableStickyWidth`.
   static const double tableStickyWidth = 1;
 }
@@ -751,116 +966,172 @@ abstract final class CsBorderLine {
 abstract final class CsFontTokens {
   /// `fontSizeExpandableHeading`: 16px.
   static const double fontSizeExpandableHeading = 16;
+
   /// `fontSizeBodyM`: 14px.
   static const double fontSizeBodyM = 14;
+
   /// `fontSizeBodyS`: 12px.
   static const double fontSizeBodyS = 12;
+
   /// `fontSizeDisplayL`: 42px.
   static const double fontSizeDisplayL = 42;
+
   /// `fontSizeDisplayXl`: 64px.
   static const double fontSizeDisplayXl = 64;
+
   /// `fontSizeFormLabel`: 14px.
   static const double fontSizeFormLabel = 14;
+
   /// `fontSizeHeadingL`: 20px.
   static const double fontSizeHeadingL = 20;
+
   /// `fontSizeHeadingM`: 18px.
   static const double fontSizeHeadingM = 18;
+
   /// `fontSizeHeadingS`: 16px.
   static const double fontSizeHeadingS = 16;
+
   /// `fontSizeHeadingXl`: 24px.
   static const double fontSizeHeadingXl = 24;
+
   /// `fontSizeHeadingXs`: 14px.
   static const double fontSizeHeadingXs = 14;
+
   /// `fontSizeKeyValuePairsLabel`: 14px.
   static const double fontSizeKeyValuePairsLabel = 14;
+
   /// `fontSizeTabs`: 16px.
   static const double fontSizeTabs = 16;
+
   /// `letterSpacingBodyS`: 0.005em.
   static const double letterSpacingBodyS = 0.005;
+
   /// `letterSpacingDisplayL`: -0.03em.
   static const double letterSpacingDisplayL = -0.03;
+
   /// `letterSpacingDisplayXl`: -0.03em.
   static const double letterSpacingDisplayXl = -0.03;
+
   /// `letterSpacingHeadingL`: -0.015em.
   static const double letterSpacingHeadingL = -0.015;
+
   /// `letterSpacingHeadingM`: -0.010em.
   static const double letterSpacingHeadingM = -0.01;
+
   /// `letterSpacingHeadingS`: -0.005em.
   static const double letterSpacingHeadingS = -0.005;
+
   /// `letterSpacingHeadingXl`: -0.02em.
   static const double letterSpacingHeadingXl = -0.02;
+
   /// `letterSpacingHeadingXs`: normal.
   static const double letterSpacingHeadingXs = 0;
+
   /// `lineHeightBodyM`: 20px.
   static const double lineHeightBodyM = 20;
+
   /// `lineHeightBodyS`: 16px.
   static const double lineHeightBodyS = 16;
+
   /// `lineHeightDisplayL`: 48px.
   static const double lineHeightDisplayL = 48;
+
   /// `lineHeightDisplayXl`: 72px.
   static const double lineHeightDisplayXl = 72;
+
   /// `lineHeightFormLabel`: 20px.
   static const double lineHeightFormLabel = 20;
+
   /// `lineHeightHeadingL`: 24px.
   static const double lineHeightHeadingL = 24;
+
   /// `lineHeightHeadingM`: 22px.
   static const double lineHeightHeadingM = 22;
+
   /// `lineHeightHeadingS`: 20px.
   static const double lineHeightHeadingS = 20;
+
   /// `lineHeightHeadingXl`: 30px.
   static const double lineHeightHeadingXl = 30;
+
   /// `lineHeightHeadingXs`: 18px.
   static const double lineHeightHeadingXs = 18;
+
   /// `lineHeightKeyValuePairsLabel`: 20px.
   static const double lineHeightKeyValuePairsLabel = 20;
+
   /// `lineHeightTabs`: 20px.
   static const double lineHeightTabs = 20;
+
   /// `fontWeightAlertHeader`: 700.
   static const FontWeight fontWeightAlertHeader = FontWeight.w700;
+
   /// `fontWeightBold`: 700.
   static const FontWeight fontWeightBold = FontWeight.w700;
+
   /// `fontWeightBreadcrumbCurrent`: 700.
   static const FontWeight fontWeightBreadcrumbCurrent = FontWeight.w700;
+
   /// `fontWeightButton`: 700.
   static const FontWeight fontWeightButton = FontWeight.w700;
+
   /// `fontWeightDisplayL`: 700.
   static const FontWeight fontWeightDisplayL = FontWeight.w700;
+
   /// `fontWeightDisplayXl`: 400.
   static const FontWeight fontWeightDisplayXl = FontWeight.w400;
+
   /// `fontWeightFlashbarHeader`: 700.
   static const FontWeight fontWeightFlashbarHeader = FontWeight.w700;
+
   /// `fontWeightFormLabel`: 700.
   static const FontWeight fontWeightFormLabel = FontWeight.w700;
+
   /// `fontWeightHeadingL`: 700.
   static const FontWeight fontWeightHeadingL = FontWeight.w700;
+
   /// `fontWeightHeadingM`: 700.
   static const FontWeight fontWeightHeadingM = FontWeight.w700;
+
   /// `fontWeightHeadingS`: 700.
   static const FontWeight fontWeightHeadingS = FontWeight.w700;
+
   /// `fontWeightHeadingXl`: 700.
   static const FontWeight fontWeightHeadingXl = FontWeight.w700;
+
   /// `fontWeightHeadingXs`: 700.
   static const FontWeight fontWeightHeadingXs = FontWeight.w700;
+
   /// `fontWeightHeavy`: 700.
   static const FontWeight fontWeightHeavy = FontWeight.w700;
+
   /// `fontWeightKeyValuePairsLabel`: 700.
   static const FontWeight fontWeightKeyValuePairsLabel = FontWeight.w700;
+
   /// `fontWeightLighter`: 300.
   static const FontWeight fontWeightLighter = FontWeight.w300;
+
   /// `fontWeightNormal`: 400.
   static const FontWeight fontWeightNormal = FontWeight.w400;
+
   /// `fontWeightTabs`: 700.
   static const FontWeight fontWeightTabs = FontWeight.w700;
+
   /// `fontWeightTabsDisabled`: 700.
   static const FontWeight fontWeightTabsDisabled = FontWeight.w700;
+
   /// `fontFamilyBase`.
   static const String fontFamilyBase = "'Open Sans', 'Helvetica Neue', Roboto, Arial, sans-serif";
+
   /// `fontFamilyDisplay`.
   static const String fontFamilyDisplay = "'Open Sans', 'Helvetica Neue', Roboto, Arial, sans-serif";
+
   /// `fontFamilyHeading`.
   static const String fontFamilyHeading = "'Open Sans', 'Helvetica Neue', Roboto, Arial, sans-serif";
+
   /// `fontFamilyMonospace`.
-  static const String fontFamilyMonospace = "Monaco, Menlo, Consolas, 'Courier Prime', Courier, 'Courier New', monospace";
+  static const String fontFamilyMonospace =
+      "Monaco, Menlo, Consolas, 'Courier Prime', Courier, 'Courier New', monospace";
 }
 
 /// Cloudscape motion durations (`motionDuration*`). All collapse to zero
@@ -868,54 +1139,79 @@ abstract final class CsFontTokens {
 abstract final class CsDurations {
   /// `motionDurationExtraFast`: 45ms.
   static const Duration extraFast = Duration(milliseconds: 45);
+
   /// `motionDurationExtraSlow`: 270ms.
   static const Duration extraSlow = Duration(milliseconds: 270);
+
   /// `motionDurationFast`: 90ms.
   static const Duration fast = Duration(milliseconds: 90);
+
   /// `motionDurationModerate`: 135ms.
   static const Duration moderate = Duration(milliseconds: 135);
+
   /// `motionDurationRefreshOnlyAmbient`: 2000ms.
   static const Duration refreshOnlyAmbient = Duration(milliseconds: 2000);
+
   /// `motionDurationRefreshOnlyFast`: 115ms.
   static const Duration refreshOnlyFast = Duration(milliseconds: 115);
+
   /// `motionDurationRefreshOnlyMedium`: 165ms.
   static const Duration refreshOnlyMedium = Duration(milliseconds: 165);
+
   /// `motionDurationRefreshOnlySlow`: 250ms.
   static const Duration refreshOnlySlow = Duration(milliseconds: 250);
+
   /// `motionDurationAvatarGenAiGradient`: 3600ms.
   static const Duration avatarGenAiGradient = Duration(milliseconds: 3600);
+
   /// `motionDurationAvatarLoadingDots`: 1200ms.
   static const Duration avatarLoadingDots = Duration(milliseconds: 1200);
+
   /// `motionDurationRotate180`: 135ms.
   static const Duration rotate180 = Duration(milliseconds: 135);
+
   /// `motionDurationRotate90`: 135ms.
   static const Duration rotate90 = Duration(milliseconds: 135);
+
   /// `motionDurationShowPaced`: 180ms.
   static const Duration showPaced = Duration(milliseconds: 180);
+
   /// `motionDurationShowQuick`: 135ms.
   static const Duration showQuick = Duration(milliseconds: 135);
+
   /// `motionDurationSlow`: 180ms.
   static const Duration slow = Duration(milliseconds: 180);
+
   /// `motionDurationTransitionQuick`: 90ms.
   static const Duration transitionQuick = Duration(milliseconds: 90);
+
   /// `motionDurationTransitionShowPaced`: 180ms.
   static const Duration transitionShowPaced = Duration(milliseconds: 180);
+
   /// `motionDurationTransitionShowQuick`: 90ms.
   static const Duration transitionShowQuick = Duration(milliseconds: 90);
+
   /// `motionDurationResponsive`: 115ms.
   static const Duration responsive = Duration(milliseconds: 115);
+
   /// `motionDurationExpressive`: 165ms.
   static const Duration expressive = Duration(milliseconds: 165);
+
   /// `motionDurationComplex`: 250ms.
   static const Duration complex = Duration(milliseconds: 250);
+
   /// `motionDurationTooltipEnter`: 115ms.
   static const Duration tooltipEnter = Duration(milliseconds: 115);
+
   /// `motionDurationExpandableContentEnter`: 180ms.
   static const Duration expandableContentEnter = Duration(milliseconds: 180);
+
   /// `motionDurationSideNavigationContentEnterFade`: 0ms.
   static const Duration sideNavigationContentEnterFade = Duration(milliseconds: 0);
+
   /// `motionDurationSideNavigationContentExit`: 0ms.
   static const Duration sideNavigationContentExit = Duration(milliseconds: 0);
+
   /// `motionDurationSideNavigationContentExitFade`: 0ms.
   static const Duration sideNavigationContentExitFade = Duration(milliseconds: 0);
 }
@@ -924,40 +1220,58 @@ abstract final class CsDurations {
 abstract final class CsCurves {
   /// `motionEasingEaseOutQuart`: cubic-bezier(0.165, 0.84, 0.44, 1).
   static const Curve easeOutQuart = Cubic(0.165, 0.84, 0.44, 1);
+
   /// `motionEasingRefreshOnlyA`: cubic-bezier(0, 0, 0, 1).
   static const Curve refreshOnlyA = Cubic(0, 0, 0, 1);
+
   /// `motionEasingRefreshOnlyB`: cubic-bezier(1, 0, 0.83, 1).
   static const Curve refreshOnlyB = Cubic(1, 0, 0.83, 1);
+
   /// `motionEasingRefreshOnlyC`: cubic-bezier(0.84, 0, 0.16, 1).
   static const Curve refreshOnlyC = Cubic(0.84, 0, 0.16, 1);
+
   /// `motionEasingRefreshOnlyD`: cubic-bezier(0.33, 0, 0.67, 1).
   static const Curve refreshOnlyD = Cubic(0.33, 0, 0.67, 1);
+
   /// `motionEasingAvatarGenAiGradient`: cubic-bezier(0.7, 0, 0.3, 1).
   static const Curve avatarGenAiGradient = Cubic(0.7, 0, 0.3, 1);
+
   /// `motionEasingRotate180`: cubic-bezier(0.165, 0.84, 0.44, 1).
   static const Curve rotate180 = Cubic(0.165, 0.84, 0.44, 1);
+
   /// `motionEasingRotate90`: cubic-bezier(0.165, 0.84, 0.44, 1).
   static const Curve rotate90 = Cubic(0.165, 0.84, 0.44, 1);
+
   /// `motionEasingShowPaced`: ease-out.
   static const Curve showPaced = Cubic(0, 0, 0.58, 1);
+
   /// `motionEasingShowQuick`: ease-out.
   static const Curve showQuick = Cubic(0, 0, 0.58, 1);
+
   /// `motionEasingTransitionQuick`: linear.
   static const Curve transitionQuick = Curves.linear;
+
   /// `motionEasingTransitionShowPaced`: ease-out.
   static const Curve transitionShowPaced = Cubic(0, 0, 0.58, 1);
+
   /// `motionEasingTransitionShowQuick`: linear.
   static const Curve transitionShowQuick = Curves.linear;
+
   /// `motionEasingResponsive`: cubic-bezier(0, 0, 0, 1).
   static const Curve responsive = Cubic(0, 0, 0, 1);
+
   /// `motionEasingSticky`: cubic-bezier(1, 0, 0.83, 1).
   static const Curve sticky = Cubic(1, 0, 0.83, 1);
+
   /// `motionEasingExpressive`: cubic-bezier(0.84, 0, 0.16, 1).
   static const Curve expressive = Cubic(0.84, 0, 0.16, 1);
+
   /// `motionEasingTooltipEnter`: cubic-bezier(0, 0, 0, 1).
   static const Curve tooltipEnter = Cubic(0, 0, 0, 1);
+
   /// `motionEasingExpandableContentEnter`: ease-out.
   static const Curve expandableContentEnter = Cubic(0, 0, 0.58, 1);
+
   /// `motionEasingSideNavigationContentExit`: ease-out.
   static const Curve sideNavigationContentExit = Cubic(0, 0, 0.58, 1);
 }
@@ -991,40 +1305,58 @@ class CsShadows {
 
   /// `shadowCard`.
   final List<BoxShadow> card;
+
   /// `shadowItemCard`.
   final List<BoxShadow> itemCard;
+
   /// `shadowDialog`.
   final List<BoxShadow> dialog;
+
   /// `shadowContainer`.
   final List<BoxShadow> container;
+
   /// `shadowContainerActive`.
   final List<BoxShadow> containerActive;
+
   /// `shadowDropdown`.
   final List<BoxShadow> dropdown;
+
   /// `shadowDropup`.
   final List<BoxShadow> dropup;
+
   /// `shadowFlashCollapsed`.
   final List<BoxShadow> flashCollapsed;
+
   /// `shadowFlashSticky`.
   final List<BoxShadow> flashSticky;
+
   /// `shadowModal`.
   final List<BoxShadow> modal;
+
   /// `shadowPanel`.
   final List<BoxShadow> panel;
+
   /// `shadowPanelToggle`.
   final List<BoxShadow> panelToggle;
+
   /// `shadowPopover`.
   final List<BoxShadow> popover;
+
   /// `shadowSplitBottom`.
   final List<BoxShadow> splitBottom;
+
   /// `shadowSplitSide`.
   final List<BoxShadow> splitSide;
+
   /// `shadowSticky`.
   final List<BoxShadow> sticky;
+
   /// `shadowStickyEmbedded`.
   final List<BoxShadow> stickyEmbedded;
+
   /// `shadowStickyColumnFirst`.
   final List<BoxShadow> stickyColumnFirst;
+
   /// `shadowStickyColumnLast`.
   final List<BoxShadow> stickyColumnLast;
 
@@ -1033,8 +1365,14 @@ class CsShadows {
     card: [],
     itemCard: [],
     dialog: [],
-    container: [BoxShadow(offset: Offset(0, 0), blurRadius: 1, spreadRadius: 1, color: Color(0xFFE9EBED)), BoxShadow(offset: Offset(0, 1), blurRadius: 8, spreadRadius: 2, color: Color(0x1F000716))],
-    containerActive: [BoxShadow(offset: Offset(0, 1), blurRadius: 1, spreadRadius: 1, color: Color(0xFFE9EBED)), BoxShadow(offset: Offset(0, 6), blurRadius: 36, spreadRadius: 0, color: Color(0x1A000716))],
+    container: [
+      BoxShadow(offset: Offset(0, 0), blurRadius: 1, spreadRadius: 1, color: Color(0xFFE9EBED)),
+      BoxShadow(offset: Offset(0, 1), blurRadius: 8, spreadRadius: 2, color: Color(0x1F000716)),
+    ],
+    containerActive: [
+      BoxShadow(offset: Offset(0, 1), blurRadius: 1, spreadRadius: 1, color: Color(0xFFE9EBED)),
+      BoxShadow(offset: Offset(0, 6), blurRadius: 36, spreadRadius: 0, color: Color(0x1A000716)),
+    ],
     dropdown: [BoxShadow(offset: Offset(0, 4), blurRadius: 20, spreadRadius: 1, color: Color(0x1A000716))],
     dropup: [BoxShadow(offset: Offset(0, 4), blurRadius: 20, spreadRadius: 1, color: Color(0x1A000716))],
     flashCollapsed: [BoxShadow(offset: Offset(0, 4), blurRadius: 4, spreadRadius: 0, color: Color(0x40000000))],
@@ -1044,9 +1382,15 @@ class CsShadows {
     panelToggle: [BoxShadow(offset: Offset(0, 6), blurRadius: 12, spreadRadius: 1, color: Color(0x1F000716))],
     popover: [BoxShadow(offset: Offset(0, 4), blurRadius: 20, spreadRadius: 1, color: Color(0x1A000716))],
     splitBottom: [BoxShadow(offset: Offset(0, -36), blurRadius: 36, spreadRadius: -36, color: Color(0x1A000716))],
-    splitSide: [BoxShadow(offset: Offset(-1, 0), blurRadius: 1, spreadRadius: 0, color: Color(0xFFE9EBED)), BoxShadow(offset: Offset(-36, 6), blurRadius: 36, spreadRadius: -36, color: Color(0x1A000716))],
+    splitSide: [
+      BoxShadow(offset: Offset(-1, 0), blurRadius: 1, spreadRadius: 0, color: Color(0xFFE9EBED)),
+      BoxShadow(offset: Offset(-36, 6), blurRadius: 36, spreadRadius: -36, color: Color(0x1A000716)),
+    ],
     sticky: [BoxShadow(offset: Offset(0, 4), blurRadius: 8, spreadRadius: 1, color: Color(0x1A000716))],
-    stickyEmbedded: [BoxShadow(offset: Offset(0, 2), blurRadius: 0, spreadRadius: 0, color: Color(0xFFE9EBED)), BoxShadow(offset: Offset(0, 16), blurRadius: 16, spreadRadius: -12, color: Color(0x1A000716))],
+    stickyEmbedded: [
+      BoxShadow(offset: Offset(0, 2), blurRadius: 0, spreadRadius: 0, color: Color(0xFFE9EBED)),
+      BoxShadow(offset: Offset(0, 16), blurRadius: 16, spreadRadius: -12, color: Color(0x1A000716)),
+    ],
     stickyColumnFirst: [BoxShadow(offset: Offset(4, 0), blurRadius: 8, spreadRadius: 1, color: Color(0x1A000716))],
     stickyColumnLast: [BoxShadow(offset: Offset(-4, 0), blurRadius: 8, spreadRadius: 1, color: Color(0x1A001C24))],
   );
@@ -1057,7 +1401,10 @@ class CsShadows {
     itemCard: [],
     dialog: [],
     container: [BoxShadow(offset: Offset(0, 1), blurRadius: 8, spreadRadius: 2, color: Color(0x99000716))],
-    containerActive: [BoxShadow(offset: Offset(0, 1), blurRadius: 1, spreadRadius: 1, color: Color(0xFF192534)), BoxShadow(offset: Offset(0, 6), blurRadius: 36, spreadRadius: 0, color: Color(0xFF00040C))],
+    containerActive: [
+      BoxShadow(offset: Offset(0, 1), blurRadius: 1, spreadRadius: 1, color: Color(0xFF192534)),
+      BoxShadow(offset: Offset(0, 6), blurRadius: 36, spreadRadius: 0, color: Color(0xFF00040C)),
+    ],
     dropdown: [BoxShadow(offset: Offset(0, 4), blurRadius: 20, spreadRadius: 1, color: Color(0xFF00040C))],
     dropup: [BoxShadow(offset: Offset(0, 4), blurRadius: 20, spreadRadius: 1, color: Color(0xFF00040C))],
     flashCollapsed: [BoxShadow(offset: Offset(0, 4), blurRadius: 4, spreadRadius: 0, color: Color(0x40000000))],
@@ -1067,9 +1414,15 @@ class CsShadows {
     panelToggle: [BoxShadow(offset: Offset(0, 6), blurRadius: 12, spreadRadius: 1, color: Color(0xFF000716))],
     popover: [BoxShadow(offset: Offset(0, 4), blurRadius: 20, spreadRadius: 1, color: Color(0xFF00040C))],
     splitBottom: [BoxShadow(offset: Offset(0, -36), blurRadius: 36, spreadRadius: -36, color: Color(0xFF000716))],
-    splitSide: [BoxShadow(offset: Offset(-1, 0), blurRadius: 1, spreadRadius: 0, color: Color(0xFF192534)), BoxShadow(offset: Offset(-36, 6), blurRadius: 36, spreadRadius: -36, color: Color(0xFF000716))],
+    splitSide: [
+      BoxShadow(offset: Offset(-1, 0), blurRadius: 1, spreadRadius: 0, color: Color(0xFF192534)),
+      BoxShadow(offset: Offset(-36, 6), blurRadius: 36, spreadRadius: -36, color: Color(0xFF000716)),
+    ],
     sticky: [BoxShadow(offset: Offset(0, 4), blurRadius: 8, spreadRadius: 1, color: Color(0x80000716))],
-    stickyEmbedded: [BoxShadow(offset: Offset(0, 2), blurRadius: 0, spreadRadius: 0, color: Color(0xFF414D5C)), BoxShadow(offset: Offset(0, 16), blurRadius: 16, spreadRadius: -12, color: Color(0xFF000716))],
+    stickyEmbedded: [
+      BoxShadow(offset: Offset(0, 2), blurRadius: 0, spreadRadius: 0, color: Color(0xFF414D5C)),
+      BoxShadow(offset: Offset(0, 16), blurRadius: 16, spreadRadius: -12, color: Color(0xFF000716)),
+    ],
     stickyColumnFirst: [BoxShadow(offset: Offset(0, 4), blurRadius: 8, spreadRadius: 1, color: Color(0x80000716))],
     stickyColumnLast: [BoxShadow(offset: Offset(0, 4), blurRadius: 8, spreadRadius: 1, color: Color(0x80000716))],
   );

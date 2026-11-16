@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/widgets.dart';
 
 import '../theme/theme.dart';
@@ -19,8 +21,10 @@ class CsFocusRingPainter extends CustomPainter {
     final inflate = offset + width / 2;
     final rect = (Offset.zero & size).inflate(inflate);
     final r = borderRadius.resolve(TextDirection.ltr);
-    Radius grow(Radius radius) =>
-        radius == Radius.zero ? Radius.zero : Radius.elliptical(radius.x + inflate, radius.y + inflate);
+    Radius grow(Radius radius) => radius == Radius.zero
+        ? Radius.zero
+        // A negative offset draws the ring inside; never let a corner go negative.
+        : Radius.elliptical(math.max(0, radius.x + inflate), math.max(0, radius.y + inflate));
     canvas.drawRRect(
       RRect.fromRectAndCorners(
         rect,

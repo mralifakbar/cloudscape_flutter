@@ -26,16 +26,16 @@ class TypographyPage extends StatelessWidget {
                       '${s.name}  ${s.fontSize.toInt()}/${s.lineHeight.toInt()}  w${s.weight.value}',
                       style: cs.code(scale: CsTypeScale.bodyS, color: CsColor.textBodySecondary),
                     ),
-                    Text(
-                      s.index >= CsTypeScale.displayL.index ? '1,284' : 'Launch an instance',
-                      style: cs.text(s),
-                    ),
+                    Text(s.index >= CsTypeScale.displayL.index ? '1,284' : 'Launch an instance', style: cs.text(s)),
                   ],
                 ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('monospace', style: cs.code(scale: CsTypeScale.bodyS, color: CsColor.textBodySecondary)),
+                  Text(
+                    'monospace',
+                    style: cs.code(scale: CsTypeScale.bodyS, color: CsColor.textBodySecondary),
+                  ),
                   Text('i-0abcd1234efgh5678', style: cs.code()),
                 ],
               ),

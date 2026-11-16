@@ -97,9 +97,7 @@ class CsEditable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cs = context.cs;
-    final style = mono
-        ? cs.code(scale: size, color: color)
-        : cs.text(size, color: color);
+    final style = mono ? cs.code(scale: size, color: color) : cs.text(size, color: color);
     final caret = cs.colors.textBodyDefault;
     final multiline = maxLines != 1;
 

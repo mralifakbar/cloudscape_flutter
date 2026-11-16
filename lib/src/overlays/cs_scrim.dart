@@ -18,7 +18,9 @@ class CsScrim extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cs = context.cs;
-    final color = cs.colors.backgroundModalOverlay.withValues(alpha: cs.colors.backgroundModalOverlay.a * opacity.clamp(0.0, 1.0));
+    final color = cs.colors.backgroundModalOverlay.withValues(
+      alpha: cs.colors.backgroundModalOverlay.a * opacity.clamp(0.0, 1.0),
+    );
     // The scrim always absorbs taps so the page behind a modal stays inert.
     final scrim = GestureDetector(
       behavior: HitTestBehavior.opaque,

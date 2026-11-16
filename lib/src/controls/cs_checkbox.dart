@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 
 import '../system/cs_focus_ring.dart';
 import '../system/cs_pressable.dart';
+import '../system/cs_strings.dart';
 import '../theme/theme.dart';
 
 /// The 16px Cloudscape checkbox glyph: a box with a 3px radius that fills
@@ -18,6 +19,8 @@ class CsCheckboxIcon extends StatefulWidget {
   });
 
   final bool checked;
+
+  /// Draws a dash instead of a check (some items of a list selected).
   final bool indeterminate;
   final bool disabled;
   final bool readOnly;
@@ -161,9 +164,9 @@ class _CheckboxPainter extends CustomPainter {
 /// )
 /// ```
 ///
-/// Tapping the label toggles it too. Use a `CsSwitch`-like `CsToggle` for
-/// settings that take effect at once, and a checkbox for choices submitted
-/// with a form.
+/// Tapping the label toggles it too. Use `CsToggle` for settings that take
+/// effect at once, and a checkbox for choices submitted with a form. A
+/// read-only checkbox stays focusable but ignores taps and keys.
 class CsCheckbox extends StatelessWidget {
   const CsCheckbox({
     super.key,
@@ -176,10 +179,12 @@ class CsCheckbox extends StatelessWidget {
     this.disabled = false,
     this.readOnly = false,
     this.ariaLabel,
+    this.ariaRequired = false,
     this.focusNode,
     this.autofocus = false,
   });
 
+  /// Whether the box is checked.
   final bool checked;
 
   /// Called with the next checked state. An indeterminate checkbox becomes
@@ -198,6 +203,9 @@ class CsCheckbox extends StatelessWidget {
 
   /// Accessible name when there is no visible label.
   final String? ariaLabel;
+
+  /// Announces the checkbox as required.
+  final bool ariaRequired;
   final FocusNode? focusNode;
   final bool autofocus;
 
@@ -215,7 +223,9 @@ class CsCheckbox extends StatelessWidget {
       color: isDisabled ? CsColor.textControlDisabled : CsColor.textFormSecondary,
     );
     return CsPressable(
-      onPress: isDisabled || readOnly ? null : () => onChange!(indeterminate ? true : !checked),
+      // Read-only stays focusable (Cloudscape) but ignores activation.
+      onPress: isDisabled ? null : (readOnly ? () {} : () => onChange!(indeterminate ? true : !checked)),
+      mouseCursor: readOnly ? SystemMouseCursors.basic : null,
       disabled: isDisabled,
       focusNode: focusNode,
       autofocus: autofocus,
@@ -224,6 +234,7 @@ class CsCheckbox extends StatelessWidget {
       checked: indeterminate ? null : checked,
       mixed: indeterminate ? true : null,
       semanticLabel: ariaLabel,
+      semanticHint: ariaRequired ? context.csStrings.required : null,
       isButton: false,
       builder: (context, state) {
         Widget box = CsCheckboxIcon(

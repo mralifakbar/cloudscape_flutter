@@ -38,11 +38,7 @@ class NavList extends StatelessWidget {
     }
     return CsContainer(
       disableContentPaddings: true,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: rows,
-      ),
+      child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.stretch, children: rows),
     );
   }
 }
@@ -67,11 +63,7 @@ class _NavRow extends StatelessWidget {
         child: Row(
           spacing: CsSpace.s,
           children: [
-            CsVisualAccent(
-              color: CsVisualAccentColor.indigo,
-              equalAspect: true,
-              child: CsIcon(entry.icon),
-            ),
+            CsVisualAccent(color: CsVisualAccentColor.indigo, equalAspect: true, child: CsIcon(entry.icon)),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

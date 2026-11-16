@@ -239,7 +239,8 @@ class CsBox extends StatelessWidget {
         fontSize: s.fontSize,
         height: s.height,
         letterSpacing: s.letterSpacing,
-        fontWeight: fontWeight == null && variant.index >= CsBoxVariant.h1.index && variant.index <= CsBoxVariant.h5.index
+        fontWeight:
+            fontWeight == null && variant.index >= CsBoxVariant.h1.index && variant.index <= CsBoxVariant.h5.index
             ? style.fontWeight
             : s.fontWeight,
       );
@@ -359,7 +360,10 @@ class CsVisualAccent extends StatelessWidget {
       ),
       child: IconTheme.merge(
         data: IconThemeData(color: fg),
-        child: DefaultTextStyle.merge(style: TextStyle(color: fg), child: child),
+        child: DefaultTextStyle.merge(
+          style: TextStyle(color: fg),
+          child: child,
+        ),
       ),
     );
   }
